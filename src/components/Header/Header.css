@@ -1,0 +1,24 @@
+.Header {
+  background-color: black;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header a {
+  color: white;
+  text-decoration: none;
+}
+
+.Header__brand {
+  margin-left: 10px;
+}
+
+.Header__nav a:not(:first-child) {
+  margin-left: 10px;
+}
+
+.Header__nav a:last-child {
+  margin-right: 10px;
+}
