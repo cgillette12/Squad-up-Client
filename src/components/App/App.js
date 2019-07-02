@@ -1,22 +1,17 @@
 import React from 'react';
-import './App.css';
+import LoginRoute from '../../Routes/LoginRoute'
+import { Route } from 'react-router-dom'
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
       </header>
+      <main role='main'>
+      <Route exact path='/Login' component={LoginRoute}/>
+      </main>
     </div>
   );
 }

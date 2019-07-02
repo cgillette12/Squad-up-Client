@@ -1,0 +1,38 @@
+.Login-parent{
+   margin-top: 3vh;
+     align-items: center;
+     justify-content: center;
+     display: flex;
+     flex-direction: column;
+     line-height: 1.8;
+   
+}
+.login-section{
+  width:40%;
+  line-height: 2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+    
+}
+.login-form{
+  width: 452px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 350px;
+
+} 
+.Login-button{
+  font-size:18px;
+  height: 42px;
+}
+#login-username-input, #login-password-input{
+  font-size:18px;
+  height:42px;
+  width:100%
+}
+
+  
