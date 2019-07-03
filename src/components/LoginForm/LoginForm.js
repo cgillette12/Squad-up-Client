@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext, useRef } from 'react'
+import React, { useState, useContext } from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/UserContext'
-import { Input, Label } from '../../components/FormUtils/FormUtils'
+import { Input } from '../../components/FormUtils/FormUtils'
 import './LoginForm.css'
 
 export default function LoginForm(props) {
@@ -10,8 +10,6 @@ export default function LoginForm(props) {
   const [error, setError] = useState(null)
   const { onLoginSuccess = () => { } } = props;
   const context = useContext(UserContext);
-
-  const firstInput = useRef(null)
 
   const handlesubmit = e => {
     e.preventDefault()
@@ -31,10 +29,6 @@ export default function LoginForm(props) {
       })
   }
 
-  useEffect(() => {
-    firstInput.current.focus();
-  });
-
   return (
     <div className="login">
       <div className="login-wrapper">
@@ -46,25 +40,27 @@ export default function LoginForm(props) {
             {error && <p>{error}</p>}
           </div>
           <div className="username-section">
-            <Label className="username">Username</Label>
             <Input
               id="login-username-input"
               type="text"
               name="username"
+              placeholder='username'
               value={user}
-              ref = {firstInput}
               onChange={e => setUser(e.target.value)}
+              aria-label='username'
+              autoFocus
               required
             />
           </div>
           <div className="password-section">
-            <Label className="password">Password</Label>
             <Input
               id="login-password-input"
               type="password"
               name="password"
+              placeholder='password'
               value={password}
               onChange={e => setPassword(e.target.value)}
+              aria-label='password'
               required
             />
           </div>
