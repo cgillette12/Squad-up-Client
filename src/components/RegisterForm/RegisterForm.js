@@ -47,6 +47,7 @@ export default function RegisterForm() {
           type="text"
           name="name"
           placeholder='Name'
+          aria-label='name'
           required
         />
         <Input
@@ -54,6 +55,7 @@ export default function RegisterForm() {
           id="register-username-input"
           type="text"
           name="username"
+          aria-label='username'
           placeholder='Username'
           required
         />
@@ -62,6 +64,7 @@ export default function RegisterForm() {
           id="register-password-input"
           type="password"
           name="password"
+          aria-label='password'
           placeholder='Password'
           required
         />

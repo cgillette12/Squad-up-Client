@@ -6,11 +6,11 @@ export function Label({ className, ...props }) {
   )
 }
 
-export const Input = ({ className, ...props }) => {
+export const Input = React.forwardRef( ({ className, ...props }, ref) => {
   return (
-    <input className={className} type='text'{...props} />
+    <input className={className} type='text' ref={ref}{...props} />
   )
-}
+})
 
 export function Required({ className, ...props }) {
   return (
