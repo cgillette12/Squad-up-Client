@@ -1,4 +1,4 @@
-.Login-parent{
+.login-parent{
    margin-top: 3vh;
      align-items: center;
      justify-content: center;
@@ -25,7 +25,7 @@
   height: 350px;
 
 } 
-.Login-button{
+.login-button{
   font-size:18px;
   height: 42px;
 }
