@@ -7,10 +7,9 @@ import './LoginForm.css'
 export default function LoginForm() {
   return (
     <div className="login">
-      <div className="login-wrapper">
         <form className="login-form">
           <div className="username-section">
-            <Label className="username">Username</Label>
+            <Label className="username-label">Username</Label>
             <Input
               id="login-username-input"
               type="text"
@@ -19,7 +18,7 @@ export default function LoginForm() {
             />
           </div>
           <div className="password-section">
-            <Label className="password">Password</Label>
+            <Label className="password-label">Password</Label>
             <Input
               id="login-password-input"
               type="password"
@@ -31,7 +30,6 @@ export default function LoginForm() {
             Login
           </button>
         </form>
-      </div>
     </div>
   )
 }

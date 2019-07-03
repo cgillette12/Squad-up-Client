@@ -1,4 +1,4 @@
-.login-parent {
+.register-parent {
   align-items: center;
   justify-content: center;
   display: flex;
@@ -6,7 +6,7 @@
   line-height: 1.8;
 }
 
-.login-section {
+.register-section {
   line-height: 2;
   display: flex;
   align-items: center;
@@ -16,26 +16,28 @@
 }
 
 
-.login-form {
+.register-form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 350px;
 }
 
-.login-button {
+.register-button {
   font-size: 18px;
   height: 42px;
 }
 
-#login-username-input,
-#login-password-input {
+#register-username-input,
+#register-password-input,
+#register-name-input{
   font-size: 18px;
   height: 42px;
   width: 100%;
 }
-.login-username-label,
-.login-password-label {
+.register-username-label,
+.register-password-label,
+.register-name-label{
   font-size: 18px;
 }
 
