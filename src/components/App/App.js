@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <main role='main'>
-        <Route exact path='/Login' component={LoginRoute} />
+        <Route exact path='/login' component={LoginRoute} />
       </main>
     </div>
   );

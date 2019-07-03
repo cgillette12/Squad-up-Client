@@ -1,9 +1,9 @@
 .Header {
   background-color: black;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
 }
 
 .Header a {
@@ -12,7 +12,7 @@
 }
 
 .Header__brand {
-  margin-left: 10px;
+  margin: 0;
 }
 
 .Header__nav a:not(:first-child) {
@@ -21,4 +21,10 @@
 
 .Header__nav a:last-child {
   margin-right: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .Header {
+    flex-direction: column;
+  }
 }
