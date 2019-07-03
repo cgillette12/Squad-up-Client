@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState }from 'react'
 import RegisterForm from '../../components/RegisterForm/RegisterForm'
 
 export default function RegisterRoute() {
