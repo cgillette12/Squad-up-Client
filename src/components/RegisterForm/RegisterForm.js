@@ -16,7 +16,7 @@ export default function RegisterForm() {
   const handleNewUserSubmit = e => {
     e.preventDefault()
 
-    this.setState({ error: null })
+    setError( null )
     AuthApiService.postUser({
       user_name: userName,
       name: name,
