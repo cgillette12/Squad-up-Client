@@ -41,7 +41,7 @@ export default function LoginForm(props) {
               id="login-username-input"
               type="text"
               name="username"
-              placeholder='username'
+              placeholder='Username'
               value={user}
               onChange={e => setUser(e.target.value)}
               aria-label='username'
@@ -52,7 +52,7 @@ export default function LoginForm(props) {
               id="login-password-input"
               type="password"
               name="password"
-              placeholder='password'
+              placeholder='Password'
               value={password}
               onChange={e => setPassword(e.target.value)}
               aria-label='password'

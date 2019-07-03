@@ -13,13 +13,14 @@
 
 .login-button {
 font-size: 20px;
- padding: 15px 10px;
+ padding: 15px 20px;
  margin: 22px 0;
+ border-radius: 5px;
 }
 
 input {
  font-size: 20px;
- padding: 15px 10px;
+ padding: 15px 20px;
  margin: 22px 0;
  border-radius: 3px;
 
