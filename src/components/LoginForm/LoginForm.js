@@ -1,35 +1,35 @@
 import React, { Component } from 'react'
-import { Input, Label } from '../FormUtils/FormUtils'
+import AuthApiService from '../../services/auth-api-service';
+import UserContext from '../../context/UserContext';
+
 import './LoginForm.css'
 
 export default class LoginForm extends Component {
-  handleSubmitLogin = ev => {
-    ev.preventDefault();
-    const { username, Password } = ev.target
-
+  static defaultProps = {
+    onLoginSuccess: () => { }
   }
+
+  static contextType = UserContext;
+
   render() {
     return (
       <div className='login'>
         <div className='login-wrapper'>
-          <form className='login-form' onClick={this.handleSubmitLogin}>
+          <form className='login-form'>
             <div className='username-section'>
-              <Label
-                className='username'>
-                Username
-              </Label>
-              <Input
+              <label className='username'>Username</label>
+              <input
                 id='login-username-input'
                 type='text'
                 name='username'
                 required />
             </div>
-            <div className='Password-section'>
-              <Label
-                className='Password'>
+            <div className='password-section'>
+              <label
+                className='password'>
                 Password
-              </Label>
-              <Input
+              </label>
+              <input
                 id='login-password-input'
                 type='password'
                 name='password'
