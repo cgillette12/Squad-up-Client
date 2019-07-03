@@ -12,7 +12,6 @@ export default function LoginForm(props) {
   const context = useContext(UserContext);
 
   const firstInput = useRef(null)
-  console.log(firstInput)
 
   const handlesubmit = e => {
     e.preventDefault()
