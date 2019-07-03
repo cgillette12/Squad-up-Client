@@ -6,6 +6,9 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <main role='main'>
+        <Route exact path='/login' component={LoginRoute} />
+      </main>
     </div>
   );
 }
