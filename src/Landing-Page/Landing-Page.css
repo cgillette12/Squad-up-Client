@@ -1,0 +1,8 @@
+.homePage{
+  margin: auto;
+  width:50%;
+  border:1px solid black;
+}
+h1, p{
+  text-align: center;
+}
