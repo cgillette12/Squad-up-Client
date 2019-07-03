@@ -1,46 +1,26 @@
-.register-parent {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.8;
-}
-
 .register-section {
-  line-height: 2;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  align-content: center;
-  justify-content: space-evenly;
+  margin: auto;
+  max-width: 500px;
 }
 
 
 .register-form {
+  margin:10px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 350px;
 }
 
 .register-button {
-  font-size: 18px;
-  height: 42px;
+ font-size: 20px;
+ padding: 9px 25px;
+ margin: 22px 0;
+ border-radius: 5px;
 }
 
-#register-username-input,
-#register-password-input,
-#register-name-input{
-  font-size: 18px;
-  height: 42px;
-  width: 100%;
+@media screen and (max-width: 500px) {
+ 
+  .register-button{
+  border:1px solid #cccccc;
+  }
 }
-.register-username-label,
-.register-password-label,
-.register-name-label{
-  font-size: 18px;
-}
-
- @media screen and (max-width: 500px) {
-     
-    }

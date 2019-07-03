@@ -41,42 +41,36 @@ export default function RegisterForm() {
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
-        <div className="username-section">
-          <Label className="username">Username</Label>
-          <Input
-            onChange={e => setUserName(e.target.value)}
-            id="register-username-input"
-            type="text"
-            name="username"
-            required
-          />
-        </div>
-        <div className="name-section">
-          <Label className="name">Name</Label>
-          <Input
-            onChange={e => setName(e.target.value)}
-            id="register-name-input"
-            type="text"
-            name="name"
-            required
-          />
-        </div>
-        <div className="password-section">
-          <Label className="password">Password</Label>
-          <Input
-            onChange={e => setPassword(e.target.value)}
-            id="register-password-input"
-            type="password"
-            name="password"
-            required
-          />
-        </div>
+        <Input
+          onChange={e => setName(e.target.value)}
+          id="register-name-input"
+          type="text"
+          name="name"
+          placeholder='Name'
+          required
+        />
+        <Input
+          onChange={e => setUserName(e.target.value)}
+          id="register-username-input"
+          type="text"
+          name="username"
+          placeholder='Username'
+          required
+        />
+        <Input
+          onChange={e => setPassword(e.target.value)}
+          id="register-password-input"
+          type="password"
+          name="password"
+          placeholder='Password'
+          required
+        />
         <div className="avatar-section">
           <Label className="avatar">Select Avitar</Label>
         </div>
         <button type="submit" className="register-button">
           Register
-          </button>
+        </button>
       </form>
     </div>
   )
