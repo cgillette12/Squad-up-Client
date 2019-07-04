@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
-import './Header.css'
 import UserContext from '../../contexts/UserContext';
+import './Header.css'
 
 export default function Header() {
   const user = useContext(UserContext)
   
   const handleLogoutClick = () => {
     TokenService.clearAuthToken()
-    user.clearUser()
+    user.processLogout()
   }
 
   const renderLogoutLink = () => {
