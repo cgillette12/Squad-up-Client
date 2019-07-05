@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
 import LoginRoute from '../../Routes/LoginRoute/LoginRoute'
 import LandingPageRoute from '../../Routes/LandingPageRoute/LandingPageRoute'
+import GamesList from '../../Routes/GamesListPage/GamesList';
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
        <Switch>
          <Route exact path={'/'} component={LandingPageRoute} />
          <Route exact path={'/login'} component={LoginRoute} />
+         <Route path={'/games-list'} component={GamesList} />
        </Switch>
       </main>
     </div>

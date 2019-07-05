@@ -1,0 +1,20 @@
+.GamesSublist {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 10px;
+}
+
+.GamesSublist__heading {
+  background-color: gray;
+  border: 2px solid gray;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: white;
+}
+
+.GamesSublist__games-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
