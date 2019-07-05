@@ -1,26 +1,38 @@
 import React, { useState, useEffect, useContext } from 'react'
 import UserContext from '../../contexts/UserContext'
+import config from '../../config';
 import { Input } from '../../components/FormUtils/FormUtils'
 
 export default function NewSquadForm() {
   const [squadName, setSquadName] = useState('');
   const [squadTag, setSquadTag] = useState('')
   const [squadTags, setSquadTags] = useState([])
-  
+
   const handleNewTag = () => {
-    setSquadTags([...squadTags, 
-      <li>
-        {squadTag}
-      </li>
+    setSquadTags([...squadTags,
+    <li className='squad-tag' key={squadTags.length + 1}>
+      {squadTag}
+    </li>
     ])
+    setSquadTag('')
   }
 
+  const handleSumbitSquad = e => {
+    e.preventDefault();
+
+    fetch(`${config.API_ENDPOINT}/squad`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      }
+    })
+  }
 
   return (
     <div>
       <form
         className='new-squad-form'
-
+        onSubmit={handleSumbitSquad}
       >
         <Input
           id='squad-name-input'
@@ -33,7 +45,7 @@ export default function NewSquadForm() {
           autoFocus
           required
         />
-        <div>
+        <div className='tags-input'>
           <Input
             id='squad-tags-input'
             type='text'
@@ -49,7 +61,7 @@ export default function NewSquadForm() {
           </ul>
         </div>
         <button type='submit' className='new-squad-submit'>
-          New Squad
+          Sumbmit Squad
         </button>
       </form>
     </div>
