@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react'
-import UserContext from '../../contexts/UserContext'
+import React, { useState } from 'react'
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import { Input } from '../../components/FormUtils/FormUtils'
 
 export default function NewSquadForm() {
   const [squadName, setSquadName] = useState('');
+  const [squadDescription, setSquadDescription] = useState('')
   const [squadTag, setSquadTag] = useState('')
   const [squadTags, setSquadTags] = useState([])
-  const [squaddescription, setSquadDescription] = useState('')
 
   const handleNewTag = () => {
     setSquadTags([...squadTags,
@@ -28,7 +27,7 @@ export default function NewSquadForm() {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`
       },
-      body: JSON.stringify({ squadName, squadTags })
+      body: JSON.stringify({ squadName, squadDescription, squadTags })
     })
       .then(res =>
         (!res.ok)
@@ -54,26 +53,14 @@ export default function NewSquadForm() {
           autoFocus
           required
         />
-        {/* <div className='tags-input'>
-          <Input
-            id='squad-tags-input'
-            type='text'
-            name='squad-tag-input'
-            placeholder='new tag'
-            value={squadTag}
-            onChange={e => setSquadTag(e.target.value)}
-            aria-label='squad tag input'
-          />
-          <button onClick={handleNewTag}>New Tag</button>
-          <ul>
-            {squadTags}
-          </ul>
-        </div> */}
-        <button type='submit' className='new-squad-submit'>
-          Sumbmit Squad
-        </button>
-      </form>
-      <form className='tags-form'>
+        <textarea 
+          id='squad-description'
+          name='squad-description'
+          placeholder='Description'
+          value={squadDescription}
+          onChange={e => setSquadDescription(e.target.value)}
+          aria-label='Description'
+          ></textarea>
         <div className='tags-input'>
           <Input
             id='squad-tags-input'
@@ -89,6 +76,9 @@ export default function NewSquadForm() {
             {squadTags}
           </ul>
         </div>
+        <button type='submit' className='new-squad-submit'>
+          Sumbmit Squad
+        </button>
       </form>
     </div>
   )
