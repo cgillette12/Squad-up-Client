@@ -5,11 +5,12 @@ import { Input, Label } from '../../components/FormUtils/FormUtils'
 import './RegisterForm.css';
 
 
-export default function RegisterForm() {
+export default function RegisterForm(props) {
   const [userName, setUserName] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const { onRegisterSuccess = () => { } } = props;
 
   const context = useContext(UserContext);
 
@@ -26,6 +27,7 @@ export default function RegisterForm() {
         setUserName('')
         setName('')
         setPassword('')
+        onRegisterSuccess()
         context.onRegistrationSuccess()
       })
       .catch(res => {
