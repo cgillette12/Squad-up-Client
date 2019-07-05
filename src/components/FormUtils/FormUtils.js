@@ -8,7 +8,7 @@ export function Label({ className, ...props }) {
 
 export const Input = React.forwardRef( ({ className, ...props }, ref) => {
   return (
-    <input className={className} type='text' ref={ref}{...props} />
+    <input className={className} type='text' ref={ref} {...props} />
   )
 })
 

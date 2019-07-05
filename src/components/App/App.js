@@ -4,6 +4,7 @@ import Header from '../Header/Header'
 import LoginRoute from '../../Routes/LoginRoute/LoginRoute'
 import LandingPageRoute from '../../Routes/LandingPageRoute/LandingPageRoute'
 import RegisterRoute from '../../Routes/RegisterRoute/RegisterRoute'
+import NewSquadRoute from '../../Routes/NewSquadRoute/NewSquadRoute'
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
          <Route exact path={'/'} component={LandingPageRoute} />
          <Route exact path={'/login'} component={LoginRoute} />
          <Route exact path={'/register'} component={RegisterRoute} />
+         <Route exact path={'/newsquad'} component={NewSquadRoute}/>
        </Switch>
       </main>
     </div>
