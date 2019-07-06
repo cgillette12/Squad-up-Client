@@ -9,11 +9,16 @@
   background-color: gray;
   border: 2px solid gray;
   border-radius: 4px;
+  margin: 0;
+  margin-bottom: -20px;
   padding: 10px 20px;
   color: white;
+  z-index: 1;
 }
 
 .GamesSublist__games-list {
+  border: 1px solid black;
+  padding: 30px 20px 10px 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
