@@ -30,8 +30,6 @@ export default function LoginForm(props) {
   }
 
   return (
-    <div className="login">
-      <div className="login-wrapper">
         <form
           className="login-form"
           onSubmit={handlesubmit}
@@ -39,36 +37,30 @@ export default function LoginForm(props) {
           <div role='alert'>
             {error && <p>{error}</p>}
           </div>
-          <div className="username-section">
             <Input
               id="login-username-input"
               type="text"
               name="username"
-              placeholder='username'
+              placeholder='Username'
               value={user}
               onChange={e => setUser(e.target.value)}
               aria-label='username'
               autoFocus
               required
             />
-          </div>
-          <div className="password-section">
             <Input
               id="login-password-input"
               type="password"
               name="password"
-              placeholder='password'
+              placeholder='Password'
               value={password}
               onChange={e => setPassword(e.target.value)}
               aria-label='password'
               required
             />
-          </div>
           <button type="submit" className="login-button">
             Login
           </button>
-        </form>
-      </div>
-    </div>
+    </form>
   )
 }
