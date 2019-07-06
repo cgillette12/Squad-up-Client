@@ -9,13 +9,22 @@ export default function NewSquadForm() {
   const [squadTag, setSquadTag] = useState('')
   const [squadTags, setSquadTags] = useState([])
 
+  const removeTag = index => {
+    setSquadTags([...squadTags.splice(index, 1)])
+  }
+
+  console.log(squadTags)
   const handleNewTag = () => {
-    setSquadTags([...squadTags,
-    <li className='squad-tag' key={squadTags.length + 1}>
-      {squadTag}
-    </li>
-    ])
+    setSquadTags([...squadTags, squadTag])
     setSquadTag('')
+
+    console.log(
+      <li className='squad-tag' key={squadTags.length}>
+        {squadTags[squadTags.length - 1]}
+        <button onClick={e => removeTag(squadTags.length)}>Remove</button>
+      </li>
+    )
+    
   }
 
   const handleSumbitSquad = e => {
@@ -53,14 +62,14 @@ export default function NewSquadForm() {
           autoFocus
           required
         />
-        <textarea 
+        <textarea
           id='squad-description'
           name='squad-description'
           placeholder='Description'
           value={squadDescription}
           onChange={e => setSquadDescription(e.target.value)}
           aria-label='Description'
-          ></textarea>
+        ></textarea>
         <div className='tags-input'>
           <Input
             id='squad-tags-input'
@@ -73,7 +82,7 @@ export default function NewSquadForm() {
           />
           <button onClick={handleNewTag}>New Tag</button>
           <ul>
-            {squadTags}
+         
           </ul>
         </div>
         <button type='submit' className='new-squad-submit'>
