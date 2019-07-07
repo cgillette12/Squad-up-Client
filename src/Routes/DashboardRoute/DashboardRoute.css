@@ -5,7 +5,7 @@
 
 .Dashboard__games-list {
   flex: 2;
-  margin: 30px 25px 50px 30px;
+  margin: 30px 15px 30px 30px;
   border: 3px solid gray;
   border-radius: 3px;
 }
@@ -13,14 +13,14 @@
 .Dashboard__user-access {
   flex: 1;
   flex-direction: column;
-  margin: 30px 25px;
+  margin: 30px 30px 30px 15px;
 }
 
 .Dashboard__user-squads,
 .Dashboard__chat {
   border: 3px solid gray;
   border-radius: 3px;
-  width: 80%;
+  /* width: 80%; */
   margin: 40px auto;
 }
 
