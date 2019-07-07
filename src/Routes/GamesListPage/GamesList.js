@@ -3,6 +3,7 @@ import GameContext from '../../contexts/GameContext'
 import GameApiService from '../../services/game-api.service'
 import GamesSublist from '../../components/GamesSublist/GamesSublist'
 import { Input } from '../../components/FormUtils/FormUtils'
+import './GamesList.css'
 
 // import store from './dummy-store'
 
@@ -69,7 +70,7 @@ export default function GamesList() {
         <Input 
           type="text"
           placeholder="Search for Games..."
-          name="search-games"
+          className="GamesList__search-input"
           onChange={e => handleSearchFuzzy(e.target.value)}
           value={searchTerm}
           aria-label="Search for Games"
