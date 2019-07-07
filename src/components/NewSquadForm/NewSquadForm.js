@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import { Input } from '../../components/FormUtils/FormUtils'
@@ -13,18 +13,12 @@ export default function NewSquadForm() {
     setSquadTags([...squadTags.splice(index, 1)])
   }
 
-  console.log(squadTags)
   const handleNewTag = () => {
+    if(squadTag === ''){
+      return;
+    }
     setSquadTags([...squadTags, squadTag])
     setSquadTag('')
-
-    console.log(
-      <li className='squad-tag' key={squadTags.length}>
-        {squadTags[squadTags.length - 1]}
-        <button onClick={e => removeTag(squadTags.length)}>Remove</button>
-      </li>
-    )
-    
   }
 
   const handleSumbitSquad = e => {
@@ -82,7 +76,12 @@ export default function NewSquadForm() {
           />
           <button onClick={handleNewTag}>New Tag</button>
           <ul>
-         
+            {squadTags.map((tag, index) => 
+              <li className='squad-tag' key={index}>
+                {tag} 
+                {/* <button onClick={removeTag(index)}>Remove</button> */}
+              </li>  
+            )}
           </ul>
         </div>
         <button type='submit' className='new-squad-submit'>
