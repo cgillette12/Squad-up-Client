@@ -1,0 +1,45 @@
+.GamesSublist {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.GamesSublist__heading {
+  background-color: gray;
+  border: 2px solid gray;
+  border-radius: 4px;
+  margin: 0;
+  padding: 10px 20px;
+  color: white;
+  /* cringe warning below: (needs fix) */
+  margin-bottom: -40px;
+  z-index: 1;
+}
+
+.GamesSublist__expand-btn {
+  justify-self: center;
+  align-self: flex-end;
+
+}
+
+.GamesSublist__games-list {
+  border: 1px solid black;
+  padding: 30px 20px 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* overflow-y: hidden; */
+  /* max-height: 240px; */
+  margin-left: 10px;
+  /* height: 100%; */
+}
+
+.not-expanded {
+  overflow-y: hidden;
+  max-height: 235px;
+}
