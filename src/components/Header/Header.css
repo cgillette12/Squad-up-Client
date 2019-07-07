@@ -15,12 +15,19 @@
   margin: 0;
 }
 
-.Header__nav a:not(:first-child) {
-  margin-left: 10px;
+.Header__user-avatar {
+  filter: invert(100%);
+  width: 33px;
 }
 
-.Header__nav a:last-child {
-  margin-right: 10px;
+.Header__logged-in,
+.Header__not-logged-in {
+  display: flex;
+}
+
+.Header__nav a:not(:first-child) {
+  align-self: center;
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 700px) {
