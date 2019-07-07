@@ -16,7 +16,7 @@ export default function Header() {
     return (
       <div className='Header__logged-in'>
         <img className='Header__user-avatar' src={userContext.user.avatar} alt="Avatar" aria-label="User Avatar" />
-        <Link to='/games-list'>{userContext.user.name}</Link>
+        <Link to='/dashboard'>{userContext.user.name}</Link>
         <Link onClick={handleLogoutClick} to='/'>Logout</Link>
       </div>
     )

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import GameContext from '../../contexts/GameContext'
 import GameApiService from '../../services/game-api.service'
-import GamesSublist from '../../components/GamesSublist/GamesSublist'
-import { Input } from '../../components/FormUtils/FormUtils'
+import GamesSublist from '../GamesSublist/GamesSublist'
+import { Input } from '../FormUtils/FormUtils'
 import './GamesList.css'
 
 // import store from './dummy-store'
