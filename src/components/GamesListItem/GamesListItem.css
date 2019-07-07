@@ -4,8 +4,12 @@
   margin: 10px 20px;
 }
 
-.GamesListItem img {
+.GamesListItem__image {
   width: 150px;
   height: 100%;
   margin-bottom: 10px;
+}
+
+.GamesListItem__title {
+  align-self: center;
 }
