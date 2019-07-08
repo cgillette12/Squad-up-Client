@@ -1,6 +1,8 @@
 .Dashboard {
   display: flex;
   flex-direction: row;
+  max-width: 1345px;
+  margin: 0 auto;
 }
 
 .Dashboard__games-list {
