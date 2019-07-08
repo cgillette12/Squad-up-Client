@@ -33,13 +33,13 @@ export default function LiveChat(props) {
         io.on('update chat', function(data){
             addMessage(data)
         })
-        io.on('delete', function(data){
-            let newMessages = messages
-            newMessages = newMessages.filter(msg => 
-                msg.id!==data
-            )
-            setMessages(newMessages)
-         })
+        // io.on('delete', function(data){
+        //     let newMessages = messages
+        //     newMessages = newMessages.filter(msg => 
+        //         msg.id!==data
+        //     )
+        //     setMessages(newMessages)
+        //  })
     },[message,messages])
 
     const addMessage = msg => {
@@ -65,20 +65,20 @@ export default function LiveChat(props) {
         
     }
 
-    const handleDelete = e =>{
-        e.preventDefault();
-        const delId = Number(e.target.id)
-        const newMessages = messages.filter(msg => {
-            return msg.id !==delId
-        })
-        setMessages(newMessages)
-        io.emit("delete chat", {
-            id:delId,
-            squad_id,
-            username:context.user.username
-        })
+    // const handleDelete = e =>{
+    //     e.preventDefault();
+    //     const delId = Number(e.target.id)
+    //     const newMessages = messages.filter(msg => {
+    //         return msg.id !==delId
+    //     })
+    //     setMessages(newMessages)
+    //     io.emit("delete chat", {
+    //         id:delId,
+    //         squad_id,
+    //         username:context.user.username
+    //     })
         
-    }
+    // }
 
     const messagesBlock = () =>{ 
         if(messages.length>0){
@@ -92,7 +92,7 @@ export default function LiveChat(props) {
                             username={m.username}
                             message_body={m.message_body}
                             time_stamp={m.time_stamp}
-                            handleDelete={handleDelete}
+                            // handleDelete={handleDelete}
                         />
                     </div>
                 )
