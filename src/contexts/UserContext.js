@@ -12,6 +12,7 @@ const UserContext = React.createContext({
   clearUser: () => { },
   processLogin: () => { },
   processLogout: () => { },
+  squad_id: 999
 })
 
 export default UserContext
@@ -116,6 +117,7 @@ export class UserProvider extends Component {
       clearUser: this.clearUser,
       processLogin: this.processLogin,
       processLogout: this.processLogout,
+      squad_id: this.state.squad_id
     }
     return (
       <UserContext.Provider value={value}>
