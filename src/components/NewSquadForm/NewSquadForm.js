@@ -9,16 +9,20 @@ export default function NewSquadForm() {
   const [squadTag, setSquadTag] = useState('')
   const [squadTags, setSquadTags] = useState([])
 
-  const removeTag = index => {
-    setSquadTags([...squadTags.splice(index, 1)])
-  }
+  console.log(squadTags)
 
   const handleNewTag = () => {
-    if(squadTag === ''){
+    if (squadTag === '') {
       return;
     }
     setSquadTags([...squadTags, squadTag])
     setSquadTag('')
+  }
+
+  const removeTag = index => {
+    const tags = [...squadTags]
+    tags.splice(index, 1)
+    setSquadTags(tags)
   }
 
   const handleSumbitSquad = e => {
@@ -76,11 +80,11 @@ export default function NewSquadForm() {
           />
           <button onClick={handleNewTag}>New Tag</button>
           <ul>
-            {squadTags.map((tag, index) => 
+            {squadTags.map((tag, index) =>
               <li className='squad-tag' key={index}>
-                {tag} 
-                {/* <button onClick={removeTag(index)}>Remove</button> */}
-              </li>  
+                {tag}
+                <button className='remove-tag-button' onClick={() => removeTag(index)}>Remove</button>
+              </li>
             )}
           </ul>
         </div>
