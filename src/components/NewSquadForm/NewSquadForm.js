@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import { Input } from '../../components/FormUtils/FormUtils'
+import './newSquadForm.css'
 
 export default function NewSquadForm() {
   const [squadName, setSquadName] = useState('');
   const [squadDescription, setSquadDescription] = useState('')
   const [squadTag, setSquadTag] = useState('')
   const [squadTags, setSquadTags] = useState([])
-
-  console.log(squadTags)
 
   const handleNewTag = () => {
     if (squadTag === '') {
@@ -44,9 +43,9 @@ export default function NewSquadForm() {
   }
 
   return (
-    <div>
+    <div id='new-squad-container'>
       <form
-        className='new-squad-form'
+        id='new-squad-form'
         onSubmit={handleSumbitSquad}
       >
         <Input
@@ -60,14 +59,15 @@ export default function NewSquadForm() {
           autoFocus
           required
         />
-        <textarea
+        {/* <textarea
           id='squad-description'
           name='squad-description'
           placeholder='Description'
           value={squadDescription}
           onChange={e => setSquadDescription(e.target.value)}
           aria-label='Description'
-        ></textarea>
+        ></textarea>  will add if we want a description later*/}
+        {/* add an add picture option here. */}
         <div className='tags-input'>
           <Input
             id='squad-tags-input'
@@ -78,18 +78,21 @@ export default function NewSquadForm() {
             onChange={e => setSquadTag(e.target.value)}
             aria-label='squad tag input'
           />
-          <button onClick={handleNewTag}>New Tag</button>
-          <ul>
+          <button className='add-tag-button' onClick={handleNewTag}>Add Tag</button>
+          <ul id='list-tags'>
             {squadTags.map((tag, index) =>
               <li className='squad-tag' key={index}>
-                {tag}
-                <button className='remove-tag-button' onClick={() => removeTag(index)}>Remove</button>
+                {tag} <button className='remove-tag-button' onClick={() => removeTag(index)}>x</button>
               </li>
             )}
           </ul>
         </div>
-        <button type='submit' className='new-squad-submit'>
-          Sumbmit Squad
+        {/* <button className='new-squad-button' onClick='close the new squad pop up'>Close</button>  Will be used with the pop up of new Squad */}
+        <button 
+          type='submit' 
+          className='new-squad-button'
+        >
+          New
         </button>
       </form>
     </div>
