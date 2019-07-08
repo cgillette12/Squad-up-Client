@@ -4,7 +4,6 @@
   align-items: flex-start;
   padding: 20px 10px;
   width: 100%;
-  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -23,7 +22,6 @@
 .GamesSublist__expand-btn {
   justify-self: center;
   align-self: flex-end;
-
 }
 
 .GamesSublist__games-list {
@@ -33,10 +31,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  /* overflow-y: hidden; */
-  /* max-height: 240px; */
   margin-left: 10px;
-  /* height: 100%; */
 }
 
 .not-expanded {
