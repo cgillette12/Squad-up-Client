@@ -19,7 +19,7 @@ export default function RegisterForm(props) {
 
     setError( null )
     AuthApiService.postUser({
-      user_name: userName,
+      username: userName,
       name: name,
       password: password
     })

@@ -1,0 +1,10 @@
+.GamesList__search-bar {
+  padding: 10px 20px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.GamesList__search-input {
+  border: 1px solid gray;
+  width: 100%;
+}
