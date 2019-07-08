@@ -1,0 +1,21 @@
+#new-squad-form{
+  margin: auto;
+  max-width: 500px;
+  border: 4px solid black;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.new-squad-button, .add-tag-button{
+  font-size: 16px;
+  padding: 8px 12px ;
+  margin: 22px 0;
+  border-radius: 5px;
+}
+.squad-tag{
+  display: inline;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 2px;
+}
