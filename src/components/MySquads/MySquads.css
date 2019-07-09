@@ -21,6 +21,7 @@
   color:var(--linen);
   border:2px solid var(--primary-color);
   text-align: center;
+  /* box-shadow: 0 4px 3px var(--vermilion); */
   box-shadow: 0 4px 4px rgba(0, 0, 0, .7);
 }
 .squad:hover{

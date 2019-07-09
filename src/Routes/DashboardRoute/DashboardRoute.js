@@ -6,11 +6,13 @@ import './DashboardRoute.css'
 export default function DashboardRoute() {
   return (
     <div className="Dashboard">
+    <section className='Dashboard_squad-list'>
+        <MySquads/>
+    </section>
       <div className="Dashboard__games-list">
         <GamesList />
       </div>
       <div className="Dashboard__user-access">
-        <MySquads/>
         <div className="Dashboard__chat">
           <h3>Chat</h3>
           <div className="Dashboard__chat-messages">
