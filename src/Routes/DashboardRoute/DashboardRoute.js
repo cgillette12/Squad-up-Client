@@ -6,12 +6,9 @@ import './DashboardRoute.css'
 
 export default function DashboardRoute() {
   const gameContext = useContext(GameContext)
-  const [selectedGame, setSelectedGame] = useState('')
 
   const renderDashboardMain = () => {
     if (gameContext.gameIsSelected) {
-      const { game, squadsList } = gameContext.selectedGame
-
       return (
         <div className="Dashboard__game-squads-list">
           <GameSquadsList />
