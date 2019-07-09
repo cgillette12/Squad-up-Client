@@ -2,7 +2,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-:root{
+:root {
  --black:#000000;
  --primary-color:#1D0E09;
  --seconday-color:#7A0607;
@@ -10,7 +10,7 @@ code {
  --vermilion:#D64317;
 }
 
-#new-squad-form{
+#new-squad-form {
   margin: auto;
   max-width: 500px;
   color: var(--linen);
@@ -20,10 +20,9 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
 }
 
-.new-squad-button, .add-tag-button{
+.new-squad-button, .add-tag-button {
   font-size: 20px;
   padding: 15px 20px;
   margin: 22px 0;
@@ -33,15 +32,14 @@ code {
   border-color: var(--seconday-color);
 }
 
-#list-tags{
+#list-tags {
   max-width: 400px;
   display: flex;
   flex-direction: column;
 }
-.squad-tag{
+.squad-tag {
   display: flex;
   justify-content: space-between;
-  list-style-type: none;
   font-size: 18px;
   padding: 5px;
   color: var(--linen);
@@ -49,11 +47,14 @@ code {
   border: 1px solid var(--vermilion);
   border-radius: 2px;
 }
-.remove-tag-button{
+.remove-tag-button {
   font-size: 18px;
   padding: 3px;
   color: var(--linen);
   background-color: var(--seconday-color);
   border: 1px solid var(--linen);
   border-radius: 2px;
+}
+.remove-tag-button:hover {
+  background-color: var(--vermilion)
 }
