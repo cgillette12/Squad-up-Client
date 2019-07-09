@@ -1,7 +1,7 @@
 .My-squads{
   margin:0;
-  background-color:var(--primary-color);
-  color:var(--vermilion);
+  background-color:var(--black);
+  color:var(--linen);
   padding:22px 0px;
   font-size: 28px;
   text-align: center;
@@ -18,12 +18,13 @@
   padding:10px 0 10px 10px;
   transition: transform .2s;
   margin:0;
+  color:var(--linen);
   border:2px solid var(--primary-color);
   text-align: center;
-  box-shadow: 0 5px 4px rgba(0, 0, 0, .7);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .7);
 }
 .squad:hover{
-  background-color:var(--primary-color);
+  background-color:var(--black);
   color:var(--seconday-color);
   transform: scale(1.03);
 }
