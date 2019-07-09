@@ -59,15 +59,6 @@ export default function NewSquadForm() {
           autoFocus
           required
         />
-        {/* <textarea
-          id='squad-description'
-          name='squad-description'
-          placeholder='Description'
-          value={squadDescription}
-          onChange={e => setSquadDescription(e.target.value)}
-          aria-label='Description'
-        ></textarea>  will add if we want a description later*/}
-        {/* add an add picture option here. */}
         <div className='tags-input'>
           <Input
             id='squad-tags-input'

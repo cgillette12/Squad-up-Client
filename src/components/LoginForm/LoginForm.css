@@ -1,8 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap rel="stylesheet');
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-color)
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+:root{
+ --black:#000000;
+ --primary-color:#1D0E09;
+ --seconday-color:#7A0607;
+ --linen:#F9F3e3;
+ --vermilion:#D64317;
+}
+
 .login-section {
     margin: auto;
     max-width: 500px;
+    color: var(--linen);
 }
-
 
 .login-form {
   margin:10px;
@@ -12,25 +36,30 @@
 }
 
 .login-button {
-font-size: 20px;
- padding: 15px 20px;
- margin: 22px 0;
- border-radius: 5px;
+  font-size: 20px;
+  padding: 15px 20px;
+  margin: 22px 0;
+  border-radius: 5px;
+  color: var(--linen);
+  background-color: var(--black);
+  border-color: var(--seconday-color);
 }
 
 input {
- font-size: 20px;
- padding: 15px 20px;
- margin: 22px 0;
- border-radius: 3px;
-
+  font-size: 20px;
+  padding: 15px 20px;
+  margin: 22px 0;
+  border-radius: 3px;
+  color: var(--linen);
+  border-color: var(--vermilion);
+  background-color: var(--black);
 }
 
  @media screen and (max-width: 500px) {
      input{
-       border: 1px solid #cccccc;
+       border: 1px solid var(--vermilion);
      }
      .login-button{
-       border:1px solid #cccccc;
+       border:1px solid var(--seconday-color);
      }
     }
