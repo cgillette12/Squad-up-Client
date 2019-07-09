@@ -1,21 +1,59 @@
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+:root{
+ --black:#000000;
+ --primary-color:#1D0E09;
+ --seconday-color:#7A0607;
+ --linen:#F9F3e3;
+ --vermilion:#D64317;
+}
+
 #new-squad-form{
   margin: auto;
   max-width: 500px;
-  border: 4px solid black;
+  color: var(--linen);
+  border: 3px solid var(--seconday-color);
   border-radius: 3px;
-  padding: 3px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
 }
 
 .new-squad-button, .add-tag-button{
-  font-size: 16px;
-  padding: 8px 12px ;
+  font-size: 20px;
+  padding: 15px 20px;
   margin: 22px 0;
   border-radius: 5px;
+  color: var(--linen);
+  background-color: var(--black);
+  border-color: var(--seconday-color);
+}
+
+#list-tags{
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
 }
 .squad-tag{
-  display: inline;
-  margin: 2px;
-  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  font-size: 18px;
+  padding: 5px;
+  color: var(--linen);
+  background-color: var(--black);
+  border: 1px solid var(--vermilion);
   border-radius: 2px;
-  padding: 2px;
+}
+.remove-tag-button{
+  font-size: 18px;
+  padding: 3px;
+  color: var(--linen);
+  background-color: var(--seconday-color);
+  border: 1px solid var(--linen);
+  border-radius: 2px;
 }

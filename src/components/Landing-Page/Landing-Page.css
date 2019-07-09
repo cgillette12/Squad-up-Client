@@ -20,12 +20,20 @@ code {
 h1, p{
   text-align: center;
 }
+
+/* I cannot for the life of me figure out how to center the buttons */
 .link-button{
   font-size: 20px;
   padding: 15px 20px;
-  margin: 22px 0;
+  margin: 22px 2px;
   border-radius: 5px;
   color: var(--linen);
   background-color: var(--black);
   border-color: var(--seconday-color);
+}
+
+#links-wrapper{
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
