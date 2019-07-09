@@ -2,7 +2,8 @@
   display: flex;
 }
 
-.Dashboard__games-list {
+.Dashboard__games-list,
+.Dashboard__game-squads-list {
   flex: 2;
   /* margin: 30px 15px 30px 30px;  */
  

@@ -31,6 +31,10 @@ export default function GamesList() {
         setGamesList(games)
       })
       .catch(gameContext.setError)
+
+    return function cleanup() {
+      gameContext.clearGamesList()
+    }
   }, [])
 
   const renderGames = () => {
