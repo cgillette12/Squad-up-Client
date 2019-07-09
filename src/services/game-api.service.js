@@ -22,6 +22,17 @@ const GamesApiService = {
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     )
+  },
+
+  getSquadsForGame(gameId) {
+    return fetch(`${config.API_ENDPOINT}/games/${gameId}/squads`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json'
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    )
   }
 }
 
