@@ -78,16 +78,16 @@ export default function NewSquadForm() {
             onChange={e => setSquadTag(e.target.value)}
             aria-label='squad tag input'
           />
-          <button className='add-tag-button' onClick={handleNewTag}>Add Tag</button>
+          <button type='button' className='add-tag-button' onClick={handleNewTag}>Add Tag</button>
           <ul id='list-tags'>
             {squadTags.map((tag, index) =>
               <li className='squad-tag' key={index}>
-                {tag} <button className='remove-tag-button' onClick={() => removeTag(index)}>x</button>
+                {tag} <button type='button' className='remove-tag-button' onClick={() => removeTag(index)}>x</button>
               </li>
             )}
           </ul>
         </div>
-        {/* <button className='new-squad-button' onClick='close the new squad pop up'>Close</button>  Will be used with the pop up of new Squad */}
+        {/* <button type='button' className='new-squad-button' onClick='close the new squad pop up'>Close</button>  Will be used with the pop up of new Squad */}
         <button 
           type='submit' 
           className='new-squad-button'
