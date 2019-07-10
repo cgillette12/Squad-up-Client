@@ -19,7 +19,7 @@ export default function SquadListItem(props) {
   const renderMembers = (membersList) => {
     return membersList.map((member, index) => {
       return (
-        <div className="SquadListItem__member">
+        <div key={index}className="SquadListItem__member">
           <img className="SquadListItem__member-img" src={member.image} alt="Member Avatar" aria-label="Member Image" />
           {/* <span>{member.name}</span> */}
         </div>

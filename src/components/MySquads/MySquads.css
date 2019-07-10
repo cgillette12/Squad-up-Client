@@ -1,7 +1,6 @@
 .My-squads{
   margin:0;
-  background-color:var(--black);
-  color:var(--linen);
+  color:var(--black);
   padding:22px 0px;
   font-size: 28px;
   text-align: center;
@@ -14,18 +13,27 @@
 }
 .squad{
   font-size:22px;
-  font-weight: 600;
   padding:10px 0 10px 10px;
-  transition: transform .5s;
+  transition: transform .2s;
   margin:0;
   color:var(--linen);
-  border:2px solid var(--primary-color);
   text-align: center;
-  /* box-shadow: 0 4px 3px var(--vermilion); */
-  box-shadow: 0 4px 4px rgba(0, 0, 0, .7);
+  
+  box-shadow: 0 4px 4px var(--primary-color);
 }
 .squad:hover{
-  background-color:var(--black);
+  background-color:var(--linen);
   color:var(--seconday-color);
   transform: scale(1.03);
+}
+.squad-item-wrapper{
+  display:flex;
+  justify-content: space-evenly;
+}
+#squad-icon{
+  height:30px;
+  width:30px;
+}
+.squad-name{
+  margin:0;
 }

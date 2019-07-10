@@ -17,8 +17,8 @@
 
 .Dashboard__user-access h3 {
   margin:0;
-  background-color:var(--black);
-  color:var(--linen);
+  /* background-color:var(--black); */
+  /* color:var(--linen); */
   padding:22px 0px;
   font-size: 28px;
   text-align: center;
@@ -26,7 +26,7 @@
 
 .Dashboard__user-squads,
 .Dashboard__chat {
-  border: 1px solid var(--linen);
+  /* border: 1px solid var(--linen); */
   border-radius: 3px;
   /* width: 80%; */
   flex:1;
