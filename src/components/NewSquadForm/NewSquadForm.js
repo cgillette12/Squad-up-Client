@@ -59,15 +59,6 @@ export default function NewSquadForm() {
           autoFocus
           required
         />
-        {/* <textarea
-          id='squad-description'
-          name='squad-description'
-          placeholder='Description'
-          value={squadDescription}
-          onChange={e => setSquadDescription(e.target.value)}
-          aria-label='Description'
-        ></textarea>  will add if we want a description later*/}
-        {/* add an add picture option here. */}
         <div className='tags-input'>
           <Input
             id='squad-tags-input'
@@ -82,7 +73,7 @@ export default function NewSquadForm() {
           <ul id='list-tags'>
             {squadTags.map((tag, index) =>
               <li className='squad-tag' key={index}>
-                {tag} <button type='button' className='remove-tag-button' onClick={() => removeTag(index)}>x</button>
+                {tag} <button type='button' className='remove-tag-button' onClick={() => removeTag(index)}>Remove Tag</button>
               </li>
             )}
           </ul>
@@ -92,7 +83,7 @@ export default function NewSquadForm() {
           type='submit' 
           className='new-squad-button'
         >
-          New
+          New Squad
         </button>
       </form>
     </div>
