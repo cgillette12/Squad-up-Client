@@ -1,26 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap rel="stylesheet');
-*{
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: var(--primary-color)
-  
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-:root{
- --black:#000000;
- --primary-color:#1D0E09;
- --seconday-color:#7A0607;
- --linen:#F9F3e3;
- --vermilion:#D64317;
-}
 
 input {
   font-size: 20px;
@@ -39,6 +16,7 @@ input:-webkit-autofill:focus{
   -webkit-box-shadow: 0 0 0 30px var(--black) inset;
   border-color: var(--vermilion);
 }
+
 input:focus{
   border: 2px solid var(--seconday-color);
   outline-width: 0;

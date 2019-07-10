@@ -1,15 +1,3 @@
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-:root{
- --black:#000000;
- --primary-color:#1D0E09;
- --seconday-color:#7A0607;
- --linen:#F9F3e3;
- --vermilion:#D64317;
-}
-
 .Header {
   background-color: black;
   display: flex;
