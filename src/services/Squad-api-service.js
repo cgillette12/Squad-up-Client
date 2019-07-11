@@ -2,7 +2,7 @@ import config from '../config'
 import TokenService from './token-service'
 
 const SquadService  = {
-  getAllSquad() {
+  getAllSquads() {
     return fetch(`${config.API_ENDPOINT}/squads`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,

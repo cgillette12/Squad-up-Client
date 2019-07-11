@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
 const SquadContext = React.createContext({
-  squadsList: [],
+  squadList: [],
   selectedSquad: {
     squad: '',
-    squadsList: []
+    squadList: []
   },
   squadIsSelected: false,
   error: null,
-  setSquadsList: () => { },
-  clearSquadsList: () => { },
+  setSquadList: () => { },
+  clearSquadList: () => { },
   setSelectedSquad: () => { },
   clearSelectedSquad: () => { },
   setError: () => { },
@@ -22,22 +22,22 @@ export class SquadProvider extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      squadsList: [],
+      squadList: [],
       selectedSquad: {
         squad: '',
-        squadsList: [],
+        squadList: [],
       },
       squadIsSelected: false,
       error: null
     }
   }
 
-  setSquadsList = squadsList => {
-    this.setState({ squadsList })
+  setSquadList = squadList => {
+    this.setState({ squadList })
   }
 
-  clearSquadsList = () => {
-    this.setState({ squadsList: [] })
+  clearSquadList = () => {
+    this.setState({ squadList: [] })
   }
 
   setSelectedSquad = selectedSquad => {
@@ -46,7 +46,7 @@ export class SquadProvider extends Component {
   }
 
   clearSelectedSquad = () => {
-    this.setState({ selectedSquad: { Squad: '', squadsList: [] } })
+    this.setState({ selectedSquad: { Squad: '', squadList: [] } })
     this.setState({ squadIsSelected: false })
   }
 
@@ -61,12 +61,12 @@ export class SquadProvider extends Component {
 
   render() {
     const value = {
-      squadsList: this.state.squadsList,
+      squadList: this.state.squadList,
       selectedSquad: this.state.selectedSquad,
       SquadIsSelected: this.state.SquadIsSelected,
       error: this.state.error,
-      setSquadsList: this.setSquadsList,
-      clearSquadsList: this.clearSquadsList,
+      setSquadList: this.setSquadList,
+      clearSquadList: this.clearSquadList,
       setSelectedSquad: this.setSelectedSquad,
       clearSelectedSquad: this.clearSelectedSquad,
       setError: this.setError,

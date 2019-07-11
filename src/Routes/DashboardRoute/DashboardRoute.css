@@ -4,11 +4,8 @@
 
 .Dashboard__games-list,
 .Dashboard__game-squads-list {
-  flex: 2;
-  /* margin: 30px 15px 30px 30px;  */
- 
-  border-radius: 3px;
-  padding:25px;
+  flex: 3;
+  
 }
 
 .Dashboard__user-access {
@@ -17,18 +14,16 @@
 
 .Dashboard__user-access h3 {
   margin:0;
-  background-color:var(--black);
-  color:var(--linen);
+  
+  color:var(--black);
   padding:22px 0px;
   font-size: 28px;
   text-align: center;
+  border-bottom: 1px solid var(--greyLines);
 }
 
 .Dashboard__user-squads,
 .Dashboard__chat {
-  border: 1px solid var(--linen);
-  border-radius: 3px;
-  /* width: 80%; */
   flex:1;
 }
 
@@ -36,5 +31,6 @@
   margin-top: 0;
 }
 .Dashboard_squad-list{
+  border-right: 1px solid var(--greyLines);
   flex:1;
 }

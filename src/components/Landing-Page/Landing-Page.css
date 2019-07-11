@@ -2,7 +2,7 @@
 #homePage{
   margin: auto;
   max-width: 500px;
-  color: var(--linen);
+  color: var(--black);
   display: flex;
   flex-direction: column;
 }
