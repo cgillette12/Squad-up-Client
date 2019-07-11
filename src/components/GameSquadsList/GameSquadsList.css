@@ -1,0 +1,40 @@
+.GameSquadsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.GameSquadsList__empty-notice {
+  margin: 40px;
+}
+
+.GameSquadsList__search-bar {
+  padding: 10px 20px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.GameSquadsList__search-input {
+  border: 1px solid gray;
+  width: 100%;
+}
+
+.GameSquadsList__controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.GameSquadsList__back-button {
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.GameSquadsList__link-make-squad {
+  text-decoration: none;
+  color: black;
+  border: 1px solid #aaa;
+  background-color: #eee;
+  border-radius: 1px;
+  padding: 10px 20px;
+}

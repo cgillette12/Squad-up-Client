@@ -1,0 +1,41 @@
+.SquadListItem {
+  border: 1px solid black;
+  margin: 10px 20px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.SquadListItem__squad-name {
+  margin: 10px 0;
+}
+
+.SquadListItem__squad-members {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.SquadListItem__member {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.SquadListItem__member:first-child {
+  border: 1px solid red;
+}
+
+.SquadListItem__member-img {
+  width: 50px;
+  align-self: center;
+}
+
+.SquadListItem__squad-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SquadListItem__join-button {
+  padding: 10px 20px;
+}

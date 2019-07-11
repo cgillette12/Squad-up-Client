@@ -1,4 +1,5 @@
 import React from 'react'
+import './FormUtils.css'
 
 export function Label({ className, ...props }) {
   return (
@@ -6,11 +7,11 @@ export function Label({ className, ...props }) {
   )
 }
 
-export const Input = React.forwardRef( ({ className, ...props }, ref) => {
+export const Input = ({ className, ...props }) => {
   return (
-    <input className={className} type='text' ref={ref}{...props} />
+    <input className={className} type='text' {...props} />
   )
-})
+}
 
 export function Required({ className, ...props }) {
   return (

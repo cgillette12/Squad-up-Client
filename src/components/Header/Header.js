@@ -5,17 +5,18 @@ import UserContext from '../../contexts/UserContext';
 import './Header.css'
 
 export default function Header() {
-  const user = useContext(UserContext)
+  const userContext = useContext(UserContext)
   
   const handleLogoutClick = () => {
     TokenService.clearAuthToken()
-    user.processLogout()
+    userContext.processLogout()
   }
 
   const renderLogoutLink = () => {
     return (
       <div className='Header__logged-in'>
-        <Link to=''>Name + Avatar</Link>
+        <img className='Header__user-avatar' src={userContext.user.avatar} alt="Avatar" aria-label="User Avatar" />
+        <Link to='/dashboard'>{userContext.user.name}</Link>
         <Link onClick={handleLogoutClick} to='/'>Logout</Link>
       </div>
     )
