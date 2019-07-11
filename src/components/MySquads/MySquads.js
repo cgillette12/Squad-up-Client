@@ -28,7 +28,7 @@ export default function MySquads() {
       <ul className='user-squads-list'>
         {userSquadsList.map((squadInfo, key) => {
           return (
-            <li key='key' className='squad'>
+            <li key={key} className='squad'>
             <div className='squad-item-wrapper'>
               <img id='squad-icon' src={squadInfo.userAvatar} alt=''/>
               <p className='squad-name'>{squadInfo.squad_name}</p>

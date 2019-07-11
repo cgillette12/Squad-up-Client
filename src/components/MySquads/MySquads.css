@@ -4,26 +4,22 @@
   padding:22px 0px;
   font-size: 28px;
   text-align: center;
+  border-bottom: 1px solid var(--greyLines);
 }
 .user-squads-list{
   list-style: none;
   padding:0;
-  background-color: var(--seconday-color);
   margin:0;
 }
 .squad{
   font-size:22px;
-  padding:10px 0 10px 10px;
+  padding:10px;
   transition: transform .2s;
   margin:0;
-  color:var(--linen);
+  color:var(--black);
   text-align: center;
-  
-  box-shadow: 0 4px 4px var(--primary-color);
 }
 .squad:hover{
-  background-color:var(--linen);
-  color:var(--seconday-color);
   transform: scale(1.03);
 }
 .squad-item-wrapper{

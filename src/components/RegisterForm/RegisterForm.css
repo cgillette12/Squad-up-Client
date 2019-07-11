@@ -3,7 +3,7 @@
 .register-section {
   margin: auto;
   max-width: 500px;
-  color: var(--linen);
+  color: var(--black);
 }
 
 
@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  color: var(--linin);
+  color: var(--black);
 }
 
 .register-button {
@@ -23,6 +23,14 @@
   color: var(--linen);
   background-color: var(--black);
   border-color: var(--seconday-color);
+}
+#register-username-input,
+#register-password-input,
+#register-name-input{
+  font-size: 22px;
+  padding: 15px 20px;
+  margin: 22px 0;
+  border-radius: 3px;
 }
 
 

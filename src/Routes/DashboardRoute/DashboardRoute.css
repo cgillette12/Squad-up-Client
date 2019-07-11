@@ -19,6 +19,7 @@
   padding:22px 0px;
   font-size: 28px;
   text-align: center;
+  border-bottom: 1px solid var(--greyLines);
 }
 
 .Dashboard__user-squads,
@@ -30,5 +31,6 @@
   margin-top: 0;
 }
 .Dashboard_squad-list{
+  border-right: 1px solid var(--greyLines);
   flex:1;
 }

@@ -3,7 +3,7 @@
 .login-section {
     margin: auto;
     max-width: 500px;
-    color: var(--linen);
+    color: var(--black);
 }
 
 .login-form {
@@ -22,7 +22,12 @@
   background-color: var(--black);
   border-color: var(--seconday-color);
 }
-
+#login-username-input,#login-password-input{
+  font-size: 22px;
+  padding: 15px 20px;
+  margin: 22px 0;
+  border-radius: 3px;
+}
  @media screen and (max-width: 500px) {
      input{
        border: 1px solid var(--vermilion);
