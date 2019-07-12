@@ -5,7 +5,7 @@ import './SquadListItem.css'
 
 export default function SquadListItem(props) {
   const { squad = {} } = props
-  const [userSquadsList, setUserSquadsList] = useState([]);
+  const [error, setError] = useState(null)
   const squadContext = useContext(SquadContext);
 
   const testMembers = [
@@ -19,10 +19,14 @@ export default function SquadListItem(props) {
   
   const handleSquadJoin = (squad) => {
     SquadApiService.postSquad({ squad_id: squad})
-      .then(squad => {
-         squadContext.setSquadList(squad)
+      .then(() => {
+        return SquadApiService.getAllSquads() 
+      }).then(squad => {
+        squadContext.setSquadList(squad)
       })
-      
+      .catch(res => {
+        squadContext.setError(res)
+      })
   }
 
 
@@ -38,14 +42,18 @@ export default function SquadListItem(props) {
   }
 
   return (
+    
     <div key={squad.id} className="SquadListItem">
       <h4 className="SquadListItem__squad-name">{squad.squad_name}</h4>
       <span className="SquadListItem__squad-members">
         {renderMembers(testMembers)}
       </span>
+      <div role='alert'>
+        {squadContext.error && <p>{squadContext.error}</p>}
+      </div>
       <div className="SquadListItem__squad-info" >
         <span className="SquadListItem__squad-tags">Tags: Squad Tags placeholding...</span>
-        
+       
         <button className="SquadListItem__join-button" onClick={() => handleSquadJoin(squad.id)}>Join</button>
       </div>
     </div>
