@@ -1,38 +1,66 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import GameSquadsList from '../../components/GameSquadsList/GameSquadsList';
 import GamesList from '../../components/GamesList/GamesList'
 import MySquads from '../../components/MySquads/MySquads'
-import MobileDashboardControl from '../../components/MobileDashboardControl/MobileDashboardControl'
 import GameContext from '../../contexts/GameContext'
 import './DashboardRoute.css'
 
 export default function DashboardRoute() {
   const gameContext = useContext(GameContext)
 
-  const [viewMain, setViewMain] = useState('')
-  const [viewSquads, setViewSquads] = useState('')
-  const [viewChat, setViewChat] = useState('')
+  const [viewMain, setViewMain] = useState(
+    {
+      hClass: '',
+      visible: false
+    })
+  const [viewSquads, setViewSquads] = useState(
+    {
+      hClass: '',
+      visible: false
+    })
+  const [viewChat, setViewChat] = useState(
+    {
+      hClass: '',
+      visible: false
+    })
+
+  const windowWidth = () => {
+    if (window.innerWidth <= 700 && viewSquads.visible === false) {
+      setViewSquads({hClass:'hidden', visible: false })
+    }
+     if (window.innerWidth <= 700 && viewChat.visible === false) {
+      setViewChat({hClass:'hidden', visible: false })
+    } 
+  } 
+  window.onresize = windowWidth;
+
+  useEffect(() => {
+    if (window.innerWidth <= 700 && viewSquads.visible === false) {
+      setViewSquads({ hClass: 'hidden', visible: false })
+    }
+    if (window.innerWidth <= 700 && viewChat.visible === false) {
+      setViewChat({ hClass: 'hidden', visible: false })
+    }
+  }, [])
 
 
   const visulizeSquads = () => {
-    setViewMain('hidden')
-    setViewChat('hidden')
-    setViewSquads('')
+    setViewMain({ hClass: 'hidden', visible: false })
+    setViewChat({ hClass: 'hidden', visible: false })
+    setViewSquads({ hClass: '', visible: true })
   }
 
   const visulizeMain = () => {
-    setViewMain('')
-    setViewChat('hidden')
-    setViewSquads('hidden')
+    setViewMain({ hClass: '', visible: true })
+    setViewChat({ hClass: 'hidden', visible: false })
+    setViewSquads({ hClass: 'hidden', visible: false })
   }
 
   const visulizeChat = () => {
-    setViewMain('hidden')
-    setViewChat('')
-    setViewSquads('hidden')
+    setViewMain({ hClass: 'hidden', visible: false })
+    setViewChat({ hClass: '', visible: true })
+    setViewSquads({ hClass: 'hidden', visible: false })
   }
-
-  
 
   const renderDashboardMain = () => {
     if (gameContext.gameIsSelected) {
@@ -57,14 +85,14 @@ export default function DashboardRoute() {
         <button onClick={visulizeMain}>Games</button>
         <button onClick={visulizeChat}>Chat</button>
       </div>
-    <section className={`Dashboard_squad-list ${viewSquads}`}>
+      <section className={`Dashboard_squad-list ${viewSquads.hClass}`}>
         <MySquads />
-    </section>
-      <div className={`Dashboard_main ${viewMain}`}>
+      </section>
+      <div className={`Dashboard_main ${viewMain.hClass}`}>
         {renderDashboardMain()}
       </div>
       <div className="Dashboard__user-access">
-        <div className={`Dashboard__chat ${viewChat}`}>
+        <div className={`Dashboard__chat ${viewChat.hClass}`}>
           <h3>Chat</h3>
           <div className="Dashboard__chat-messages">
             <p>
