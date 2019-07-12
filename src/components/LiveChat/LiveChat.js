@@ -10,7 +10,7 @@ import { restElement } from '@babel/types';
 import ScrollArea from 'react-scrollbar';
 import './LiveChat.css';
 
-const io = openSocket('http://localhost:8000')
+const io = openSocket(config.LIVE_CHAT_ENDPOINT)
 
 
 export default function LiveChat(props) {

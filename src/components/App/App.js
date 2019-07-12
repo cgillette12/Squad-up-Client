@@ -18,12 +18,8 @@ function App() {
          <Route exact path={'/'} component={LandingPageRoute} />
          <Route exact path={'/login'} component={LoginRoute} />
          <Route exact path={'/register'} component={RegisterRoute} />
-<<<<<<< HEAD
-         <Route exact path={'/chat'} component={LiveChat} />
-=======
          <Route exact path={'/newsquad'} component={NewSquadRoute}/>
          <Route path={'/dashboard'} component={DashboardRoute} />
->>>>>>> 57126bdc2d15cf5b04a0144a18fc74852829c963
        </Switch>
       </main>
     </div>

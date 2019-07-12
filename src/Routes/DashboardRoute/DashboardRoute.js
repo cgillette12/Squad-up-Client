@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import GameSquadsList from '../../components/GameSquadsList/GameSquadsList';
 import GamesList from '../../components/GamesList/GamesList'
 import GameContext from '../../contexts/GameContext'
+import LiveChat from '../../components/LiveChat/LiveChat'
 import './DashboardRoute.css'
 
 export default function DashboardRoute() {
@@ -36,7 +37,8 @@ export default function DashboardRoute() {
             <li>Squad 4</li>
           </ul>
         </div>
-        <div className="Dashboard__chat">
+        <LiveChat />
+        {/* <div className="Dashboard__chat">
           <h3>Chat</h3>
           <div className="Dashboard__chat-messages">
             <p>
@@ -58,7 +60,7 @@ export default function DashboardRoute() {
               username <strong>time</strong> : some text messages
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
