@@ -81,9 +81,9 @@ export default function DashboardRoute() {
   return (
     <div className="Dashboard">
       <div id='mobile-buttons-container'>
-        <button onClick={visulizeSquads}>My Squads</button>
-        <button onClick={visulizeMain}>Games</button>
-        <button onClick={visulizeChat}>Chat</button>
+        <button className='mobile-button' onClick={visulizeSquads}>Squads</button>
+        <button className='mobile-button' onClick={visulizeMain}>Games</button>
+        <button className='mobile-button' onClick={visulizeChat}>Chat</button>
       </div>
       <section className={`Dashboard_squad-list ${viewSquads.hClass}`}>
         <MySquads />

@@ -47,6 +47,13 @@
   visibility: hidden;
 }
 
+.mobile-button{
+  font-size: 20px;
+  padding: 5, 8;
+  margin: 10px;
+  border-radius: 25px;
+}
+
 @media screen and (max-width: 700px){
   .hidden {
     display: none;
