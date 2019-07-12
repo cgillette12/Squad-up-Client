@@ -13,6 +13,7 @@ export default function MySquads() {
     squadContext.clearError()
     SquadService.getAllSquads()
       .then(squads => {
+        squadContext.setSquadList(squads)
         setUserSquadsList(squads)
       })
       .catch(res => {
@@ -26,7 +27,7 @@ export default function MySquads() {
     <div className="Dashboard__user-squads">
       <h3 className='My-squads'>My Squads</h3>
       <ul className='user-squads-list'>
-        {userSquadsList.map((squadInfo, key) => {
+        {squadContext.squadList.map((squadInfo, key) => {
           return (
             <li key={key} className='squad'>
             <div className='squad-item-wrapper'>

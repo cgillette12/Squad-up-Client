@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useState , useEffect , useContext}from 'react'
+import SquadApiService from '../../services/Squad-api-service'
+import SquadContext from '../../contexts/SquadContext'
 import './SquadListItem.css'
 
 export default function SquadListItem(props) {
   const { squad = {} } = props
+  const [userSquadsList, setUserSquadsList] = useState([]);
+  const squadContext = useContext(SquadContext);
 
   const testMembers = [
     {name: 'leader', image: "https://image.flaticon.com/icons/svg/78/78373.svg"},
@@ -12,9 +16,15 @@ export default function SquadListItem(props) {
     {name: 'member5', image: "https://image.flaticon.com/icons/svg/78/78373.svg"},
   ]
 
-  const handleSquadJoin = () => {
-    // TODO: wait for backend confirmation
+  
+  const handleSquadJoin = (squad) => {
+    SquadApiService.postSquad({ squad_id: squad})
+      .then(squad => {
+         squadContext.setSquadList(squad)
+      })
+      
   }
+
 
   const renderMembers = (membersList) => {
     return membersList.map((member, index) => {
@@ -33,9 +43,10 @@ export default function SquadListItem(props) {
       <span className="SquadListItem__squad-members">
         {renderMembers(testMembers)}
       </span>
-      <div className="SquadListItem__squad-info">
+      <div className="SquadListItem__squad-info" >
         <span className="SquadListItem__squad-tags">Tags: Squad Tags placeholding...</span>
-        <button className="SquadListItem__join-button" onClick={handleSquadJoin}>Join</button>
+        
+        <button className="SquadListItem__join-button" onClick={() => handleSquadJoin(squad.id)}>Join</button>
       </div>
     </div>
   )
