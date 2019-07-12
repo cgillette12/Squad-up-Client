@@ -1,19 +1,9 @@
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-:root{
- --black:#000000;
- --primary-color:#1D0E09;
- --seconday-color:#7A0607;
- --linen:#F9F3e3;
- --vermilion:#D64317;
-}
+
 
 .register-section {
   margin: auto;
   max-width: 500px;
-  color: var(--linen);
+  color: var(--black);
 }
 
 
@@ -22,7 +12,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  color: var(--linin);
+  color: var(--black);
 }
 
 .register-button {
@@ -33,6 +23,14 @@ code {
   color: var(--linen);
   background-color: var(--black);
   border-color: var(--seconday-color);
+}
+#register-username-input,
+#register-password-input,
+#register-name-input{
+  font-size: 22px;
+  padding: 15px 20px;
+  margin: 22px 0;
+  border-radius: 3px;
 }
 
 

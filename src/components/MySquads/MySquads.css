@@ -1,0 +1,35 @@
+.My-squads{
+  margin:0;
+  color:var(--black);
+  padding:22px 0px;
+  font-size: 28px;
+  text-align: center;
+  border-bottom: 1px solid var(--greyLines);
+}
+.user-squads-list{
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+.squad{
+  font-size:22px;
+  padding:10px;
+  transition: transform .2s;
+  margin:0;
+  color:var(--black);
+  text-align: center;
+}
+.squad:hover{
+  transform: scale(1.03);
+}
+.squad-item-wrapper{
+  display:flex;
+  justify-content: space-evenly;
+}
+#squad-icon{
+  height:30px;
+  width:30px;
+}
+.squad-name{
+  margin:0;
+}
