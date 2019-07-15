@@ -12,7 +12,10 @@ const UserContext = React.createContext({
   clearUser: () => { },
   processLogin: () => { },
   processLogout: () => { },
-  squad_id: 999
+  squad_id: 999,
+  setSquadId: () => { },
+  squad_name: "General Chat",
+  setSquadName: () => { }
 })
 
 export default UserContext
@@ -20,7 +23,7 @@ export default UserContext
 export class UserProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { user: {}, error: null }
+    const state = { user: {}, error: null, squad_id:999, squad_name: "General Chat" }
 
     const jwtPayload = TokenService.parseAuthToken()
 
@@ -65,6 +68,12 @@ export class UserProvider extends Component {
   clearUser = () => {
     this.setState({ user: {} })
   }
+  setSquadId = (squad_id) => {
+    this.setState({squad_id})
+  }
+  setSquadName = (squad_name) => {
+    this.setState({squad_name})
+  }
 
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
@@ -73,7 +82,10 @@ export class UserProvider extends Component {
       id: jwtPayload.user_id,
       name: jwtPayload.name,
       username: jwtPayload.sub,
-      avatar: jwtPayload.avatar
+      avatar: jwtPayload.avatar,
+      xp:jwtPayload.xp,
+      level:jwtPayload.level,
+      xp_threshold:jwtPayload.xp_threshold
     })
     IdleService.regiserIdleTimerResets()
     TokenService.queueCallbackBeforeExpiry(() => {
@@ -118,7 +130,10 @@ export class UserProvider extends Component {
       clearUser: this.clearUser,
       processLogin: this.processLogin,
       processLogout: this.processLogout,
-      squad_id: this.state.squad_id
+      squad_id: this.state.squad_id,
+      setSquadId:this.setSquadId,
+      squad_name: "General Chat",
+      setSquadName:this.setSquadName
     }
     return (
       <UserContext.Provider value={value}>

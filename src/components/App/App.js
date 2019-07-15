@@ -7,7 +7,7 @@ import RegisterRoute from '../../Routes/RegisterRoute/RegisterRoute'
 import NewSquadRoute from '../../Routes/NewSquadRoute/NewSquadRoute'
 import DashboardRoute from '../../Routes/DashboardRoute/DashboardRoute'
 import './App.css'
-import LiveChat from '../LiveChat/LiveChat'
+
 
 function App() {
   return (

@@ -6,7 +6,6 @@ import openSocket from 'socket.io-client'
 import TokenService from '../../services/token-service'
 import { Input } from '../FormUtils/FormUtils';
 import MessageBlock from './MessageBlock'
-import { restElement } from '@babel/types';
 import ScrollArea from 'react-scrollbar';
 import './LiveChat.css';
 
@@ -18,18 +17,16 @@ export default function LiveChat(props) {
     const [message, setMessage] = useState('')
     const context = useContext(UserContext)
     const [messages, setMessages] = useState([])
-    const [squad_id, setSquadId] = useState(999)
-
 
     useEffect( () => {
-        LiveChatService.getChat(squad_id)
+        LiveChatService.getChat(context.squad_id)
         .then(chats => {
             setMessages(chats)
         })
-    }, [])
+    }, [context.squad_id])
 
     useEffect( () => {
-        io.emit('join room', squad_id)
+        io.emit('join room', context.squad_id)
         io.on('update chat', function(data){
             addMessage(data)
         })
@@ -58,7 +55,7 @@ export default function LiveChat(props) {
         const newMessage = {
             message_body:message,
             username:context.user.username,
-            squad_id
+            squad_id:context.squad_id
         }
         setMessage('')
         io.emit('message', newMessage)
@@ -84,10 +81,11 @@ export default function LiveChat(props) {
         if(messages.length>0){
         const tmp = messages
         return tmp.map( 
-            m => {
+            (m,idx) => {
                 return (
                     <div key={m.id}>
                         <MessageBlock 
+                            idx={idx}
                             id={m.id}
                             username={m.username}
                             message_body={m.message_body}
@@ -106,11 +104,9 @@ export default function LiveChat(props) {
 
     return (
         <div className="LiveChat">
-            <div className="Chat-Header">
-                <h4>
-                    Chatroom
-                </h4>
-            </div>
+            <h3>
+                {context.squad_name || "General Chat"}
+            </h3>
             <div className="ChatHistory">
                 <ScrollArea
                     speed={0.8}

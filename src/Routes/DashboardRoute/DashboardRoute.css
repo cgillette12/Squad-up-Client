@@ -1,32 +1,36 @@
 .Dashboard {
   display: flex;
-  flex-direction: row;
-  max-width: 1345px;
-  margin: 0 auto;
 }
 
 .Dashboard__games-list,
 .Dashboard__game-squads-list {
-  flex: 2;
-  margin: 30px 15px 30px 30px;
-  border: 3px solid gray;
-  border-radius: 3px;
+  flex: 3;
+  
 }
 
 .Dashboard__user-access {
   flex: 1;
-  flex-direction: column;
-  margin: 30px 30px 30px 15px;
+}
+
+.Dashboard__user-access h3 {
+  margin:0;
+  
+  color:var(--black);
+  padding:22px 0px;
+  font-size: 28px;
+  text-align: center;
+  border-bottom: 1px solid var(--greyLines);
 }
 
 .Dashboard__user-squads,
 .Dashboard__chat {
-  border: 3px solid gray;
-  border-radius: 3px;
-  /* width: 80%; */
-  margin: 40px auto;
+  flex:1;
 }
 
 .Dashboard__user-squads {
   margin-top: 0;
+}
+.Dashboard_squad-list{
+  border-right: 1px solid var(--greyLines);
+  flex:1;
 }

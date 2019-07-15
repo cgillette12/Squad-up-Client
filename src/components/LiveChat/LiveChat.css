@@ -1,18 +1,23 @@
 .LiveChat{
+    margin-top:-1px;
     width:300px;
-    height:fit-content;
-    border:1px solid black;
-    color:white;
+    height:95vh;
+    border-left:1px solid var(--greyLines);
+    border-bottom:1px solid var(--greyLines);
+    border-top:1px solid black;
+    color:black;
 }
-.Chat-Header{
-    background-color:gray;
-    border: 1px solid black;
-}
-h4{
+h3{
     text-align: center;
+    margin:0;
+    color:var(--black);
+    padding:22px 0px;
+    font-size: 28px;
+    text-align: center;
+    border-bottom: 1px solid var(--greyLines);
 }
 .Scrollable-Chat{
-    height:300px;
+    height:70vh;
 }
 .Message-Input{
     font-size:18px;
@@ -25,4 +30,15 @@ h4{
     width:100%;
     height:fit-content;
     margin-bottom:5px;
+}
+.ChatHistory{
+    height:70vh;
+    padding-right:5px;
+}
+.Time-Text{
+    float:right;
+}
+.User-Text{
+    font-weight:bold;
+    
 }

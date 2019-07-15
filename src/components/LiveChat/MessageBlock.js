@@ -31,7 +31,17 @@ export default function MessageBlock(props){
                 hovered ? <button id={props.id} className="Delete-Btn" onClick={props.handleDelete}>delete</button> : 
                 <div key={props.id}>{props.username}{' '}:{' '}{props.message_body} {' '}{moment.utc(props.time_stamp).format("HH:mm")}</div>
             } */}
-            <div key={props.id}>{props.username}{' '}:{' '}{props.message_body} {' '}{moment.utc(props.time_stamp).format("HH:mm")}</div>
+            <div key={props.id} name={props.idx}>
+                <span className="User-Text">
+                    {props.username}{' '}:
+                </span>
+                <span>
+                    {' '}{props.message_body}
+                </span>
+                <span className="Time-Text">
+                    {moment.utc(props.time_stamp).format("HH:mm")}
+                </span>
+                </div>
         </div>
     )
 }

@@ -1,4 +1,3 @@
-import io from 'socket.io-client';
 import TokenService from '../../services/token-service';
 
 
