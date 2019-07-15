@@ -23,7 +23,6 @@ export default function GameSquadsList() {
       return (
         <div>
           <NewSquadForm cancel={() => setOpenSquadForm(false)} />
-          {/* <button onClick={() => setOpenSquadForm(false)}>Cancel</button> */}
         </div>
       )
     }
@@ -58,7 +57,7 @@ export default function GameSquadsList() {
       <div className="GameSquadsList__controls">
         <button className="GameSquadsList__back-button" onClick={gameContext.clearSelectedGame}>Back</button>
         {/* <Link className="GameSquadsList__link-make-squad" to="/newsquad">Create a Squad</Link> */}
-        <button onClick={() => setOpenSquadForm(true)}>Create a Squad</button>
+        <button className="GameSquadsList__new-squad-button" onClick={() => setOpenSquadForm(true)}>Create a Squad</button>
       </div>
       {renderSquads()}
     </section>

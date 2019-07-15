@@ -27,7 +27,7 @@ export default function NewSquadForm(props) {
   const handleSumbitSquad = e => {
     e.preventDefault();
 
-    fetch(`${config.API_ENDPOINT}/squad`, {
+    fetch(`${config.API_ENDPOINT}/squads/add`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
