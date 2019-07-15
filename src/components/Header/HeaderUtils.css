@@ -1,0 +1,94 @@
+.SideNav-button {
+    display: none;
+    cursor: pointer;
+    outline: none;
+    position: fixed;
+    top: 0px;
+    right:0;
+    justify-content: center;
+    align-items: center;
+    height: 58px;
+    width: 75px;
+    padding: 0;
+    margin: 0;
+    z-index: 20;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.SideNav-button.active {
+    background: black;
+}
+
+.SideNav-button.active .SideNav-button-line {
+    background: white;
+}
+
+nav.SideNav-button:hover {
+    opacity: 0.8;
+}
+
+
+.SideNav-button-line {
+    width: 25px;
+    height: 4px;
+    background: white;
+    margin-bottom: 5px;
+    border-radius: 1.5px;
+    transition: background-color 0.15s ease-in-out;
+
+}
+
+
+
+.side-drawer.active {
+    right: 0!important;
+}
+
+.side-drawer {
+    transition: right 0.15s linear;
+    position: fixed;
+    top: 55px;
+    right: -100vw;
+    width: 100vw;
+    bottom: 0;
+    background-color: black;
+    font-size: 28px;
+    z-index: 20;
+}
+
+
+.side-drawer ul  {
+    padding: 0;
+    margin: 0;
+}
+
+.side-drawer li:first-of-type {
+    border-top-width: 0;
+}
+.side-drawer li  {
+    list-style: none;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: linen;
+    width: 100%;    
+}
+
+.side-drawer a:hover {
+    background-color: darkgray;
+    color: white;
+}
+.side-drawer a {
+    justify-content: center;
+    padding: 10px 0 10px 0;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+    text-decoration: none;
+    color: linen;
+    display: flex;
+    background-color: rgb(14, 11, 11);
+}
+
+@media only screen and (max-width: 700px) {
+    .SideNav-button {
+        display: flex;
+    }
+}
