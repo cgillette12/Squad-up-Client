@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import GameContext from '../../contexts/GameContext'
 import SquadListItem from '../SquadListItem/SquadListItem'
 import { Input } from '../FormUtils/FormUtils'
+import NewSquadForm from '../NewSquadForm/NewSquadForm'
 import './GameSquadsList.css'
 
 export default function GameSquadsList() {
@@ -10,6 +11,7 @@ export default function GameSquadsList() {
 
   const [squadsList, setSquadsList] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
+  const [openSquadForm, setOpenSquadForm] = useState(false)
 
   useEffect(() => {
     gameContext.clearError()
@@ -17,6 +19,14 @@ export default function GameSquadsList() {
   }, [])
 
   const renderSquads = () => {
+    if(openSquadForm === true){
+      return (
+        <div>
+          <NewSquadForm cancel={() => setOpenSquadForm(false)} />
+          {/* <button onClick={() => setOpenSquadForm(false)}>Cancel</button> */}
+        </div>
+      )
+    }
     if (squadsList.length === 0) {
       return <h2 className="GameSquadsList__empty-notice">No squads, yet</h2>
     }
@@ -47,7 +57,8 @@ export default function GameSquadsList() {
       </form>
       <div className="GameSquadsList__controls">
         <button className="GameSquadsList__back-button" onClick={gameContext.clearSelectedGame}>Back</button>
-        <Link className="GameSquadsList__link-make-squad" to="/newsquad">Create a Squad</Link>
+        {/* <Link className="GameSquadsList__link-make-squad" to="/newsquad">Create a Squad</Link> */}
+        <button onClick={() => setOpenSquadForm(true)}>Create a Squad</button>
       </div>
       {renderSquads()}
     </section>

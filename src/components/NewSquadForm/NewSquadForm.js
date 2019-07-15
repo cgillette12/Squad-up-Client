@@ -4,7 +4,7 @@ import TokenService from '../../services/token-service';
 import { Input } from '../../components/FormUtils/FormUtils'
 import './newSquadForm.css'
 
-export default function NewSquadForm() {
+export default function NewSquadForm(props) {
   const [squadName, setSquadName] = useState('');
   const [squadDescription, setSquadDescription] = useState('')
   const [squadTag, setSquadTag] = useState('')
@@ -78,13 +78,13 @@ export default function NewSquadForm() {
             )}
           </ul>
         </div>
-        {/* <button type='button' className='new-squad-button' onClick='close the new squad pop up'>Close</button>  Will be used with the pop up of new Squad */}
         <button 
           type='submit' 
           className='new-squad-button'
         >
           New Squad
         </button>
+        <button type='button' className='new-squad-button' onClick={props.cancel}>Cancel</button>
       </form>
     </div>
   )
