@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import { Input } from '../../components/FormUtils/FormUtils'
 import './newSquadForm.css'
+import GameContext from '../../contexts/GameContext';
 
 export default function NewSquadForm(props) {
   const [squadName, setSquadName] = useState('');
-  const [squadDescription, setSquadDescription] = useState('')
   const [squadTag, setSquadTag] = useState('')
   const [squadTags, setSquadTags] = useState([])
+
+  const context = useContext(GameContext)
+  const gameId = context.selectedGame.gameId
 
   const handleNewTag = () => {
     if (squadTag === '') {
@@ -33,7 +36,7 @@ export default function NewSquadForm(props) {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`
       },
-      body: JSON.stringify({ squadName, squadDescription, squadTags })
+      body: JSON.stringify({ game_id: gameId, squad_name: squadName, tags: squadTags })
     })
       .then(res =>
         (!res.ok)
