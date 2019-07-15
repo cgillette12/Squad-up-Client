@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useState , useEffect , useContext}from 'react'
+import SquadApiService from '../../services/Squad-api-service'
+import SquadContext from '../../contexts/SquadContext'
 import './SquadListItem.css'
 
 export default function SquadListItem(props) {
   const { squad = {} } = props
+  const [error, setError] = useState(null)
+  const squadContext = useContext(SquadContext);
 
   const testMembers = [
     {name: 'leader', image: "https://image.flaticon.com/icons/svg/78/78373.svg"},
@@ -12,9 +16,19 @@ export default function SquadListItem(props) {
     {name: 'member5', image: "https://image.flaticon.com/icons/svg/78/78373.svg"},
   ]
 
-  const handleSquadJoin = () => {
-    // TODO: wait for backend confirmation
+  
+  const handleSquadJoin = (squad) => {
+    SquadApiService.postSquad({ squad_id: squad})
+      .then(() => {
+        return SquadApiService.getAllSquads() 
+      }).then(squad => {
+        squadContext.setSquadList(squad)
+      })
+      .catch(res => {
+        squadContext.setError(res)
+      })
   }
+
 
   const renderMembers = (membersList) => {
     return membersList.map((member, index) => {
@@ -28,14 +42,19 @@ export default function SquadListItem(props) {
   }
 
   return (
+    
     <div key={squad.id} className="SquadListItem">
       <h4 className="SquadListItem__squad-name">{squad.squad_name}</h4>
       <span className="SquadListItem__squad-members">
         {renderMembers(testMembers)}
       </span>
-      <div className="SquadListItem__squad-info">
+      <div role='alert'>
+        {squadContext.error && <p>{squadContext.error}</p>}
+      </div>
+      <div className="SquadListItem__squad-info" >
         <span className="SquadListItem__squad-tags">Tags: Squad Tags placeholding...</span>
-        <button className="SquadListItem__join-button" onClick={handleSquadJoin}>Join</button>
+       
+        <button className="SquadListItem__join-button" onClick={() => handleSquadJoin(squad.id)}>Join</button>
       </div>
     </div>
   )
