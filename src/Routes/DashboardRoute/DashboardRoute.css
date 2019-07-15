@@ -34,3 +34,32 @@
   border-right: 1px solid var(--greyLines);
   flex:1;
 }
+
+#mobile-buttons-container{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 2;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  visibility: hidden;
+}
+
+.mobile-button{
+  font-size: 20px;
+  padding: 5, 8;
+  margin: 10px;
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 700px){
+  .hidden {
+    display: none;
+  }
+  #mobile-buttons-container{
+    visibility: visible;
+  }
+
+}
