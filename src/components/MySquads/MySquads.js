@@ -5,17 +5,14 @@ import UserContext from '../../contexts/UserContext'
 import './MySquads.css';
 
 export default function MySquads() {
-
-  const [userSquadsList, setUserSquadsList] = useState([]);
+  const userContext = useContext(UserContext)
   const [error, setError] = useState(null)
   const squadContext = useContext(SquadContext);
-  const userContext = useContext(UserContext)
-  
+
   useEffect(() => {
     squadContext.clearError()
-    SquadService.getAllSquads(userContext.user.id)
+    SquadService.getAllSquads()
       .then(squads => {
-        setUserSquadsList(squads)
         squadContext.setSquadList(squads)
       })
       .catch(res => {
@@ -28,13 +25,9 @@ export default function MySquads() {
     <div className="Dashboard__user-squads">
       <h3 className='My-squads'>My Squads</h3>
       <ul className='user-squads-list'>
-        {userSquadsList.map((squadInfo, key) => {
+        {squadContext.squadList.map((squadInfo, key) => {
           return (
-            <li key={key} className='squad' onClick ={(ev) => {
-              ev.preventDefault()
-              userContext.setSquadId(squadInfo.squad_id)
-              userContext.setSquadName(squadInfo.squad_name)
-            }}>
+            <li key={key} className='squad'>
             <div className='squad-item-wrapper'>
               <img id='squad-icon' src={squadInfo.userAvatar} alt=''/>
               <p className='squad-name'>{squadInfo.squad_name}</p>

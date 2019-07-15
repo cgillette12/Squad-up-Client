@@ -2,8 +2,8 @@ import config from '../config'
 import TokenService from './token-service'
 
 const SquadService  = {
-  getAllSquads(id) {
-    return fetch(`${config.API_ENDPOINT}/squads/${id}`, {
+  getAllSquads() {
+    return fetch(`${config.API_ENDPOINT}/squads`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
         'content-type': 'application/json'
@@ -24,15 +24,15 @@ const SquadService  = {
     )
   },
 
-  // postSquad(){
-  //   return fetch(`${config.API_ENDPOINT}/squads`, {
-  //     method: `POST`,
-  //     headers:{
-  //       'authorization' :`bearer ${TokenService.getAuthToken()}`,
-  //       'content-type':'application/json',
-  //     },
-  //     body: body: JSON.stringify(),
-  //   })
-  // }
+  postSquad({ squad_id}){
+    return fetch(`${config.API_ENDPOINT}/squads/join`, {
+      method: `POST`,
+      headers:{
+        'authorization' :`bearer ${TokenService.getAuthToken()}`,
+        'content-type':'application/json',
+      },
+     body: JSON.stringify({squad_id}),
+    })
+  }
 }
 export default SquadService;

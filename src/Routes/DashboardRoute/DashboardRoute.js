@@ -4,7 +4,7 @@ import GamesList from '../../components/GamesList/GamesList'
 import MySquads from '../../components/MySquads/MySquads'
 import GameContext from '../../contexts/GameContext'
 import LiveChat from '../../components/LiveChat/LiveChat'
-import Profile from '../../components/Profile/Profile'
+// import Profile from '../../components/Profile/Profile'
 import './DashboardRoute.css'
 
 export default function DashboardRoute() {
@@ -15,14 +15,14 @@ export default function DashboardRoute() {
       return (
         
         <div className="Dashboard__game-squads-list">
-          <Profile />
+          {/* <Profile /> */}
           <GameSquadsList />
         </div>
       )
     } else {
       return (
         <div className="Dashboard__games-list">
-          <Profile />
+          {/* <Profile /> */}
           <GamesList />
         </div>
       )

@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import './Profile.css'
 import UserBlock from './UserBlock'
 import UserContext from '../../contexts/UserContext'
-import UserApiService from '../../services/user-api-service'
+import ProfileService from '../../services/profile-service'
 
 
 export default function Profile(){
@@ -10,15 +10,17 @@ export default function Profile(){
     console.log(userContext.user)
     
     useEffect( () => {
-        UserApiService.getUserInfo(userContext.user.username)
+        ProfileService.getUserInfo(userContext.user.username)
         .then(data => {
             userContext.setUser(data)
         })
     },[])
 
-    const setAvatar = (image) => {
-        UserApiService.getUserInfo(userContext.user.id)
-        .then(data => console.log(data))
+    const setAvatar = (id, image) => {
+        ProfileService.updateAvatar(id, image)
+        .then(info => {
+            UserContext.setUser(info)
+        })
     }
 
 
