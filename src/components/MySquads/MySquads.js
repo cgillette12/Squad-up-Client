@@ -5,7 +5,7 @@ import './MySquads.css';
 
 export default function MySquads() {
 
-  const [userSquadsList, setUserSquadsList] = useState([]);
+ 
   const [error, setError] = useState(null)
   const squadContext = useContext(SquadContext);
 
@@ -14,7 +14,6 @@ export default function MySquads() {
     SquadService.getAllSquads()
       .then(squads => {
         squadContext.setSquadList(squads)
-        setUserSquadsList(squads)
       })
       .catch(res => {
         setError(res.error)
@@ -25,6 +24,9 @@ export default function MySquads() {
 
   return (
     <div className="Dashboard__user-squads">
+      <div role='alert'>
+        {error && <p>{error}</p>}
+      </div>
       <h3 className='My-squads'>My Squads</h3>
       <ul className='user-squads-list'>
         {squadContext.squadList.map((squadInfo, key) => {
