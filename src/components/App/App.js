@@ -6,7 +6,6 @@ import LandingPageRoute from '../../Routes/LandingPageRoute/LandingPageRoute'
 import SquadList from '../../components/MySquads/MySquads'
 import GameList from '../../components/GamesList/GamesList'
 import RegisterRoute from '../../Routes/RegisterRoute/RegisterRoute'
-import NewSquadRoute from '../../Routes/NewSquadRoute/NewSquadRoute'
 import DashboardRoute from '../../Routes/DashboardRoute/DashboardRoute'
 import './App.css'
 
