@@ -59,7 +59,6 @@
   .hidden {
     display: none;
   }
-<<<<<<< HEAD
   .Dashboard {
   display: block;
   padding-top: 10px;
@@ -74,9 +73,7 @@
   display:none;
 } */
 
-=======
   #mobile-buttons-container{
     visibility: visible;
   }
->>>>>>> 4733ceb5f530bceb10afa56313edc12944a75127
 }
