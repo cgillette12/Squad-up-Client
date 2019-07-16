@@ -5,8 +5,6 @@ import GamesSublist from '../GamesSublist/GamesSublist'
 import { Input } from '../FormUtils/FormUtils'
 import './GamesList.css'
 
-// import store from './dummy-store'
-
 export default function GamesList() {
   const gameContext = useContext(GameContext)
   
@@ -54,22 +52,15 @@ export default function GamesList() {
   }
 
   const handleSearchFuzzy = (input) => {
-    const filteredList = gameContext.gamesList.filter(game => game.game_title.includes(input))
+    const filteredList = gameContext.gamesList.filter(game => game.game_title.toLowerCase().includes(input))
     setGamesList(filteredList)
     setSearchTerm(input)
   }
-
-  // const handleSearchSubmit = (e) => {
-  //   e.preventDefault()
-
-  //   setSearchTerm(e.target.value)
-  // }
 
   return (
     <section className="GamesList">
       <form 
         className="GamesList__search-bar"
-        // onSubmit={e => handleSearchSubmit(e)}  
       >
         <Input 
           type="text"
@@ -80,7 +71,6 @@ export default function GamesList() {
           aria-label="Search for Games"
           autoFocus
         />
-        {/* <button type="submit">Search</button> */}
       </form>
       {renderGames()}
     </section>

@@ -13,6 +13,7 @@
 
 # misc
 .vscode
+.assets
 .DS_Store
 .env.local
 .env.development.local
