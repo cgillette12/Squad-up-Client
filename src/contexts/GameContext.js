@@ -4,6 +4,7 @@ const GameContext = React.createContext({
   gamesList: [],
   selectedGame: {
     game: '',
+    gameId: null,
     squadsList: []
   },
   gameIsSelected: false,

@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import { Input } from '../../components/FormUtils/FormUtils'
+import GameContext from '../../contexts/GameContext'
 import './newSquadForm.css'
 
-export default function NewSquadForm() {
+export default function NewSquadForm(props) {
   const [squadName, setSquadName] = useState('');
-  const [squadDescription, setSquadDescription] = useState('')
   const [squadTag, setSquadTag] = useState('')
   const [squadTags, setSquadTags] = useState([])
+
+  const context = useContext(GameContext)
+  const gameId = context.selectedGame.gameId
 
   const handleNewTag = () => {
     if (squadTag === '') {
@@ -24,29 +27,32 @@ export default function NewSquadForm() {
     setSquadTags(tags)
   }
 
-  const handleSumbitSquad = e => {
-    e.preventDefault();
+  // const handleSumbitSquad = e => {
+  //   e.preventDefault();
 
-    fetch(`${config.API_ENDPOINT}/squad`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`
-      },
-      body: JSON.stringify({ squadName, squadDescription, squadTags })
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(err => Promise.reject(err))
-          : res.json()
-      )
-  }
+  //   fetch(`${config.API_ENDPOINT}/squads/add`, {
+  //     method: 'POST',
+  //     headers: {
+  //       'content-type': 'application/json',
+  //       'authorization': `bearer ${TokenService.getAuthToken()}`
+  //     },
+  //     body: JSON.stringify({ game_id: gameId, squad_name: squadName, tags: squadTags })
+  //   })
+  //     .then(res =>
+  //       (!res.ok)
+  //         ? res.json().then(err => Promise.reject(err))
+  //         : res.json()
+  //     )
+
+  //   props.cancel()
+
+  // }
 
   return (
     <div id='new-squad-container'>
       <form
         id='new-squad-form'
-        onSubmit={handleSumbitSquad}
+         onSubmit={(e) => props.onFormSubmit(e, squadName, squadTags)}
       >
         <Input
           id='squad-name-input'
@@ -78,12 +84,18 @@ export default function NewSquadForm() {
             )}
           </ul>
         </div>
-        {/* <button type='button' className='new-squad-button' onClick='close the new squad pop up'>Close</button>  Will be used with the pop up of new Squad */}
-        <button 
-          type='submit' 
-          className='new-squad-button'
+          <button
+            type='submit'
+            className='new-squad-button'
+          >
+            New Squad
+          </button>
+        <button
+          type='button'
+          className='new-sqaud-button'
+          onClick={props.cancel}
         >
-          New Squad
+          Cancel
         </button>
       </form>
     </div>
