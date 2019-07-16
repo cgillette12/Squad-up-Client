@@ -7,7 +7,7 @@
     right:0;
     justify-content: center;
     align-items: center;
-    height: 58px;
+    height: 75px;
     width: 75px;
     padding: 0;
     margin: 0;
@@ -16,7 +16,7 @@
 }
 
 .SideNav-button.active {
-    background: black;
+    background: var(--black);
 }
 
 .SideNav-button.active .SideNav-button-line {
@@ -47,11 +47,11 @@ nav.SideNav-button:hover {
 .side-drawer {
     transition: right 0.15s linear;
     position: fixed;
-    top: 55px;
+    top: 75px;
     right: -100vw;
     width: 100vw;
     bottom: 0;
-    background-color: black;
+    background-color: var(--black);
     font-size: 28px;
     z-index: 20;
 }
@@ -69,7 +69,7 @@ nav.SideNav-button:hover {
     list-style: none;
     border-width: 1px 0 1px 0;
     border-style: solid;
-    border-color: linen;
+    border-color: var(linen);
     width: 100%;    
 }
 
@@ -82,12 +82,12 @@ nav.SideNav-button:hover {
     padding: 10px 0 10px 0;
     transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
     text-decoration: none;
-    color: linen;
+    color: var(linen);
     display: flex;
-    background-color: rgb(14, 11, 11);
+    background-color: var(--black);
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     .SideNav-button {
         display: flex;
     }

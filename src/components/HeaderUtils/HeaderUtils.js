@@ -7,10 +7,7 @@ export  function SideNavButton(props) {
   const [dropDownToggled, setDropDownToggled] = useState(false)
 
   const handleDropdownToggle = () => {
-
     dropDownToggled ? setDropDownToggled(false) : setDropDownToggled(true);
-
-
   }
 
   return (

@@ -31,8 +31,18 @@
   margin-left: 10px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
+  body{
+    padding-top:75px;
+  }
   .Header {
     flex-direction: column;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
   }
+  .Header__user-avatar {
+  width: 25px;
+}
 }
