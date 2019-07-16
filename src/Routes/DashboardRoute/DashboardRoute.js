@@ -5,13 +5,10 @@ import MySquads from '../../components/MySquads/MySquads'
 import GameContext from '../../contexts/GameContext'
 import LiveChat from '../../components/LiveChat/LiveChat'
 import Profile from '../../components/Profile/Profile'
-import ChatSquadList from '../../components/LiveChat/ChatSquadList'
-import SquadContext from '../../contexts/SquadContext'
 import './DashboardRoute.css'
 
 export default function DashboardRoute() {
   const gameContext = useContext(GameContext)
-  const squadContext = useContext(SquadContext)
 
   const renderDashboardMain = () => {
     if (gameContext.gameIsSelected) {
@@ -39,7 +36,7 @@ export default function DashboardRoute() {
     </section>
       {renderDashboardMain()}
         
-      {squadContext.displayChat ? <LiveChat /> : <ChatSquadList />}
+      <LiveChat />
       
     </div>
   )

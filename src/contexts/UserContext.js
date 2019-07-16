@@ -72,7 +72,7 @@ export class UserProvider extends Component {
     this.setState({squad_id})
   }
   setSquadName = (squad_name) => {
-    this.setState({squad_name})
+    this.setState({ squad_name })
   }
 
   processLogin = authToken => {
@@ -132,7 +132,7 @@ export class UserProvider extends Component {
       processLogout: this.processLogout,
       squad_id: this.state.squad_id,
       setSquadId:this.setSquadId,
-      squad_name: "General Chat",
+      squad_name: this.state.squad_name,
       setSquadName:this.setSquadName
     }
     return (

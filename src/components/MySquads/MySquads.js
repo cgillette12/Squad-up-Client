@@ -7,8 +7,7 @@ import './MySquads.css';
 export default function MySquads() {
   const userContext = useContext(UserContext)
   const [error, setError] = useState(null)
-  const squadContext = useContext(SquadContext);
-  console.log(squadContext.squadList)
+  const squadContext = useContext(SquadContext)
 
   useEffect(() => {
     squadContext.clearError()
@@ -36,18 +35,6 @@ export default function MySquads() {
             </li>
           )
           })}
-        {userContext.squad_id!==999 ? 
-        <li className='squad' onClick={(ev) => {
-          ev.preventDefault()
-          userContext.setSquadId(999)
-          userContext.setSquadName("General Chat")
-        }}>
-        <div className='squad-item-wrapper'>
-          <img id='squad-icon' src={userContext.user.avatar} alt=''/>
-          <p className='squad-name'>General Chat</p>
-        </div>
-        </li> : <></>
-        }
       </ul>
     </div>
   )

@@ -13,7 +13,6 @@ export default function ChatSquadList(){
                 <div key={squad.squad_id} onClick={(ev) => {
                     ev.preventDefault()
                     userContext.setSquadId(squad.squad_id)
-                    squadContext.setDisplayChat()
                 }}>
                     <h4>
                         {squad.squad_name}
@@ -32,7 +31,6 @@ export default function ChatSquadList(){
                 <div onClick={(ev) => {
                     ev.preventDefault()
                     userContext.setSquadId(999)
-                    squadContext.setDisplayChat()
                 }}>
                 <h4>
                     General Chat

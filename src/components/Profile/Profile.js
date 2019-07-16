@@ -8,12 +8,10 @@ import ProfileService from '../../services/profile-service'
 export default function Profile(){
     const userContext = useContext(UserContext)
     
-    
     useEffect( () => {
-        console.log(userContext.user.id)
+        
         ProfileService.getUserInfo(userContext.user.id)
         .then(data => {
-            console.log(data)
             userContext.setUser(data)
         })
     },[])
@@ -32,7 +30,7 @@ export default function Profile(){
                 <UserBlock
                     xp={userContext.user.xp}
                     xpthreshold={userContext.user.xp_threshold}
-                    level={userContext.user.level_id}
+                    level={userContext.user.level}
                     avatar={userContext.user.avatar}
                     setAvatar={setAvatar}
                     username={userContext.user.name}

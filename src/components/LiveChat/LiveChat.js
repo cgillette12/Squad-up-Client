@@ -19,6 +19,7 @@ export default function LiveChat(props) {
     const context = useContext(UserContext)
     const squadContext = useContext(SquadContext)
     const [messages, setMessages] = useState([])
+    const [showBotMenu, setShowBotMenu] = useState(false)
 
     useEffect( () => {
         LiveChatService.getChat(context.squad_id)
@@ -26,6 +27,12 @@ export default function LiveChat(props) {
             setMessages(chats)
         })
     }, [context.squad_id])
+
+
+    const handleBotMenu = (ev) => {
+        ev.preventDefault()
+        setShowBotMenu(!showBotMenu)
+    }
 
     useEffect( () => {
         io.emit('join room', context.squad_id)
@@ -42,7 +49,6 @@ export default function LiveChat(props) {
     },[message,messages])
 
     const addMessage = msg => {
-        
         setMessages([...messages, msg])
     }
 
@@ -79,6 +85,21 @@ export default function LiveChat(props) {
         
     // }
 
+    const displayDropDown = () => {
+        return squadContext.squadList.map(squad => {
+            return (
+                <li key={squad.squad_id} className="Drop-Down-Squad" onClick={(ev) =>{
+                    ev.preventDefault()
+                    context.setSquadId(squad.squad_id)
+                    context.setSquadName(squad.squad_name)
+                    }
+                }>
+                    {squad.squad_name}
+                </li>
+            )
+        })
+    }
+
     const messagesBlock = () =>{ 
         if(messages.length>0){
         const tmp = messages
@@ -103,11 +124,14 @@ export default function LiveChat(props) {
         }
     }
 
-
+    const ulStyle={
+        marginTop:`-${(squadContext.squadList.length+1)*28}px`
+    }
+    
     return (
         <div className="LiveChat">
             <h3>
-                {context.squad_name || "General Chat"}
+                {context.squad_name}
             </h3>
             <div className="ChatHistory">
                 <ScrollArea
@@ -122,6 +146,26 @@ export default function LiveChat(props) {
             <div role='alert'>
                 {error && <p>{error}</p>}
             </div>
+            <ul className="Chat-SquadList-Ctner" style={ulStyle}>
+                {showBotMenu ? 
+                    <>
+                    {displayDropDown()}
+                    <li className="Drop-Down-Squad" onClick={(ev) =>{
+                        ev.preventDefault()
+                        context.setSquadId(999)
+                        context.setSquadName("General Chat")
+                    }
+                    }>
+                    General Chat
+                    </li>
+                    </>
+                    : 
+                    <></>
+                    }
+            </ul>
+            <button onClick={handleBotMenu} className="Show-List-Btn">
+                Show Squad List
+            </button>
             <form className="chat-input" onSubmit={handleSubmit}>
                 <Input
                     value={message}
@@ -131,10 +175,7 @@ export default function LiveChat(props) {
                     required
                 />
             </form>
-            <button onClick={(ev) => {
-                ev.preventDefault()
-                squadContext.setDisplayChat()
-            }}>back</button>
+           
         </div>
     )
 

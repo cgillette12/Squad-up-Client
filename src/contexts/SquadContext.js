@@ -13,9 +13,7 @@ const SquadContext = React.createContext({
   setSelectedSquad: () => { },
   clearSelectedSquad: () => { },
   setError: () => { },
-  clearError: () => { },
-  displayChat: false,
-  setDisplayChat: () => { }
+  clearError: () => { }
  })
 
 export default SquadContext
@@ -30,8 +28,7 @@ export class SquadProvider extends Component {
         squadList: [],
       },
       squadIsSelected: false,
-      error: null,
-      displayChat: false
+      error: null
     }
   }
 
@@ -62,10 +59,6 @@ export class SquadProvider extends Component {
     this.setState({ error: null })
   }
 
-  setDisplayChat = () => {
-    this.setState({ displayChat:!this.state.displayChat })
-  }
-
   render() {
     const value = {
       squadList: this.state.squadList,
@@ -77,9 +70,7 @@ export class SquadProvider extends Component {
       setSelectedSquad: this.setSelectedSquad,
       clearSelectedSquad: this.clearSelectedSquad,
       setError: this.setError,
-      clearError: this.clearError,
-      displayChat: this.state.displayChat,
-      setDisplayChat: this.setDisplayChat
+      clearError: this.clearError
     }
 
     return (
