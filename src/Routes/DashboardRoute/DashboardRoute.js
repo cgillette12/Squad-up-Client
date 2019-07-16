@@ -10,6 +10,8 @@ import './DashboardRoute.css'
 export default function DashboardRoute() {
   const gameContext = useContext(GameContext)
 
+
+  
   const renderDashboardMain = () => {
     if (gameContext.gameIsSelected) {
       return (

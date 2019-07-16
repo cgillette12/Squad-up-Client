@@ -8,8 +8,8 @@
 }
 
 .GamesSublist__heading {
-  background-color: gray;
-  border: 2px solid gray;
+  background-color: rgba(186,39,47, 1);
+  border: 2px solid rgba(186,39,47, 1);
   border-radius: 4px;
   margin: 0;
   padding: 10px 20px;
