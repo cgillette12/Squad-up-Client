@@ -9,12 +9,12 @@ const GameContext = React.createContext({
   },
   gameIsSelected: false,
   error: null,
-  setGamesList: () => {},
-  clearGamesList: () => {},
-  setSelectedGame: () => {},
-  clearSelectedGame: () => {},
-  setError: () => {},
-  clearError: () => {}
+  setGamesList: () => { },
+  clearGamesList: () => { },
+  setSelectedGame: () => { },
+  clearSelectedGame: () => { },
+  setError: () => { },
+  clearError: () => { }
 })
 
 export default GameContext
@@ -45,7 +45,7 @@ export class GameProvider extends Component {
     this.setState({ selectedGame })
     this.setState({ gameIsSelected: true })
   }
-  
+
   clearSelectedGame = () => {
     this.setState({ selectedGame: { game: '', squadsList: [] } })
     this.setState({ gameIsSelected: false })

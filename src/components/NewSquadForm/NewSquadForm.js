@@ -1,17 +1,12 @@
 import React, { useState, useContext } from 'react'
-import config from '../../config';
-import TokenService from '../../services/token-service';
 import { Input } from '../../components/FormUtils/FormUtils'
-import GameContext from '../../contexts/GameContext'
 import './newSquadForm.css'
+
 
 export default function NewSquadForm(props) {
   const [squadName, setSquadName] = useState('');
   const [squadTag, setSquadTag] = useState('')
   const [squadTags, setSquadTags] = useState([])
-
-  const context = useContext(GameContext)
-  const gameId = context.selectedGame.gameId
 
   const handleNewTag = () => {
     if (squadTag === '') {
@@ -27,26 +22,6 @@ export default function NewSquadForm(props) {
     setSquadTags(tags)
   }
 
-  // const handleSumbitSquad = e => {
-  //   e.preventDefault();
-
-  //   fetch(`${config.API_ENDPOINT}/squads/add`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'content-type': 'application/json',
-  //       'authorization': `bearer ${TokenService.getAuthToken()}`
-  //     },
-  //     body: JSON.stringify({ game_id: gameId, squad_name: squadName, tags: squadTags })
-  //   })
-  //     .then(res =>
-  //       (!res.ok)
-  //         ? res.json().then(err => Promise.reject(err))
-  //         : res.json()
-  //     )
-
-  //   props.cancel()
-
-  // }
 
   return (
     <div id='new-squad-container'>
@@ -97,6 +72,7 @@ export default function NewSquadForm(props) {
         >
           Cancel
         </button>
+        <button type='button' className='new-squad-button' onClick={props.cancel}>Cancel</button>
       </form>
     </div>
   )
