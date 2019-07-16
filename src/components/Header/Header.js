@@ -16,7 +16,7 @@ export default function Header() {
   const renderLogoutLink = () => {
     return (
       <div className='Header__logged-in'>
-        <img className='Header__user-avatar' src={userContext.user.avatar} alt="Avatar" aria-label="User Avatar" />
+        <img className='Header__user-avatar' src={userContext.user.avatar} alt=" " aria-label="User Avatar" />
         <Link to='/dashboard'>{userContext.user.name}</Link>
         <Link onClick={handleLogoutClick} to='/'>Logout</Link>
       </div>
