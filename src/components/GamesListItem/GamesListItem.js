@@ -10,7 +10,7 @@ export default function GameListItem(props) {
   const handleGameClick = () => {
     GamesApiService.getSquadsForGame(game.id)
       .then(squadsList => {
-        gameContext.setSelectedGame({ game: game.game_title, squadsList })
+        gameContext.setSelectedGame({ game: game.game_title, gameId: game.id, squadsList })
       })
       .catch(error => {
         console.error(error)

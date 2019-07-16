@@ -1,3 +1,4 @@
+
 import React, { useContext} from 'react'
 import GameSquadsList from '../../components/GameSquadsList/GameSquadsList'
 import GamesList from '../../components/GamesList/GamesList'
@@ -37,6 +38,7 @@ export default function DashboardRoute() {
       <MobileUtils/>
       <div className="Dashboard__user-access">
         <div className='Dashboard__chat'>
+
           <h3>Chat</h3>
           <div className="Dashboard__chat-messages">
             <p>

@@ -22,7 +22,6 @@ function App() {
          <Route exact path={'/squads'} component={SquadList}/>
          <Route exact path={'/games'} component={GameList} />
          <Route exact path={'/register'} component={RegisterRoute} />
-         <Route exact path={'/newsquad'} component={NewSquadRoute}/>
          <Route path={'/dashboard'} component={DashboardRoute} />
           <Redirect from="/" to="/games" />
        </Switch>
