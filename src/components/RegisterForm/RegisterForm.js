@@ -1,7 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/UserContext'
 import { Input, Label } from '../../components/FormUtils/FormUtils'
+import avatarList from './avatarList'
 import './RegisterForm.css';
 
 
@@ -11,6 +12,8 @@ export default function RegisterForm(props) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const { onRegisterSuccess = () => { } } = props;
+
+  
 
   const context = useContext(UserContext);
 
@@ -34,9 +37,7 @@ export default function RegisterForm(props) {
         setError(res.error)
       })
   }
-  const handleSelectAvitar = () => {
-    // will display all Avitars
-  }
+  
   return (
     <div className="register">
       <form className="register-form" onSubmit={handleNewUserSubmit}>

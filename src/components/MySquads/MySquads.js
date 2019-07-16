@@ -1,26 +1,24 @@
 import React, { useState, useEffect, useContext } from 'react'
 import SquadService from '../../services/Squad-api-service'
 import SquadContext from '../../contexts/SquadContext'
+import UserContext from '../../contexts/UserContext'
 import './MySquads.css';
 
 export default function MySquads() {
-
-  const [userSquadsList, setUserSquadsList] = useState([]);
+  const userContext = useContext(UserContext)
   const [error, setError] = useState(null)
-  const squadContext = useContext(SquadContext);
+  const squadContext = useContext(SquadContext)
 
   useEffect(() => {
     squadContext.clearError()
     SquadService.getAllSquads()
       .then(squads => {
         squadContext.setSquadList(squads)
-        setUserSquadsList(squads)
       })
       .catch(res => {
         setError(res.error)
       })
   }, [])
-
 
 
   return (

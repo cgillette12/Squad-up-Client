@@ -1,0 +1,35 @@
+.Process-Bar{
+    position: relative;
+    height:20px;
+    width:80%;
+    max-width:400px;
+    border-radius:50px;
+    border: 1px solid #333;
+}
+.Filler{
+    background:green;
+    height:100%;
+    border-radius:inherit;
+    transition: width .2s ease-in;
+}
+.User-Avatar-Container{
+    width:70px;
+    height:70px;
+    background-Image:url('https://image.flaticon.com/icons/svg/78/78373.svg');
+    background-size:70px 70px;
+}
+.Level-Container{
+    text-align:center;
+}
+.Process-Bar{
+    margin:auto;
+}
+h3{
+    text-align: center;
+
+}
+.User-Avatar-Container{
+    margin:auto;
+    color:red;
+    text-align: center;
+}

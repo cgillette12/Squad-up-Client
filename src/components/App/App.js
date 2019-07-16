@@ -4,9 +4,9 @@ import Header from '../Header/Header'
 import LoginRoute from '../../Routes/LoginRoute/LoginRoute'
 import LandingPageRoute from '../../Routes/LandingPageRoute/LandingPageRoute'
 import RegisterRoute from '../../Routes/RegisterRoute/RegisterRoute'
-import NewSquadRoute from '../../Routes/NewSquadRoute/NewSquadRoute'
 import DashboardRoute from '../../Routes/DashboardRoute/DashboardRoute'
 import './App.css'
+
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
          <Route exact path={'/'} component={LandingPageRoute} />
          <Route exact path={'/login'} component={LoginRoute} />
          <Route exact path={'/register'} component={RegisterRoute} />
-         <Route exact path={'/newsquad'} component={NewSquadRoute}/>
          <Route path={'/dashboard'} component={DashboardRoute} />
        </Switch>
       </main>
