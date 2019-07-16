@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import {SideNavButton} from '../HeaderUtils/HeaderUtils'
 import TokenService from '../../services/token-service'
-import UserContext from '../../contexts/UserContext';
+import UserContext from '../../contexts/UserContext'
 import './Header.css'
 
 export default function Header() {

@@ -1,15 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Link } from 'react-router-dom'
 import SquadService from '../../services/Squad-api-service'
 import SquadContext from '../../contexts/SquadContext'
 import MobileUtils from '../../components/Utils/MobileUtils'
 import './MySquads.css';
 
 export default function MySquads() {
-
-
   const [error, setError] = useState(null)
-  const squadContext = useContext(SquadContext);
+  const squadContext = useContext(SquadContext)
 
   useEffect(() => {
     squadContext.clearError()

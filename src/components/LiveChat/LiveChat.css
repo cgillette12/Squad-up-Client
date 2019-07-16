@@ -1,0 +1,65 @@
+.LiveChat{
+    margin-top:-1px;
+    width:300px;
+    height:95vh;
+    border-left:1px solid var(--greyLines);
+    border-bottom:1px solid var(--greyLines);
+    border-top:1px solid black;
+    color:black;
+}
+h3{
+    text-align: center;
+    margin:0;
+    color:var(--black);
+    padding:22px 0px;
+    font-size: 28px;
+    text-align: center;
+    border-bottom: 1px solid var(--greyLines);
+}
+.Scrollable-Chat{
+    height:70vh;
+}
+.Message-Input{
+    font-size:18px;
+    height:30px;
+    width:100%;
+    margin-bottom:0;
+    margin-top:0;
+}
+.Msg-Ctner{
+    width:100%;
+    height:fit-content;
+    margin-bottom:5px;
+}
+.ChatHistory{
+    height:70vh;
+    padding-right:5px;
+}
+.Time-Text{
+    float:right;
+}
+.User-Text{
+    font-weight:bold;
+    
+}
+.Chat-SquadList-Ctner{
+    position:absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color:white;
+    z-index:5;
+    list-style-type: none;
+    margin-top:-40px;
+    height:fit-content;
+    max-height: 200px;
+    width:fit-content;
+}
+.Drop-Down-Squad{
+    height:20px;
+    font-size:18px;
+    text-align:center;
+    margin-bottom: 8px;
+}
+.Show-List-Btn{
+    width:100%;
+    font-size:18px;
+}

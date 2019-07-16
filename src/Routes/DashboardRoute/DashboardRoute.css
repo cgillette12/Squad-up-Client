@@ -8,7 +8,6 @@
 .Dashboard__games-list,
 .Dashboard__game-squads-list {
   flex: 3;
-  
 }
 
 .Dashboard__user-access {
@@ -17,7 +16,6 @@
 
 .Dashboard__user-access h3 {
   margin:0;
-  
   color:var(--black);
   padding:22px 0px;
   font-size: 28px;
@@ -33,14 +31,26 @@
 .Dashboard__user-squads {
   margin-top: 0;
 }
+
 .Dashboard_squad-list{
   border-right: 1px solid var(--greyLines);
   flex:1;
 }
-.back-router{
-  display: none;
-  text-decoration: none;
-  color:var(--primary);
+
+.Chat-SquadList-Container{
+  text-align: center;
+}
+
+#mobile-buttons-container{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 2;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  visibility: hidden;
 }
 
 
@@ -49,6 +59,7 @@
   .hidden {
     display: none;
   }
+<<<<<<< HEAD
   .Dashboard {
   display: block;
   padding-top: 10px;
@@ -63,4 +74,9 @@
   display:none;
 } */
 
+=======
+  #mobile-buttons-container{
+    visibility: visible;
+  }
+>>>>>>> 4733ceb5f530bceb10afa56313edc12944a75127
 }

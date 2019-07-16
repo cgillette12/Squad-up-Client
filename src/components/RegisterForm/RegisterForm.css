@@ -32,7 +32,19 @@
   margin: 22px 0;
   border-radius: 3px;
 }
-
+.Avatar-Container{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width:15%;
+  height:15%;
+}
+.Avatar-Selection-Box{
+  width:500px;
+  display:flex;
+  z-index: 0;
+  position: fixed;
+  height:300px;
+}
 
 @media screen and (max-width: 800px) {
  
