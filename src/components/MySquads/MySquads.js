@@ -8,8 +8,13 @@ import './MySquads.css';
 export default function MySquads() {
 
 
+import UserContext from '../../contexts/UserContext'
+import './MySquads.css';
+
+export default function MySquads() {
+  const userContext = useContext(UserContext)
   const [error, setError] = useState(null)
-  const squadContext = useContext(SquadContext);
+  const squadContext = useContext(SquadContext)
 
   useEffect(() => {
     squadContext.clearError()

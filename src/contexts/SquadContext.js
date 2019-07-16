@@ -14,7 +14,7 @@ const SquadContext = React.createContext({
   clearSelectedSquad: () => { },
   setError: () => { },
   clearError: () => { }
-})
+ })
 
 export default SquadContext
 

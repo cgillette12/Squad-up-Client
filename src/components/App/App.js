@@ -11,6 +11,7 @@ import NewSquadRoute from '../../Routes/NewSquadRoute/NewSquadRoute'
 import DashboardRoute from '../../Routes/DashboardRoute/DashboardRoute'
 import './App.css'
 
+
 function App() {
   return (
     <div className="App">
