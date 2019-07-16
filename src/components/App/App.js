@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main role="main" query="(max-width:800px)">
+      <main role="main">
        <Switch>
          <Route exact path={'/'} component={LandingPageRoute} />
          <Route exact path={'/login'} component={LoginRoute} />

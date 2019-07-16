@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react'
-import { Redirect} from 'react-router'
+import React, { useContext} from 'react'
 import GameSquadsList from '../../components/GameSquadsList/GameSquadsList'
 import GamesList from '../../components/GamesList/GamesList'
 import MySquads from '../../components/MySquads/MySquads'

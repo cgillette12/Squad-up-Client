@@ -37,6 +37,11 @@
   border-right: 1px solid var(--greyLines);
   flex:1;
 }
+.back-router{
+  display: none;
+  text-decoration: none;
+  color:var(--primary);
+}
 
 
 
@@ -48,6 +53,10 @@
   display: block;
   padding-top: 10px;
   padding-bottom: 30px;
+}
+
+.back-router{
+  display:block;
 }
 /* .Dashboard__user-squads,
 .Dashboard__chat {

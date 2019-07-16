@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import SquadService from '../../services/Squad-api-service'
 import SquadContext from '../../contexts/SquadContext'
 import MobileUtils from '../../components/Utils/MobileUtils'
@@ -28,8 +28,9 @@ export default function MySquads() {
       <div role='alert'>
         {error && <p>{error}</p>}
       </div>
-      <MobileUtils />
-      <h3 className='My-squads'>My Squads</h3>
+      <section className='squads-header'>
+        <h3 className='My-squads'>My Squads</h3>
+      </section>
       <ul className='user-squads-list'>
         {squadContext.squadList.map((squadInfo, key) => {
           return (
@@ -42,6 +43,7 @@ export default function MySquads() {
           )
         })}
       </ul>
+      <MobileUtils />
     </div>
   )
 }
