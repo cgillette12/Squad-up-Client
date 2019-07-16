@@ -34,3 +34,6 @@
   border-right: 1px solid var(--greyLines);
   flex:1;
 }
+.Chat-SquadList-Container{
+  text-align: center;
+}

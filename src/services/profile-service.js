@@ -3,14 +3,14 @@ import TokenService from './token-service'
 
 const ProfileService = {
     getUserInfo(id){
-        return fetch(`${config.API_ENDPOINT}/info/`+id, {
+        return fetch(`${config.API_ENDPOINT}/user/`+id, {
             method:'GET',
             headers: {
                 'authorization': `Bearer ${TokenService.getAuthToken()}`
             }
         }).then(
             res => {
-                (!res.ok)
+                return (!res.ok)
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             }

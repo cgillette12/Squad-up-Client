@@ -4,25 +4,28 @@ import GamesList from '../../components/GamesList/GamesList'
 import MySquads from '../../components/MySquads/MySquads'
 import GameContext from '../../contexts/GameContext'
 import LiveChat from '../../components/LiveChat/LiveChat'
-// import Profile from '../../components/Profile/Profile'
+import Profile from '../../components/Profile/Profile'
+import ChatSquadList from '../../components/LiveChat/ChatSquadList'
+import SquadContext from '../../contexts/SquadContext'
 import './DashboardRoute.css'
 
 export default function DashboardRoute() {
   const gameContext = useContext(GameContext)
-  
+  const squadContext = useContext(SquadContext)
+
   const renderDashboardMain = () => {
     if (gameContext.gameIsSelected) {
       return (
         
         <div className="Dashboard__game-squads-list">
-          {/* <Profile /> */}
+          <Profile />
           <GameSquadsList />
         </div>
       )
     } else {
       return (
         <div className="Dashboard__games-list">
-          {/* <Profile /> */}
+          <Profile />
           <GamesList />
         </div>
       )
@@ -36,7 +39,7 @@ export default function DashboardRoute() {
     </section>
       {renderDashboardMain()}
         
-      <LiveChat />
+      {squadContext.displayChat ? <LiveChat /> : <ChatSquadList />}
       
     </div>
   )

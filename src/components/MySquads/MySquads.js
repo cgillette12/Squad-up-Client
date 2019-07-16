@@ -8,6 +8,7 @@ export default function MySquads() {
   const userContext = useContext(UserContext)
   const [error, setError] = useState(null)
   const squadContext = useContext(SquadContext);
+  console.log(squadContext.squadList)
 
   useEffect(() => {
     squadContext.clearError()

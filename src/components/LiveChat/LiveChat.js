@@ -7,6 +7,7 @@ import TokenService from '../../services/token-service'
 import { Input } from '../FormUtils/FormUtils';
 import MessageBlock from './MessageBlock'
 import ScrollArea from 'react-scrollbar';
+import SquadContext from '../../contexts/SquadContext'
 import './LiveChat.css';
 
 const io = openSocket(config.LIVE_CHAT_ENDPOINT)
@@ -16,6 +17,7 @@ export default function LiveChat(props) {
     const [error, setError] = useState(null)
     const [message, setMessage] = useState('')
     const context = useContext(UserContext)
+    const squadContext = useContext(SquadContext)
     const [messages, setMessages] = useState([])
 
     useEffect( () => {
@@ -129,6 +131,10 @@ export default function LiveChat(props) {
                     required
                 />
             </form>
+            <button onClick={(ev) => {
+                ev.preventDefault()
+                squadContext.setDisplayChat()
+            }}>back</button>
         </div>
     )
 

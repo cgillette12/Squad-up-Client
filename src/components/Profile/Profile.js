@@ -7,11 +7,13 @@ import ProfileService from '../../services/profile-service'
 
 export default function Profile(){
     const userContext = useContext(UserContext)
-    console.log(userContext.user)
+    
     
     useEffect( () => {
-        ProfileService.getUserInfo(userContext.user.username)
+        console.log(userContext.user.id)
+        ProfileService.getUserInfo(userContext.user.id)
         .then(data => {
+            console.log(data)
             userContext.setUser(data)
         })
     },[])
