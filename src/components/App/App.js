@@ -7,6 +7,7 @@ import RegisterRoute from '../../Routes/RegisterRoute/RegisterRoute'
 import DashboardRoute from '../../Routes/DashboardRoute/DashboardRoute'
 import './App.css'
 
+
 function App() {
   return (
     <div className="App">

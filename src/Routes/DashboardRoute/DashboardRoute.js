@@ -3,6 +3,8 @@ import GameSquadsList from '../../components/GameSquadsList/GameSquadsList';
 import GamesList from '../../components/GamesList/GamesList'
 import MySquads from '../../components/MySquads/MySquads'
 import GameContext from '../../contexts/GameContext'
+import LiveChat from '../../components/LiveChat/LiveChat'
+import Profile from '../../components/Profile/Profile'
 import './DashboardRoute.css'
 
 export default function DashboardRoute() {
@@ -13,13 +15,16 @@ export default function DashboardRoute() {
   const renderDashboardMain = () => {
     if (gameContext.gameIsSelected) {
       return (
+        
         <div className="Dashboard__game-squads-list">
+          <Profile />
           <GameSquadsList />
         </div>
       )
     } else {
       return (
         <div className="Dashboard__games-list">
+          <Profile />
           <GamesList />
         </div>
       )
@@ -32,31 +37,9 @@ export default function DashboardRoute() {
         <MySquads/>
     </section>
       {renderDashboardMain()}
-      <div className="Dashboard__user-access">
-        <div className="Dashboard__chat">
-          <h3>Chat</h3>
-          <div className="Dashboard__chat-messages">
-            <p>
-              username <strong>time</strong> : some text messages
-            </p>
-            <p>
-              username <strong>time</strong> : some text messages
-            </p>
-            <p>
-              username <strong>time</strong> : some text messages
-            </p>
-            <p>
-              username <strong>time</strong> : some text messages
-            </p>
-            <p>
-              username <strong>time</strong> : some text messages
-            </p>
-            <p>
-              username <strong>time</strong> : some text messages
-            </p>
-          </div>
-        </div>
-      </div>
+        
+      <LiveChat />
+      
     </div>
   )
 }
