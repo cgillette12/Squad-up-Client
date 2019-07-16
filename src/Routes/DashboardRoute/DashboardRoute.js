@@ -1,8 +1,11 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> e198f3467aecb7ab928dd3e773912d5515a646bf
 import React, { useContext} from 'react'
 import GameSquadsList from '../../components/GameSquadsList/GameSquadsList'
 import GamesList from '../../components/GamesList/GamesList'
 import MySquads from '../../components/MySquads/MySquads'
-
 import GameContext from '../../contexts/GameContext'
 import MobileUtils from '../../components/Utils/MobileUtils'
 import LiveChat from '../../components/LiveChat/LiveChat'
@@ -48,7 +51,6 @@ export default function DashboardRoute() {
           </div>
         </div>
       </div>
-      
     </div>
   )
 }

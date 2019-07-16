@@ -36,6 +36,15 @@
   border-right: 1px solid var(--greyLines);
   flex:1;
 }
+<<<<<<< HEAD
+=======
+
+.back-router{
+  display: none;
+  text-decoration: none;
+  color:var(--primary);
+
+>>>>>>> e198f3467aecb7ab928dd3e773912d5515a646bf
 
 .Chat-SquadList-Container{
   text-align: center;
@@ -73,7 +82,9 @@
   display:none;
 } */
 
+
   #mobile-buttons-container{
     visibility: visible;
   }
+
 }
