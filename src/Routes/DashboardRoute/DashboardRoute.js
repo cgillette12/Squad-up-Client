@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> e198f3467aecb7ab928dd3e773912d5515a646bf
 import React, { useContext} from 'react'
 import GameSquadsList from '../../components/GameSquadsList/GameSquadsList'
 import GamesList from '../../components/GamesList/GamesList'
