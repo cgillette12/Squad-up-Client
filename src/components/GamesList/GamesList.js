@@ -7,19 +7,19 @@ import './GamesList.css'
 
 export default function GamesList() {
   const gameContext = useContext(GameContext)
-  
+
   const [gamesList, setGamesList] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
-  
+
   const gameTypes = [
     'Video Games',
     'Board Games',
     'Card Games',
-    'Table-Top Games',
+    'Table Top Games',
     'Recreation',
     'Others'
   ]
-  
+
   useEffect(() => {
     gameContext.clearError()
 
@@ -33,36 +33,33 @@ export default function GamesList() {
     return function cleanup() {
       gameContext.clearGamesList()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const renderGames = () => {
     return gameTypes.map((type, index) => {
       const gamesByType = gamesList.filter(game => game.game_type === type)
 
-      if(gamesByType.length !== 0) {
-        return (
-          <GamesSublist
-            key={index}
-            type={type}
-            games={gamesByType}
-          />
-        )
+      if (gamesByType.length !== 0) {
+        return <GamesSublist key={index} type={type} games={gamesByType} />
       }
+
+      return null
     })
   }
 
-  const handleSearchFuzzy = (input) => {
-    const filteredList = gameContext.gamesList.filter(game => game.game_title.toLowerCase().includes(input))
+  const handleSearchFuzzy = input => {
+    const filteredList = gameContext.gamesList.filter(game =>
+      game.game_title.toLowerCase().includes(input)
+    )
     setGamesList(filteredList)
     setSearchTerm(input)
   }
 
   return (
     <section className="GamesList">
-      <form 
-        className="GamesList__search-bar"
-      >
-        <Input 
+      <form className="GamesList__search-bar">
+        <Input
           type="text"
           placeholder="Search for Games..."
           className="GamesList__search-input"
