@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import SquadApiService from '../../services/Squad-api-service'
 import SquadContext from '../../contexts/SquadContext'
 import './SquadListItem.css'
-import { Label } from '../FormUtils/FormUtils';
+import { Label } from '../FormUtils/FormUtils'
 
 export default function SquadListItem(props) {
   const { squad = {} } = props
@@ -15,7 +15,7 @@ export default function SquadListItem(props) {
   useEffect(() => {
     setError(null)
     setTags(squad.tags)
-    
+
     SquadApiService.getSquadMembers(squad.squad_id)
       .then(mbrs => {
         setMembers(mbrs)
@@ -24,13 +24,17 @@ export default function SquadListItem(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const handleSquadJoin = squad => {
-    SquadApiService.joinSquad({ squad_id: squad })
+  const handleSquadJoin = squad_id => {
+    SquadApiService.joinSquad({ squad_id })
       .then(() => {
-        return SquadApiService.getAllSquads()
+        SquadApiService.getAllSquads().then(squads => {
+          squadContext.setSquadList(squads)
+        })
       })
-      .then(squads => {
-        squadContext.setSquadList(squads)
+      .then(() => {
+        SquadApiService.getSquadMembers(squad_id).then(mbrs => {
+          setMembers(mbrs)
+        })
       })
       .catch(err => setError(err.error))
   }
@@ -50,13 +54,19 @@ export default function SquadListItem(props) {
   }
 
   const renderTags = () => {
-    if(tags.length === 0) {
+    if (tags.length === 0) {
       return <span className="SquadListItem__empty-tags-notice">None...</span>
     }
 
     return tags.map(tagObj => {
       return (
-        <span key={tagObj.id} className="SquadListItem__squad-tag" aria-label={`Tag ${tagObj.tag}`}>{tagObj.tag}</span>
+        <span
+          key={tagObj.id}
+          className="SquadListItem__squad-tag"
+          aria-label={`Tag ${tagObj.tag}`}
+        >
+          {tagObj.tag}
+        </span>
       )
     })
   }
@@ -67,17 +77,13 @@ export default function SquadListItem(props) {
         {error && <p>{error}</p>}
       </div>
       <h4 className="SquadListItem__squad-name">{squad.squad_name}</h4>
-      <span className="SquadListItem__squad-members">
-        {renderMembers()}
-      </span>
+      <span className="SquadListItem__squad-members">{renderMembers()}</span>
       <div className="red" role="alert">
         {squadContext.error && <p>{squadContext.error}</p>}
       </div>
       <div className="SquadListItem__squad-info">
         <Label className="SquadListItem__tags-label">Tags:</Label>
-        <span className="SquadListItem__squad-tags">
-          {renderTags()}
-        </span>
+        <span className="SquadListItem__squad-tags">{renderTags()}</span>
 
         <button
           className="SquadListItem__join-button"
