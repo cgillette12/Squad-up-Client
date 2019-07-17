@@ -1,10 +1,11 @@
-import React, { useState }from 'react'
+import React from 'react'
 import RegisterForm from '../../components/RegisterForm/RegisterForm'
 
 export default function RegisterRoute(props) {
-   const handleRegisterSuccess = () => {
+  
+  const handleRegisterSuccess = () => {
     const {location = {}, history={push: () => {}}} = props;
-    const destination = (location.state || {}).from || '/'
+    const destination = (location.state || {}).from || '/login'
     history.push(destination)
   }
 
