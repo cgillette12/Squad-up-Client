@@ -6,10 +6,13 @@ import NewSquadForm from '../NewSquadForm/NewSquadForm'
 import TokenService from '../../services/token-service'
 import config from '../../config'
 import './GameSquadsList.css'
+import SquadContext from '../../contexts/SquadContext'
 
 export default function GameSquadsList() {
   const gameContext = useContext(GameContext)
+  const squadContext = useContext(SquadContext)
 
+  const [error, setError] = useState(null)
   const [squadsList, setSquadsList] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [openSquadForm, setOpenSquadForm] = useState(false)
@@ -31,6 +34,7 @@ export default function GameSquadsList() {
         </div>
       )
     }
+
     if (squadsList.length === 0) {
       return <h2 className="GameSquadsList__empty-notice">No squads, yet</h2>
     }
@@ -64,9 +68,13 @@ export default function GameSquadsList() {
       .then(res =>
         !res.ok ? res.json().then(err => Promise.reject(err)) : res.json()
       )
-      .then(data => {
+      .then(newSquad => {
         setOpenSquadForm(false)
-        setSquadsList([...squadsList, data])
+        setSquadsList([...squadsList, newSquad])
+        squadContext.addToSquadList(newSquad)
+      })
+      .catch(res => {
+        setError(res.error)
       })
   }
 
@@ -90,6 +98,9 @@ export default function GameSquadsList() {
         >
           Back
         </button>
+        <div className="GameSquadsList__error red" role="alert">
+          {error && <p>{error}</p>}
+        </div>
         <button
           onClick={() => setOpenSquadForm(true)}
           className="GameSquadsList__link-make-squad"

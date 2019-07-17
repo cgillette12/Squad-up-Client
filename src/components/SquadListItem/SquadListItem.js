@@ -9,22 +9,23 @@ export default function SquadListItem(props) {
   const [error, setError] = useState(null)
   const [members, setMembers] = useState([])
   const [tags, setTags] = useState([])
+
   const squadContext = useContext(SquadContext)
 
   useEffect(() => {
     setError(null)
     setTags(squad.tags)
-
-    SquadApiService.getSquadMembers(squad.id)
+    
+    SquadApiService.getSquadMembers(squad.squad_id)
       .then(mbrs => {
         setMembers(mbrs)
       })
-      .catch(error => console.log(error))
+      .catch(res => setError(res.error))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleSquadJoin = squad => {
-    SquadApiService.postSquad({ squad_id: squad })
+    SquadApiService.joinSquad({ squad_id: squad })
       .then(() => {
         return SquadApiService.getAllSquads()
       })
@@ -35,7 +36,7 @@ export default function SquadListItem(props) {
   }
 
   const renderMembers = () => {
-    return members.map((member, index) => {
+    return members.map(member => {
       return (
         <div key={member.user_id} className="SquadListItem__member">
           <img
@@ -43,7 +44,6 @@ export default function SquadListItem(props) {
             src={member.avatar}
             alt="Member Avatar"
           />
-          {/* <span>{member.name}</span> */}
         </div>
       )
     })
