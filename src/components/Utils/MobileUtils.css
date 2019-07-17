@@ -1,0 +1,25 @@
+#mobile-buttons-container{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 2;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  visibility: hidden;
+}
+
+.mobile-button{
+  font-size: 20px;
+  padding: 5, 8;
+  margin: 10px;
+  border-radius: 25px;
+}
+
+
+@media screen and (max-width: 800px){
+  #mobile-buttons-container{
+    visibility: visible;
+  }
+}
