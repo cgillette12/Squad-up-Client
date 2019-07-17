@@ -11,7 +11,7 @@ export default function LoginForm(props) {
   const { onLoginSuccess = () => { } } = props;
   const context = useContext(UserContext);
 
-  const handlesubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault()
 
     AuthApiService.postLogin({
@@ -32,9 +32,9 @@ export default function LoginForm(props) {
   return (
         <form
           className="login-form"
-          onSubmit={handlesubmit}
+          onSubmit={handleSubmit}
         >
-          <div role='alert'>
+          <div className="red" role='alert'>
             {error && <p>{error}</p>}
           </div>
             <Input

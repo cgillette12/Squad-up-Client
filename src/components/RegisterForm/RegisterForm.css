@@ -1,14 +1,11 @@
-
-
 .register-section {
   margin: auto;
   max-width: 500px;
   color: var(--black);
 }
 
-
 .register-form {
-  margin:10px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -24,32 +21,46 @@
   background-color: var(--black);
   border-color: var(--seconday-color);
 }
+
 #register-username-input,
 #register-password-input,
-#register-name-input{
+#register-name-input {
   font-size: 22px;
   padding: 15px 20px;
   margin: 22px 0;
   border-radius: 3px;
 }
-.Avatar-Container{
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  width:15%;
-  height:15%;
-}
-.Avatar-Selection-Box{
-  width:500px;
-  display:flex;
-  z-index: 0;
-  position: fixed;
-  height:300px;
+
+.avatar-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 15px;
 }
 
-@media screen and (max-width: 800px) {
- 
-  .register-button{
-  border:1px solid var(--seconday-color);
+.avatar-item {
+  width: 65px;
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  background-color: var(--vermilion);
+  margin: 3px;
+}
+
+.avatar-item:hover,
+.avatar-item:focus {
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .avatar-list {
+    height: 200px;
+    overflow-y: scroll;
+  }
+
+  .register-button {
+    border: 1px solid var(--seconday-color);
   }
   
 }

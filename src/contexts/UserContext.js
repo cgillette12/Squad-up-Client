@@ -40,7 +40,7 @@ export class UserProvider extends Component {
 
   componentDidMount() {
     if (TokenService.hasAuthToken()) {
-      IdleService.regiserIdleTimerResets()
+      IdleService.registerIdleTimerResets()
       TokenService.queueCallbackBeforeExpiry(() => {
         this.fetchRefreshToken()
       })
@@ -68,9 +68,11 @@ export class UserProvider extends Component {
   clearUser = () => {
     this.setState({ user: {} })
   }
+
   setSquadId = (squad_id) => {
     this.setState({squad_id})
   }
+
   setSquadName = (squad_name) => {
     this.setState({ squad_name })
   }
@@ -87,7 +89,7 @@ export class UserProvider extends Component {
       level:jwtPayload.level,
       xp_threshold:jwtPayload.xp_threshold
     })
-    IdleService.regiserIdleTimerResets()
+    IdleService.registerIdleTimerResets()
     TokenService.queueCallbackBeforeExpiry(() => {
       this.fetchRefreshToken()
     })

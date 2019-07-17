@@ -6,6 +6,10 @@
   flex-direction: column;
 }
 
+.SquadListItem__error p{
+  margin: 0;
+}
+
 .SquadListItem__squad-name {
   margin: 10px 0;
 }
@@ -22,20 +26,40 @@
   margin-right: 10px;
 }
 
-.SquadListItem__member:first-child {
-  border: 1px solid red;
-}
-
 .SquadListItem__member-img {
   width: 50px;
+  background-color: var(--vermilion);
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
   align-self: center;
 }
 
 .SquadListItem__squad-info {
   display: flex;
-  justify-content: space-between;
+}
+
+.SquadListItem__tags-label {
+  margin-right: 10px;
+}
+
+.SquadListItem__squad-tags {
+  display: flex;
+  /* justify-content: ; */
+  
+}
+
+.SquadListItem__squad-tag {
+  align-self: center;
+  margin-right: 5px;
+  font-size: 18px;
+  padding: 5px;
+  color: var(--linen);
+  background-color: var(--black);
+  border: 1px solid var(--vermilion);
+  border-radius: 2px;
 }
 
 .SquadListItem__join-button {
+  margin-left: auto;
   padding: 10px 20px;
 }

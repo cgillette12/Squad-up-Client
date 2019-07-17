@@ -19,7 +19,7 @@ export default function GameListItem(props) {
 
   return (
     <div key={game.id} className="GamesListItem" onClick={handleGameClick}>
-      <img className="GamesListItem__image" src={game.image} alt={game.game_title} aria-label={`Image of ${game.game_title}`}/>
+      <span className="GamesListItem__image" style={{backgroundImage: `url(${game.image})`}} aria-label={`Image of ${game.game_title}`}></span>
       <span className="GamesListItem__title">{game.game_title}</span>
     </div>
   )

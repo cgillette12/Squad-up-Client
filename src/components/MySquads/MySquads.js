@@ -17,8 +17,8 @@ export default function MySquads() {
       .catch(res => {
         setError(res.error)
       })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
 
   return (
     <div className="Dashboard__user-squads">
