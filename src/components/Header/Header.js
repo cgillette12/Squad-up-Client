@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import {SideNavButton} from '../HeaderUtils/HeaderUtils'
 import TokenService from '../../services/token-service'
 import UserContext from '../../contexts/UserContext'
 import './Header.css'
@@ -15,7 +16,7 @@ export default function Header() {
   const renderLogoutLink = () => {
     return (
       <div className='Header__logged-in'>
-        <img className='Header__user-avatar' src={userContext.user.avatar} alt="Avatar" aria-label="User Avatar" />
+        <img className='Header__user-avatar' src={userContext.user.avatar} alt=" " aria-label="User Avatar" />
         <Link to='/dashboard'>{userContext.user.name}</Link>
         <Link onClick={handleLogoutClick} to='/'>Logout</Link>
       </div>
@@ -44,6 +45,7 @@ export default function Header() {
           : renderLoginLink()
         }
       </nav>
+      <SideNavButton handleLogoutClick={handleLogoutClick} />
     </header>
   )
 }

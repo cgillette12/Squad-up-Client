@@ -46,9 +46,10 @@
   height:300px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
  
   .register-button{
   border:1px solid var(--seconday-color);
   }
+  
 }

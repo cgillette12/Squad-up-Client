@@ -1,11 +1,10 @@
-import React, {useState , useEffect , useContext}from 'react'
+import React, {useContext}from 'react'
 import SquadApiService from '../../services/Squad-api-service'
 import SquadContext from '../../contexts/SquadContext'
 import './SquadListItem.css'
 
 export default function SquadListItem(props) {
   const { squad = {} } = props
-  const [error, setError] = useState(null)
   const squadContext = useContext(SquadContext);
 
   const testMembers = [

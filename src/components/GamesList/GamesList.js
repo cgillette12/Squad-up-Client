@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import GameContext from '../../contexts/GameContext'
 import GameApiService from '../../services/game-api.service'
 import GamesSublist from '../GamesSublist/GamesSublist'
+import MobileUtils from '../../components/Utils/MobileUtils'
 import { Input } from '../FormUtils/FormUtils'
 import './GamesList.css'
 
@@ -59,6 +60,7 @@ export default function GamesList() {
 
   return (
     <section className="GamesList">
+    <MobileUtils/>
       <form 
         className="GamesList__search-bar"
       >
