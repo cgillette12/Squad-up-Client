@@ -9,6 +9,10 @@ body {
   
 }
 
+.red {
+  color: var(--vermilion);
+}
+
 
 :root{
  --black:#212121;
