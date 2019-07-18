@@ -3,6 +3,8 @@ import SquadApiService from '../../services/Squad-api-service'
 import SquadContext from '../../contexts/SquadContext'
 import './SquadListItem.css'
 import { Label } from '../FormUtils/FormUtils'
+import UserContext from '../../contexts/UserContext';
+import ProfileService from '../../services/profile-service';
 
 export default function SquadListItem(props) {
   const { squad = {} } = props
@@ -11,6 +13,7 @@ export default function SquadListItem(props) {
   const [tags, setTags] = useState([])
 
   const squadContext = useContext(SquadContext)
+  const userContext = useContext(UserContext)
 
   useEffect(() => {
     setError(null)
@@ -34,6 +37,10 @@ export default function SquadListItem(props) {
       .then(() => {
         SquadApiService.getSquadMembers(squad_id).then(mbrs => {
           setMembers(mbrs)
+        })
+        
+        ProfileService.getUserInfo(userContext.user.id).then(data => {
+          userContext.setUser(data)
         })
       })
       .catch(err => setError(err.error))

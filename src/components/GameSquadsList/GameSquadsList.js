@@ -1,16 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react'
+import config from '../../config'
 import GameContext from '../../contexts/GameContext'
+import SquadContext from '../../contexts/SquadContext'
+import UserContext from '../../contexts/UserContext'
+import TokenService from '../../services/token-service'
+import ProfileService from '../../services/profile-service'
+import NewSquadForm from '../NewSquadForm/NewSquadForm'
 import SquadListItem from '../SquadListItem/SquadListItem'
 import { Input } from '../FormUtils/FormUtils'
-import NewSquadForm from '../NewSquadForm/NewSquadForm'
-import TokenService from '../../services/token-service'
-import config from '../../config'
 import './GameSquadsList.css'
-import SquadContext from '../../contexts/SquadContext'
 
 export default function GameSquadsList() {
   const gameContext = useContext(GameContext)
   const squadContext = useContext(SquadContext)
+  const userContext = useContext(UserContext)
 
   const [error, setError] = useState(null)
   const [squadsList, setSquadsList] = useState([])
@@ -72,6 +75,9 @@ export default function GameSquadsList() {
         setOpenSquadForm(false)
         setSquadsList([...squadsList, newSquad])
         squadContext.addToSquadList(newSquad)
+        ProfileService.getUserInfo(userContext.user.id).then(data => {
+          userContext.setUser(data)
+        })
       })
       .catch(res => {
         setError(res.error)
