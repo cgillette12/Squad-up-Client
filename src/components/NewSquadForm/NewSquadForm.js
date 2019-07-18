@@ -27,7 +27,7 @@ export default function NewSquadForm(props) {
     <div id='new-squad-container'>
       <form
         id='new-squad-form'
-         onSubmit={(e) => props.onFormSubmit(e, squadName, squadTags)}
+        onSubmit={(e) => props.onFormSubmit(e, squadName, squadTags)}
       >
         <Input
           id='squad-name-input'
@@ -41,24 +41,31 @@ export default function NewSquadForm(props) {
           required
         />
         <div className='tags-input'>
-          <Input
-            id='squad-tags-input'
-            type='text'
-            name='squad-tag-input'
-            placeholder='new tag'
-            value={squadTag}
-            onChange={e => setSquadTag(e.target.value)}
-            aria-label='squad tag input'
-          />
-          <button type='button' className='add-tag-button' onClick={handleNewTag}>Add Tag</button>
+          <div className='tags-input-wrapper'>
+            <Input
+              id='squad-tags-input'
+              type='text'
+              name='squad-tag-input'
+              placeholder='new tag'
+              value={squadTag}
+              onChange={e => setSquadTag(e.target.value)}
+              aria-label='squad tag input'
+            />
+            <button type='button' className='add-tag-button' onClick={handleNewTag}>Add Tag</button>
+          </div>
+        </div>
+        <section className='taglist'>
           <ul id='list-tags'>
             {squadTags.map((tag, index) =>
-              <li className='squad-tag' key={index}>
-                {tag} <button type='button' className='remove-tag-button' onClick={() => removeTag(index)}>Remove Tag</button>
-              </li>
+                <li className='squad-tag' key={index}>
+               <button type='button' 
+               className='remove-tag-button' 
+                    onClick={() => removeTag(index)}>{tag} X</button>
+                </li>
             )}
           </ul>
-        </div>
+        </section>
+        <section className='button-wrapper'>
           <button
             type='submit'
             className='new-squad-button'
@@ -66,6 +73,7 @@ export default function NewSquadForm(props) {
             New Squad
           </button>
           <button type='button' className='new-squad-button' onClick={props.cancel}>Cancel</button>
+        </section>
       </form>
     </div>
   )

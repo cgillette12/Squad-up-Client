@@ -1,47 +1,79 @@
+#new-squad-container{
+  padding-top:25px;
+}
+
 #new-squad-form {
-  margin: auto;
-  max-width: 500px;
   color: var(--linen);
-  border: 3px solid var(--seconday-color);
-  border-radius: 3px;
-  padding: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-
-.new-squad-button, .add-tag-button {
-  font-size: 20px;
-  padding: 15px 20px;
-  margin: 22px 0;
+#squad-name-input{
+  font-size: 22px;
+  padding: 8px 20px;
   border-radius: 5px;
-  color: var(--linen);
-  background-color: var(--black);
-  border-color: var(--seconday-color);
+  border: 2px solid var(--primary-color);
+  width: 100%;
 }
-
+#squad-tags-input{
+  font-size: 22px;
+  padding: 0 20px;
+  border-radius: 5px;
+  border: 0px;
+}
+.new-squad-button, .add-tag-button {
+  background: var(--red);
+  color: var(--linen);
+  border-radius: 1px;
+  border: 1px solid var(--red);
+  font-size: 16px;
+  padding: 10px 20px;
+}
+.tags-input-wrapper{
+  border:2px solid var(--primary-color);
+  border-radius: 5px;
+}
+.tags-input{
+  padding: 25px 0;
+  display: flex;
+  
+}
+textarea:focus, #squad-tags-input:focus{
+    outline: none;
+}
+.tag-wrapper{
+  padding:5px 0;
+}
 #list-tags {
   max-width: 400px;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 10px 0;
 }
 .squad-tag {
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
-  padding: 5px;
-  color: var(--linen);
-  background-color: var(--black);
-  border: 1px solid var(--vermilion);
+  align-items: center;
+  font-size: 22px;
+  padding-left: 20px;
+  font-weight: 400;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   border-radius: 2px;
 }
+.button-wrapper{
+ display: flex;
+ justify-content: space-evenly;
+}
 .remove-tag-button {
-  font-size: 18px;
-  padding: 3px;
+  border: 1px solid var(--red);
+  background: var(--red);
   color: var(--linen);
-  background-color: var(--seconday-color);
-  border: 1px solid var(--linen);
-  border-radius: 2px;
+  border-radius: 1px;
+  font-size: 16px;
+  padding: 10px 20px;
 }
 .remove-tag-button:hover {
   background-color: var(--vermilion)
