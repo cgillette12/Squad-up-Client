@@ -4,6 +4,7 @@ import './MobileUtils.css'
 
 export default function MobileUtils() {
   const [redirect, setRedirect] = useState(false)
+  
   useEffect(() => {
     if (window.innerWidth >= 800) {
       redirect ? setRedirect(false) : setRedirect(true)

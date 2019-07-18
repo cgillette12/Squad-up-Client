@@ -1,13 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react'
-import LiveChatService from './LiveChatService'
 import config from '../../config'
-import UserContext from '../../contexts/UserContext'
 import openSocket from 'socket.io-client'
-import TokenService from '../../services/token-service'
-import { Input } from '../FormUtils/FormUtils'
-import MessageBlock from './MessageBlock'
-import ScrollArea from 'react-scrollbar'
+import UserContext from '../../contexts/UserContext'
 import SquadContext from '../../contexts/SquadContext'
+import LiveChatService from './LiveChatService'
+import TokenService from '../../services/token-service'
+import MessageBlock from './MessageBlock'
+import MobileUtils from '../Utils/MobileUtils';
+import ScrollArea from 'react-scrollbar'
+import { Input } from '../FormUtils/FormUtils'
 import './LiveChat.css'
 
 const io = openSocket(config.LIVE_CHAT_ENDPOINT)
@@ -36,13 +37,6 @@ export default function LiveChat(props) {
     io.on('update chat', function(data) {
       addMessage(data)
     })
-    // io.on('delete', function(data){
-    //     let newMessages = messages
-    //     newMessages = newMessages.filter(msg =>
-    //         msg.id!==data
-    //     )
-    //     setMessages(newMessages)
-    //  })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [message, messages])
 
@@ -66,21 +60,6 @@ export default function LiveChat(props) {
     setMessage('')
     io.emit('message', newMessage)
   }
-
-  // const handleDelete = e =>{
-  //     e.preventDefault();
-  //     const delId = Number(e.target.id)
-  //     const newMessages = messages.filter(msg => {
-  //         return msg.id !==delId
-  //     })
-  //     setMessages(newMessages)
-  //     io.emit("delete chat", {
-  //         id:delId,
-  //         squad_id,
-  //         username:context.user.username
-  //     })
-
-  // }
 
   const displayDropDown = () => {
     return squadContext.squadList.map(squad => {
@@ -112,7 +91,6 @@ export default function LiveChat(props) {
               username={m.username}
               message_body={m.message_body}
               time_stamp={m.time_stamp}
-              // handleDelete={handleDelete}
             />
           </div>
         )
@@ -173,6 +151,7 @@ export default function LiveChat(props) {
           required
         />
       </form>
+      <MobileUtils />
     </div>
   )
 }
