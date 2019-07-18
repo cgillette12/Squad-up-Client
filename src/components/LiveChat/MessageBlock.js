@@ -1,47 +1,29 @@
-import React from 'react';
-import moment from 'moment';
+import React from 'react'
+import moment from 'moment'
+import jstz from 'jstz'
+import 'moment-timezone'
 
-// function useHover(){
-//     const ref =useRef()
-//     const [hovered, setHovered] = useState(false)
+export default function MessageBlock(props) {
+  const renderTimeStamp = () => {
+    if (!sessionStorage.getItem('timezone')) {
+      const tz = jstz.determine() || 'UTC'
+      sessionStorage.setItem('timezone', tz.name())
+    }
 
-//     const enter = () => setHovered(true)
-//     const leave = () => setHovered(false)
+    const currTz = sessionStorage.getItem('timezone')
+    const momentTime = moment(props.time_stamp)
+    const tzTime = momentTime.tz(currTz)
 
-//     useEffect( ()=> {
-//         ref.current.addEventListener('mouseenter', enter)
-//         ref.current.addEventListener('mouseleave', leave)
+    return tzTime.format('h:mm A')
+  }
 
-//         return () => {
-//             ref.current.removeEventListener('mouseenter', enter)
-//             ref.current.removeEventListener('mouseleave', leave)
-//         }
-//     }, [ref])
-
-//     return [ref, hovered]
-// }
-
-export default function MessageBlock(props){
-    // const [ref, hovered] = useHover()
-
-    return (
-        // <div className="Msg-Ctner" ref={ref}>
-        <div className="Msg-Ctner">
-            {/* {
-                hovered ? <button id={props.id} className="Delete-Btn" onClick={props.handleDelete}>delete</button> : 
-                <div key={props.id}>{props.username}{' '}:{' '}{props.message_body} {' '}{moment.utc(props.time_stamp).format("HH:mm")}</div>
-            } */}
-            <div key={props.id} name={props.idx}>
-                <span className="User-Text">
-                    {props.username}{' '}:
-                </span>
-                <span>
-                    {' '}{props.message_body}
-                </span>
-                <span className="Time-Text">
-                    {moment.utc(props.time_stamp).format("HH:mm")}
-                </span>
-                </div>
-        </div>
-    )
+  return (
+    <div className="Msg-Ctner">
+      <div key={props.id} name={props.idx}>
+        <span className="User-Text">{props.username} :</span>
+        <span> {props.message_body}</span>
+        <span className="Time-Text">{renderTimeStamp()}</span>
+      </div>
+    </div>
+  )
 }

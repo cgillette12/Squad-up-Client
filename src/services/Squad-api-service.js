@@ -42,8 +42,10 @@ const SquadService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
         'content-type': 'application/json',
       },
-      body: JSON.stringify({ squad_id }),
-    })
+      body: JSON.stringify({ squad_id })
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.text()
+    )
   }
 }
 export default SquadService

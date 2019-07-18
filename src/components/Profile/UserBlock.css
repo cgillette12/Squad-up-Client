@@ -1,35 +1,40 @@
-.Process-Bar{
-    position: relative;
-    height:20px;
-    width:80%;
-    max-width:400px;
-    border-radius:50px;
-    border: 1px solid #333;
+.Process-Bar {
+  position: relative;
+  height: 20px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 50px;
+  border: 1px solid #333;
 }
-.Filler{
-    background:green;
-    height:100%;
-    border-radius:inherit;
-    transition: width .2s ease-in;
+
+.Filler {
+  background: green;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.2s ease-in;
 }
+
 .user-Avatar{
     width:70px;
     height:70px;
 }
+
 .Level-Container{
     display: flex;
     justify-content: space-around;
     padding: 15px
 }
+
 .Level-Container h4 , p{
     margin:0;
 }
 
-.user-Lable{
+.user-Label{
     display:flex;
     justify-content: center;
 }
-.user-Lable h3{
+
+.user-Label h3{
     margin:0;
     color:var(--black);
     padding:22px;

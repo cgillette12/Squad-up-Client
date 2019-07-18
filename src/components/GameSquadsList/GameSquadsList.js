@@ -1,15 +1,21 @@
 import React, { useState, useEffect, useContext } from 'react'
+import config from '../../config'
 import GameContext from '../../contexts/GameContext'
+import SquadContext from '../../contexts/SquadContext'
+import UserContext from '../../contexts/UserContext'
+import TokenService from '../../services/token-service'
+import ProfileService from '../../services/profile-service'
+import NewSquadForm from '../NewSquadForm/NewSquadForm'
 import SquadListItem from '../SquadListItem/SquadListItem'
 import { Input } from '../FormUtils/FormUtils'
-import NewSquadForm from '../NewSquadForm/NewSquadForm'
-import TokenService from '../../services/token-service'
-import config from '../../config'
 import './GameSquadsList.css'
 
 export default function GameSquadsList() {
   const gameContext = useContext(GameContext)
+  const squadContext = useContext(SquadContext)
+  const userContext = useContext(UserContext)
 
+  const [error, setError] = useState(null)
   const [squadsList, setSquadsList] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [openSquadForm, setOpenSquadForm] = useState(false)
@@ -31,6 +37,7 @@ export default function GameSquadsList() {
         </div>
       )
     }
+
     if (squadsList.length === 0) {
       return <h2 className="GameSquadsList__empty-notice">No squads, yet</h2>
     }
@@ -64,9 +71,16 @@ export default function GameSquadsList() {
       .then(res =>
         !res.ok ? res.json().then(err => Promise.reject(err)) : res.json()
       )
-      .then(data => {
+      .then(newSquad => {
         setOpenSquadForm(false)
-        setSquadsList([...squadsList, data])
+        setSquadsList([...squadsList, newSquad])
+        squadContext.addToSquadList(newSquad)
+        ProfileService.getUserInfo(userContext.user.id).then(data => {
+          userContext.setUser(data)
+        })
+      })
+      .catch(res => {
+        setError(res.error)
       })
   }
 
@@ -90,6 +104,9 @@ export default function GameSquadsList() {
         >
           Back
         </button>
+        <div className="GameSquadsList__error red" role="alert">
+          {error && <p>{error}</p>}
+        </div>
         <button
           onClick={() => setOpenSquadForm(true)}
           className="GameSquadsList__link-make-squad"
