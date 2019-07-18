@@ -1,5 +1,5 @@
-# Squad Up (logo)
-![Squad Up Logo]()
+# Squad Up
+![Squad Up Logo](squaduplogo.png)
 
 ### Find people to play the games you love
 
