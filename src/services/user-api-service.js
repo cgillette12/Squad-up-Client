@@ -3,7 +3,7 @@ import TokenService from './token-service'
 
 const UserApiService = {
     getUserInfo(user_id){
-        return fetch(`${config.API_ENDPOINT}/info/`+user_id, {
+        return fetch(`${config.API_ENDPOINT}/user/`+user_id, {
             headers: {
               'authorization': `bearer ${TokenService.getAuthToken()}`,
               'content-type': 'application/json'
