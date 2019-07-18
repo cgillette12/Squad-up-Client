@@ -2,10 +2,14 @@ import React from 'react'
 import './UserBlock.css'
 
 export default function UserBlock(props) {
-  const ProcessBar = (xp, xpthreshold) => {
-    let percent = (xp / xpthreshold) * 100
+  const ProcessBar = (xp, xpThreshold, level) => {
+    const prevThreshold = 500 * (level - 1)
+    const currThreshold = xpThreshold - prevThreshold
+    const currProgress = xp - prevThreshold
 
-    if(percent >= 100) {
+    let percent = (currProgress / currThreshold) * 100
+
+    if (percent >= 100) {
       percent = 100
     }
 
@@ -22,8 +26,8 @@ export default function UserBlock(props) {
 
   return (
     <>
-      <div className="User-Info-Contaiiner">
-        <h3>{props.username}</h3>
+      <div className="User-Info-Container">
+        <h3 className="User-Info-username">{props.username}</h3>
         <div
           className="User-Avatar-Container"
           style={{ backgroundImage: `url(${props.avatar})` }}
@@ -31,7 +35,7 @@ export default function UserBlock(props) {
         <div className="Level-Container">
           <h4>Level: {props.level}</h4>
           <div className="Level-Bar">
-            {ProcessBar(props.xp, props.xpthreshold)}
+            {ProcessBar(props.xp, props.xpthreshold, props.level)}
           </div>
           <div className="Level-Info">
             {props.xp}/{props.xpthreshold}
