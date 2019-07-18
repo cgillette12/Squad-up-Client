@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { Input } from '../../components/FormUtils/FormUtils'
 import './newSquadForm.css'
 
@@ -65,14 +65,7 @@ export default function NewSquadForm(props) {
           >
             New Squad
           </button>
-        <button
-          type='button'
-          className='new-sqaud-button'
-          onClick={props.cancel}
-        >
-          Cancel
-        </button>
-        <button type='button' className='new-squad-button' onClick={props.cancel}>Cancel</button>
+          <button type='button' className='new-squad-button' onClick={props.cancel}>Cancel</button>
       </form>
     </div>
   )
