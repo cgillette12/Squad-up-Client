@@ -3,8 +3,8 @@
   color:var(--linen);
   padding:22px 0px;
   font-size: 28px;
-  box-shadow: 0 4px 4px rgba(160, 160, 160, .6);
-  background:#7A0607;
+  box-shadow: 0 4px 4px #a0a0a099;
+  background:var(--red);
   text-align: center;
   border-bottom: 1px solid var(--grey);
 }

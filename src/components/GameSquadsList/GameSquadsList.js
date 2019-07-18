@@ -3,6 +3,7 @@ import config from '../../config'
 import GameContext from '../../contexts/GameContext'
 import SquadContext from '../../contexts/SquadContext'
 import UserContext from '../../contexts/UserContext'
+import ScrollArea from 'react-scrollbar'
 import TokenService from '../../services/token-service'
 import ProfileService from '../../services/profile-service'
 import NewSquadForm from '../NewSquadForm/NewSquadForm'
@@ -114,7 +115,15 @@ export default function GameSquadsList() {
           Create a Squad
         </button>
       </div>
+      <ScrollArea
+        speed={0.8}
+        className="Scrollable-squads"
+        horizontal={false}
+        vertical={true}
+        smoothScrolling={true}
+      >
       {renderSquads()}
+      </ScrollArea>
     </section>
   )
 }

@@ -9,32 +9,39 @@
 }
 
 .GameSquadsList__search-bar {
-  padding: 10px 20px;
-  width: 75%;
-  margin: 0 auto;
+    padding: 15px;
 }
 
 .GameSquadsList__search-input {
-  border: 1px solid gray;
-  width: 100%;
+    font-size: 22px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    width: 100%;
 }
 
 .GameSquadsList__controls {
   display: flex;
   justify-content: space-between;
-  margin: 0 20px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 4px rgba(160, 160, 160, .6);
 }
 
 .GameSquadsList__back-button {
   font-size: 16px;
   padding: 10px 20px;
+  background: var(--red);
+  color: var(--linen);
 }
 
 .GameSquadsList__link-make-squad {
-  text-decoration: none;
-  color: black;
-  border: 1px solid #aaa;
-  background-color: #eee;
+  text-decoration: none;      
+  background: var(--red);
+  color: var(--linen);
   border-radius: 1px;
+  font-size: 16px;
   padding: 10px 20px;
+}
+.Scrollable-squads{
+  height: 410px;
 }
