@@ -11,10 +11,7 @@
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.0.0",
-    "chai": "^4.2.0",
     "cypress": "^3.4.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
     "eslint-plugin-react-hooks": "^1.6.1",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
