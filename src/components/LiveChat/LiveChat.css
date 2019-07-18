@@ -10,18 +10,10 @@
     padding: 22px 0px;
     font-size: 28px;;
     box-shadow: 0 4px 4px rgba(160, 160, 160, .6);
-    background: rgba(186,39,47, 1);
+    background:#7A0607;
     color: var(--linen);
 }
-h3{
-    text-align: center;
-    margin:0;
-    color:var(--black);
-    padding:22px 0px;
-    font-size: 28px;
-    text-align: center;
-    border-bottom: 1px solid var(--grey);
-}
+
 .Scrollable-Chat{
     height:70vh;
 }

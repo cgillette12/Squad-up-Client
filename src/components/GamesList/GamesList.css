@@ -1,6 +1,6 @@
 .GamesList__search-bar {
  padding:15px;
- border-bottom: 1px solid var(--grey)
+ box-shadow: 0 4px 4px rgba(160, 160, 160, .6);
 }
 
 .GamesList__search-input {
