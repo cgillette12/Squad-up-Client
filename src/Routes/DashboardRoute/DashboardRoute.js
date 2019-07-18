@@ -41,7 +41,6 @@ export default function DashboardRoute() {
       <MobileUtils/>
       <div className="Dashboard__user-access">
         <div className='Dashboard__chat'>
-          <h3>Chat</h3>
           <div className="Dashboard__chat-messages">
             <LiveChat />
           </div>

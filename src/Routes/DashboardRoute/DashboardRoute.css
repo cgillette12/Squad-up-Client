@@ -1,6 +1,5 @@
 .Dashboard {
   display: flex;
-  padding-top: 10px;
 }
 .Dashboard_main {
   flex:3;
@@ -12,6 +11,7 @@
 
 .Dashboard__user-access {
   flex: 1;
+  max-width:300px;
 }
 
 .Dashboard__user-access h3 {
@@ -20,7 +20,7 @@
   padding:22px 0px;
   font-size: 28px;
   text-align: center;
-  border-bottom: 1px solid var(--greyLines);
+  border-bottom: 1px solid var(--grey);
 }
 
 .Dashboard__user-squads,
@@ -33,7 +33,7 @@
 }
 
 .Dashboard_squad-list{
-  border-right: 1px solid var(--greyLines);
+  border-right: 1px solid var(--grey);
   flex:1;
 }
 
@@ -46,7 +46,7 @@
   width: 100%;
   bottom: 0;
   z-index: 2;
-  background-color: black;
+  background-color: var(--black);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -56,6 +56,7 @@
 
 
 @media screen and (max-width: 800px){
+  
   .hidden {
     display: none;
   }

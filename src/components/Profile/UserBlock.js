@@ -67,24 +67,16 @@ export default function UserBlock(props){
     return (
         <>
         <div className="User-Info-Contaiiner">
+        <section className='user-Lable'>
+            <img className='user-Avatar' src={props.avatar} alt=''/>
             <h3>{props.username}</h3>
-            <div 
-                className="User-Avatar-Container"
-                style={{ backgroundImage:`url(${props.avatar})`}}
-                // ref={ref}
-            >
-                {/* {
-                    hovered ? <span>Change Avatar</span> : ""
-                } */}
-            </div>
+        </section>
             <div className="Level-Container">
-                <h4>level:{props.level}</h4>
-                <div className="Level-Bar">
-                    {ProcessBar(props.xp,props.xpthreshold)}
-                </div>
-                <div className="Level-Info">
+                <h4>level: {props.level}</h4>
+                {ProcessBar(props.xp,props.xpthreshold)}
+                <p className="Level-Info">
                     {props.xp}/{props.xpthreshold}
-                </div>
+                </p>
             </div>
         </div>
         </>

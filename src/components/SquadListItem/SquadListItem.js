@@ -24,7 +24,7 @@ export default function SquadListItem(props) {
   }, [])
 
   const handleSquadJoin = squad => {
-    SquadApiService.postSquad({ squad_id: squad })
+    SquadApiService.joinSquad({ squad_id: squad })
       .then(() => {
         return SquadApiService.getAllSquads()
       })

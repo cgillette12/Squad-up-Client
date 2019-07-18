@@ -12,24 +12,26 @@
     border-radius:inherit;
     transition: width .2s ease-in;
 }
-.User-Avatar-Container{
+.user-Avatar{
     width:70px;
     height:70px;
-    background-Image:url('https://image.flaticon.com/icons/svg/78/78373.svg');
-    background-size:70px 70px;
 }
 .Level-Container{
-    text-align:center;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px
 }
-.Process-Bar{
-    margin:auto;
+.Level-Container h4 , p{
+    margin:0;
 }
-h3{
-    text-align: center;
 
+.user-Lable{
+    display:flex;
+    justify-content: center;
 }
-.User-Avatar-Container{
-    margin:auto;
-    color:red;
-    text-align: center;
+.user-Lable h3{
+    margin:0;
+    color:var(--black);
+    padding:22px;
+    font-size: 28px;
 }
