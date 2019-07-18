@@ -6,4 +6,7 @@ import Header from '../components/Header/Header';
 import ReactDOM from 'react-dom';
 
 Enzyme.configure({ adapter: new Adapter() });
-
+it('renders the header without token', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Header/>, div)
+})
