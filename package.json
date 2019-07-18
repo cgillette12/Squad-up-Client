@@ -10,10 +10,17 @@
     "Nick Lee": "leexnick@gmail.com"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^4.0.0",
+    "chai": "^4.2.0",
+    "cypress": "^3.4.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint-plugin-react-hooks": "^1.6.1",
     "jsonwebtoken": "^8.5.1",
+    "jstz": "^2.1.1",
     "jwt-decode": "^2.2.0",
     "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
@@ -44,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^8.0.5"
   }
 }

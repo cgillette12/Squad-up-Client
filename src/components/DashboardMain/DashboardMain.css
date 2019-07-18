@@ -1,0 +1,4 @@
+.Dashboard__games-list,
+.Dashboard__game-squads-list {
+  flex: 3;
+}

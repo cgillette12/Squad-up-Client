@@ -1,35 +1,42 @@
-.Process-Bar{
-    position: relative;
-    height:20px;
-    width:80%;
-    max-width:400px;
-    border-radius:50px;
-    border: 1px solid #333;
+.Process-Bar {
+  position: relative;
+  height: 20px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 50px;
+  border: 1px solid #333;
 }
-.Filler{
-    background:green;
-    height:100%;
-    border-radius:inherit;
-    transition: width .2s ease-in;
+
+.Filler {
+  background: green;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.2s ease-in;
 }
-.User-Avatar-Container{
+
+.user-Avatar{
     width:70px;
     height:70px;
-    background-Image:url('https://image.flaticon.com/icons/svg/78/78373.svg');
-    background-size:70px 70px;
 }
-.Level-Container{
-    text-align:center;
-}
-.Process-Bar{
-    margin:auto;
-}
-h3{
-    text-align: center;
 
+.Level-Container{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px
 }
-.User-Avatar-Container{
-    margin:auto;
-    color:red;
-    text-align: center;
+
+.Level-Container h4 , p{
+    margin:0;
+}
+
+.user-Label{
+    display:flex;
+    justify-content: center;
+}
+
+.user-Label h3{
+    margin:0;
+    color:var(--black);
+    padding:22px;
+    font-size: 28px;
 }

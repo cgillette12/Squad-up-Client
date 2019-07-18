@@ -36,6 +36,7 @@
 @media screen and (max-width: 800px) {
   body{
     padding-top:75px;
+    padding-bottom: 45px;
   }
   .Header {
     flex-direction: column;

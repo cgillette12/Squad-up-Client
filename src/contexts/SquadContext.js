@@ -9,6 +9,7 @@ const SquadContext = React.createContext({
   squadIsSelected: false,
   error: null,
   setSquadList: () => { },
+  addToSquadList: () => { },
   clearSquadList: () => { },
   setSelectedSquad: () => { },
   clearSelectedSquad: () => { },
@@ -34,6 +35,10 @@ export class SquadProvider extends Component {
 
   setSquadList = squadList => {
     this.setState({ squadList })
+  }
+
+  addToSquadList = squad => {
+    this.setState({ squadList: [...this.state.squadList, squad]})
   }
 
   clearSquadList = () => {
@@ -66,6 +71,7 @@ export class SquadProvider extends Component {
       SquadIsSelected: this.state.SquadIsSelected,
       error: this.state.error,
       setSquadList: this.setSquadList,
+      addToSquadList: this.addToSquadList,
       clearSquadList: this.clearSquadList,
       setSelectedSquad: this.setSelectedSquad,
       clearSelectedSquad: this.clearSelectedSquad,
