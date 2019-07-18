@@ -39,8 +39,8 @@ const SquadService = {
     return fetch(`${config.API_ENDPOINT}/squads/join`, {
       method: `POST`,
       headers: {
-        authorization: `bearer ${TokenService.getAuthToken()}`,
-        'content-type': 'application/json'
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json',
       },
       body: JSON.stringify({ squad_id })
     }).then(res =>

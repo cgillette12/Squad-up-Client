@@ -1,6 +1,5 @@
 .Dashboard {
   display: flex;
-  padding-top: 10px;
 }
 
 .Dashboard_main {
@@ -9,6 +8,7 @@
 
 .Dashboard__user-access {
   flex: 1;
+  max-width:300px;
 }
 
 .Dashboard__user-access h3 {
@@ -17,7 +17,7 @@
   padding: 22px 0px;
   font-size: 28px;
   text-align: center;
-  border-bottom: 1px solid var(--greyLines);
+  border-bottom: 1px solid var(--grey);
 }
 
 .Dashboard__user-squads,
@@ -29,9 +29,9 @@
   margin-top: 0;
 }
 
-.Dashboard_squad-list {
-  border-right: 1px solid var(--greyLines);
-  flex: 1;
+.Dashboard_squad-list{
+  border-right: 1px solid var(--grey);
+  flex:1;
 }
 
 .Chat-SquadList-Container {
@@ -43,7 +43,7 @@
   width: 100%;
   bottom: 0;
   z-index: 2;
-  background-color: black;
+  background-color: var(--black);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -54,6 +54,7 @@
   .hidden {
     display: none;
   }
+  
   .Dashboard {
     display: block;
     padding-top: 10px;

@@ -102,7 +102,7 @@ export default function LiveChat(props) {
 
   return (
     <div className="LiveChat">
-      <h3>{context.squad_name}</h3>
+      <h4>{context.squad_name}</h4>
       <div className="ChatHistory">
         <ScrollArea
           speed={0.8}
