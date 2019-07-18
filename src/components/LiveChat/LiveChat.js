@@ -6,7 +6,7 @@ import SquadContext from '../../contexts/SquadContext'
 import LiveChatService from './LiveChatService'
 import TokenService from '../../services/token-service'
 import MessageBlock from './MessageBlock'
-import MobileUtils from '../Utils/MobileUtils';
+import MobileUtils from '../Utils/MobileUtils'
 import ScrollArea from 'react-scrollbar'
 import { Input } from '../FormUtils/FormUtils'
 import './LiveChat.css'
@@ -22,6 +22,7 @@ export default function LiveChat(props) {
   const [showBotMenu, setShowBotMenu] = useState(false)
 
   useEffect(() => {
+    io.emit('join room', context.squad_id)
     LiveChatService.getChat(context.squad_id).then(chats => {
       setMessages(chats)
     })
@@ -33,16 +34,11 @@ export default function LiveChat(props) {
   }
 
   useEffect(() => {
-    io.emit('join room', context.squad_id)
-    io.on('update chat', function(data) {
-      addMessage(data)
+    io.on('update chat', function(msg) {
+      setMessages([...messages, msg])
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [message, messages])
-
-  const addMessage = msg => {
-    setMessages([...messages, msg])
-  }
+  }, [messages])
 
   const handleSubmit = e => {
     e.preventDefault()
