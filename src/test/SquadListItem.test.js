@@ -11,7 +11,3 @@ it('renders SquadListItem without crashing', () => {
     </BrowserRouter>, div)
   ReactDOM.unmountComponentAtNode(div)
 })
-
-
-// if need context use provider from context. 
-// if needs prop give it an empty prop. 

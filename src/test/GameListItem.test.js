@@ -3,7 +3,7 @@ import {BrowserRouter} from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import GameListItem from '../components/GamesListItem/GamesListItem'
 
-it('renders SquadListItem without crashing', () => {
+it('renders GameListItem without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <BrowserRouter>

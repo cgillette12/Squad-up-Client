@@ -5,12 +5,12 @@ import MySquads from '../components/MySquads/MySquads';
 
 
 
-it('renders MySquad without crashing and renders correct squads', () => {
+it('renders MySquad without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
         <BrowserRouter>
         <MySquads/>
         </BrowserRouter>, div)
-        ReactDOM.unmountComponentAtNode(div)
+    ReactDOM.unmountComponentAtNode(div)
 })
 
