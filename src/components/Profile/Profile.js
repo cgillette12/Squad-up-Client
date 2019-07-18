@@ -14,12 +14,6 @@ export default function Profile() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const setAvatar = (id, image) => {
-    ProfileService.updateAvatar(id, image).then(info => {
-      UserContext.setUser(info)
-    })
-  }
-
   return (
     <div className="Profile-Container">
       <div className="User-Container">
@@ -28,7 +22,6 @@ export default function Profile() {
           xpthreshold={userContext.user.xp_threshold}
           level={userContext.user.level}
           avatar={userContext.user.avatar}
-          setAvatar={setAvatar}
           username={userContext.user.name}
         />
       </div>
