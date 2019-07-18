@@ -1,92 +1,43 @@
-import React from 'react';
-import './UserBlock.css';
+import React from 'react'
+import './UserBlock.css'
 
+export default function UserBlock(props) {
+  const ProcessBar = (xp, xpthreshold) => {
+    let percent = (xp / xpthreshold) * 100
 
-// function useHover(){
-//     const ref =useRef()
-//     const [hovered, setHovered] = useState(false)
-
-//     const enter = () => setHovered(true)
-//     const leave = () => setHovered(false)
-
-//     useEffect( ()=> {
-//         ref.current.addEventListener('mouseenter', enter)
-//         ref.current.addEventListener('mouseleave', leave)
-
-//         return () => {
-//             ref.current.removeEventListener('mouseenter', enter)
-//             ref.current.removeEventListener('mouseleave', leave)
-//         }
-//     }, [ref])
-
-//     return [ref, hovered]
-// }
-
-export default function UserBlock(props){
-    // const [ref, hovered] = useHover()
-    
-    const ProcessBar = (xp, xpthreshold) => {
-        const percent = xp/xpthreshold*100
-        
-        const divStyle = {
-            width:`${percent}%`
-        }
-        
-        return (
-            <div className="Process-Bar">
-                <div 
-                    className="Filler" 
-                    style={ divStyle }
-                ></div>
-            </div>
-        )
+    if(percent >= 100) {
+      percent = 100
     }
-    // function renderAvatars(){
-    //     const avatars = [
-    //         "https://image.flaticon.com/icons/svg/78/78373.svg",
-    //         "https://image.flaticon.com/icons/svg/78/78373.svg",
-    //         "https://image.flaticon.com/icons/svg/78/78373.svg",
-    //         "https://image.flaticon.com/icons/svg/78/78373.svg",
-    //         "https://image.flaticon.com/icons/svg/78/78373.svg",
-    //         "https://image.flaticon.com/icons/svg/78/78373.svg"
-    //     ]
-    //     return avatars.map(image => {
-    //         return (
-    //             <div className="Avatar-Container" 
-    //                 style ={{backgroundImage :`${image}`}}
-    //                 key={image.charAt(15)}
-    //                 onClick={ev => {
-    //                     ev.preventDefault()
-    //                     props.setAvatar(image)
-    //                 }}
-    //                 >
-    //             </div>
-    //         )
-    //     })
-    // }
+
+    const divStyle = {
+      width: `${percent}%`
+    }
+
     return (
-        <>
-        <div className="User-Info-Contaiiner">
-            <h3>{props.username}</h3>
-            <div 
-                className="User-Avatar-Container"
-                style={{ backgroundImage:`url(${props.avatar})`}}
-                // ref={ref}
-            >
-                {/* {
-                    hovered ? <span>Change Avatar</span> : ""
-                } */}
-            </div>
-            <div className="Level-Container">
-                <h4>level:{props.level}</h4>
-                <div className="Level-Bar">
-                    {ProcessBar(props.xp,props.xpthreshold)}
-                </div>
-                <div className="Level-Info">
-                    {props.xp}/{props.xpthreshold}
-                </div>
-            </div>
-        </div>
-        </>
+      <div className="Process-Bar">
+        <div className="Filler" style={divStyle} />
+      </div>
     )
+  }
+
+  return (
+    <>
+      <div className="User-Info-Contaiiner">
+        <h3>{props.username}</h3>
+        <div
+          className="User-Avatar-Container"
+          style={{ backgroundImage: `url(${props.avatar})` }}
+        />
+        <div className="Level-Container">
+          <h4>Level: {props.level}</h4>
+          <div className="Level-Bar">
+            {ProcessBar(props.xp, props.xpthreshold)}
+          </div>
+          <div className="Level-Info">
+            {props.xp}/{props.xpthreshold}
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
