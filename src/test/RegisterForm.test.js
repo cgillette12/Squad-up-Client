@@ -1,16 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'
-import LandingPage from '../components/Landing-Page/Landing-Page';
+import ReactDOM from 'react-dom';
+import RegisterForm from '../components/RegisterForm/RegisterForm';
 
 
-
-it('renders LandingPage without crashing', () => {
+it('renders RegisterForm without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
         <BrowserRouter>
-        <LandingPage/>
+        <RegisterForm />
         </BrowserRouter>, div)
     ReactDOM.unmountComponentAtNode(div)
 })
-

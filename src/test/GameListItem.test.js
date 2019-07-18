@@ -1,13 +1,13 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom'
 import ReactDOM from 'react-dom';
-import Header from '../components/Header/Header'
+import GameListItem from '../components/GamesListItem/GamesListItem'
 
-it('renders Header without crashing', () => {
+it('renders GameListItem without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <BrowserRouter>
-    <Header  />
+    <GameListItem />
     </BrowserRouter>, div)
   ReactDOM.unmountComponentAtNode(div)
 })

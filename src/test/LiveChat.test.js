@@ -1,16 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'
-import LandingPage from '../components/Landing-Page/Landing-Page';
+import ReactDOM from 'react-dom';
+import LiveChat from '../components/LiveChat/LiveChat';
 
 
-
-it('renders LandingPage without crashing', () => {
+it('renders LiveChat without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
         <BrowserRouter>
-        <LandingPage/>
+        <LiveChat />
         </BrowserRouter>, div)
     ReactDOM.unmountComponentAtNode(div)
 })
-
