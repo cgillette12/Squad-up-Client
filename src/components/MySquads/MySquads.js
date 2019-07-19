@@ -25,7 +25,11 @@ export default function MySquads() {
       return (
         <li key={key} className="squad">
           <div className="squad-item-wrapper">
-            <img id="squad-icon" src={squadInfo.userAvatar} alt="" />
+            <img
+              id="squad-icon"
+              src="https://res.cloudinary.com/squad-up/image/upload/c_scale,w_128/v1563466769/avatars/squad_avatar_tcnq2r.png"
+              alt=""
+            />
             <p className="squad-name">{squadInfo.squad_name}</p>
           </div>
         </li>
@@ -39,9 +43,7 @@ export default function MySquads() {
       <section className="squads-header">
         <h3 className="My-squads">My Squads</h3>
       </section>
-      <ul className="user-squads-list">
-        {renderSquadsList()}
-      </ul>
+      <ul className="user-squads-list">{renderSquadsList()}</ul>
       <MobileUtils />
     </div>
   )
