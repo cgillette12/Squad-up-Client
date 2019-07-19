@@ -1,6 +1,6 @@
 # Squad Up 
 
-![Squad Up Logo](src\pictures\squaduplogo.png)
+![Squad Up Logo](squaduplogo.png)
 
 ### Find people to play the games you love
 
@@ -14,11 +14,11 @@ Created by gamers to bring all your gaming communities under one roof. Find new 
 
 ## ScreanShots
 DashBoard
-  ![Dashboard Main](src\pictures\DashBoardWithUpdatedChat.png)
+  ![Dashboard Main](DashBoardWithUpdatedChat.png)
 DashBoard showing game squad list
-  ![Dashboard Main](src\pictures\DashBoardSquads.png)
+  ![Dashboard Main](DashBoardSquads.png)
 Creating a new Squad
-  ![Dashboard Main](src\pictures\DashBoardMakeSquad.png)
+  ![Dashboard Main](DashBoardMakeSquad.png)
 
 
 ## V1 Feature List
@@ -38,15 +38,16 @@ Created with React, React-Hooks, JSX, HTML5, CSS3
 
 ## Wire Frames
 WireFrame Dashboard
-![WireFram-Dashboard](src\pictures\WireFrame-Dashboard.PNG)
+![WireFram-Dashboard](WireFrame-Dashboard.PNG)
 WireFrame GameSquadList
-![WireFram-Dashboard](src\pictures\WireFrame-GameSquadList.PNG)
+![WireFram-Dashboard](WireFrame-GameSquadList.PNG)
 WireFrame new Squad form
-![WireFram-Dashboard](src\pictures\WireFrame-newSquadForm.PNG)
+![WireFram-Dashboard](WireFrame-newSquadForm.PNG)
 WireFram Mobile Dashboard
-![WireFram-Dashboard](src\pictures\WireFrame-Mobile-Dash.PNG)
+![WireFram-Dashboard](WireFrame-Mobile-Dash.PNG)
 WireFrame Mobile Chat
-![WireFram-Dashboard](src\pictures\WireFrame-Mobile-chat.PNG)
+![WireFram-Dashboard](WireFrame-Mobile-chat.PNG)
+
 ## Created By
 * [Adam](https://github.com/AdamPavlicek "Adam's Github")
 * [Cody](https://github.com/cgillette12 "Cody's Github")
