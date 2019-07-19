@@ -67,6 +67,7 @@ export default function LiveChat(props) {
             ev.preventDefault()
             context.setSquadId(squad.squad_id)
             context.setSquadName(squad.squad_name)
+            setShowBotMenu(!showBotMenu)
           }}
         >
           {squad.squad_name}
@@ -126,6 +127,7 @@ export default function LiveChat(props) {
                 ev.preventDefault()
                 context.setSquadId(999)
                 context.setSquadName('General Chat')
+                setShowBotMenu(!showBotMenu)
               }}
             >
               General Chat
