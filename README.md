@@ -14,13 +14,13 @@ Created by gamers to bring all your gaming communities under one roof. Find new 
 
 ## Screenshots
 Dashboard
-  ![Dashboard Main](/screenshots/DashBoardMain.png)
+  ![Dashboard Main](/src/screenshots/DashBoardMain.png)
 
 DashBoard with Squads
-  ![Dashboard Main](/screenshots/DashBoardSquads.png)
+  ![Dashboard Main](/src/screenshots/DashBoardSquads.png)
 
 Creating a new Squad
-  ![Dashboard Main](/screenshots/DashBoardMakeSquad.png)
+  ![Dashboard Main](/src/screenshots/DashBoardMakeSquad.png)
 
 
 ## V1 Feature List
