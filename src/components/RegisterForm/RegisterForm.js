@@ -95,7 +95,7 @@ export default function RegisterForm(props) {
           </div>
         </div>
         <button type="submit" className="register-button">
-          Register
+          Sign Up
         </button>
       </form>
       </ScrollArea>

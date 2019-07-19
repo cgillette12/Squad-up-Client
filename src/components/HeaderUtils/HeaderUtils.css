@@ -86,8 +86,14 @@ nav.SideNav-button:hover {
     display: flex;
     background-color: var(--black);
 }
-
-@media only screen and (max-width: 800px) {
+.nav-login a{
+    list-style: none;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: var(linen);
+    width: 100%;
+}
+    @media only screen and (max-width: 800px) {
     .SideNav-button {
         display: flex;
     }

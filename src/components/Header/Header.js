@@ -26,7 +26,7 @@ export default function Header() {
   const renderLoginLink = () => {
     return (
       <div className='Header__logged-out'>
-        <Link to='/register'>Register</Link>
+        <Link to='/register'>Sign Up</Link>
         <Link to='/login'>Login</Link>
       </div>
     )

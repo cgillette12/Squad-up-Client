@@ -12,7 +12,7 @@ export default function RegisterRoute(props) {
   return (
     <div className='register-parent'>
       <section className='register-section'>
-        <h1 className='register-Title'>Register</h1>
+        <h1 className='register-Title'>Sign Up</h1>
         <RegisterForm onRegisterSuccess={handleRegisterSuccess} />
       </section>
     </div>

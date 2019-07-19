@@ -48,4 +48,7 @@
   .Header__user-avatar {
   width: 25px;
 }
+.Header__logged-out a{
+  color:var(--black);
+}
 }
