@@ -39,7 +39,6 @@ textarea:focus, #squad-tags-input:focus{
   padding:5px 0;
 }
 #list-tags {
-  max-width: 400px;
   display: flex;
   margin: 0;
   padding: 10px 0;
