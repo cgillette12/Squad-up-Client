@@ -11,9 +11,22 @@ body {
 }
 
 .red {
-  color: var(--vermilion);
+  color: var(--red);
 }
 
+button:hover {
+  cursor: pointer;
+  background-color: rgb(170, 8, 10);
+  color: var(--linen);
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+a:hover {
+  font-size: 105%;
+}
 
 :root{
  --black:#212121;

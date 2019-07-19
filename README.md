@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/screenshots/squaduplogo.png" height="300" /><br/>
+  <img src="/src/screenshots/squaduplogo.png" height="300" /><br/>
   <font size="4"><b>Find people to play the games you love</b></font><br/>
 </p>
 
@@ -51,15 +51,15 @@ Mobile Chat
 ![WireFrame-Dashboard](/screenshots/WireFrame-Mobile-chat.png) -->
 <p align="center">
   <font size="3"><b>Dashboard</b></font><br/>
-  <img src="/screenshots/WireFrame-Dashboard.png"  /><br/><br>
+  <img src="/src/screenshots/WireFrame-Dashboard.png"  /><br/><br>
   <font size="3"><b>Dashboard with Squads List</b></font><br/>
-  <img src="/screenshots/WireFrame-GameSquadList.png" /><br/><br>
+  <img src="/src/screenshots/WireFrame-GameSquadList.png" /><br/><br>
   <font size="3"><b>New Squad Form</b></font><br/>
-  <img src="/screenshots/WireFrame-newSquadForm.png" /><br/><br>
+  <img src="/src/screenshots/WireFrame-newSquadForm.png" /><br/><br>
   <font size="3"><b>Mobile Dashboard</b></font><br/>
-  <img src="/screenshots/WireFrame-Mobile-Dash.png" /><br/><br>
+  <img src="/src/screenshots/WireFrame-Mobile-Dash.png" /><br/><br>
   <font size="3"><b>Mobile Chat</b></font><br/>
-  <img src="/screenshots/WireFrame-Mobile-chat.png" /><br/>
+  <img src="/src/screenshots/WireFrame-Mobile-chat.png" /><br/>
 </p>
 
 ## Created By
