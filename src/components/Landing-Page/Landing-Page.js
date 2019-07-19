@@ -8,8 +8,8 @@ export default function Home(){
 
   return(
     <div id='homePage'>
-      <h1>SquadUp</h1>
-      <h2>One platform. Any game.</h2>
+      <h1 className='landing-page-heading'>SquadUp</h1>
+      <h2 className='tag-line'>One platform. Any game.</h2>
       <div id='features-wrapper'>
           <img className='image' src={DashboardScreenshot} alt='Dashboard Screenshot'></img>
         <div id='content-wrapper'> 
