@@ -24,14 +24,17 @@ export default function LiveChat(props) {
   const scrollArea = useRef()
   const scrollable = useRef()
   const inner = useRef()
+  const squadButton = useRef()
+  const [dropDownWidth, setDropDownWidth] = useState(0)
 
   useLayoutEffect(() => {
     const realHeight = inner.current.getBoundingClientRect().height
     const containerHeight = scrollable.current.clientHeight-20
-    
+    setDropDownWidth(squadButton.current.getBoundingClientRect().width)
     if (realHeight>containerHeight){
       scrollArea.current.state.topPosition = realHeight-containerHeight
     }
+
   },[messages])
 
   useEffect(() => {
@@ -112,7 +115,8 @@ export default function LiveChat(props) {
   }
 
   const ulStyle = {
-    marginTop: `-${(squadContext.squadList.length + 1) * 28}px`
+    marginTop: `-${(squadContext.squadList.length + 1) * 28}px`,
+    width:`${dropDownWidth}px`
   }
 
   return (
@@ -154,7 +158,7 @@ export default function LiveChat(props) {
           <></>
         )}
       </ul>
-      <button onClick={handleBotMenu} className="Show-List-Btn">
+      <button onClick={handleBotMenu} className="Show-List-Btn" ref={squadButton}>
         Show Squad List
       </button>
       <form className="chat-input" onSubmit={handleSubmit}>
