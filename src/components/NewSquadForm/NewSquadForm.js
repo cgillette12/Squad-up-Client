@@ -57,11 +57,14 @@ export default function NewSquadForm(props) {
         <section className='taglist'>
           <ul id='list-tags'>
             {squadTags.map((tag, index) =>
+              <section className='tagList-wrapper'>
                 <li className='squad-tag' key={index}>
-               <button type='button' 
-               className='remove-tag-button' 
-                    onClick={() => removeTag(index)}>{tag} X</button>
+                  <p className='remove-tag-button'>{tag}
+                    <span
+                      onClick={() => removeTag(index)}> X </span>
+                  </p>
                 </li>
+              </section>
             )}
           </ul>
         </section>
@@ -72,7 +75,10 @@ export default function NewSquadForm(props) {
           >
             New Squad
           </button>
-          <button type='button' className='new-squad-button' onClick={props.cancel}>Cancel</button>
+          <button
+            type='button'
+            className='new-squad-button'
+            onClick={props.cancel}>Cancel</button>
         </section>
       </form>
     </div>

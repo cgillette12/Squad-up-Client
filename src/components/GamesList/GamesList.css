@@ -13,3 +13,8 @@
 .Scrollable-games{
     height: 465px;
 }
+@media screen and (max-width: 800px){
+  .Scrollable-games{
+  height: 310px;
+}
+}

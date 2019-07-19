@@ -22,14 +22,7 @@
   border-radius: 5px;
   border: 0px;
 }
-.new-squad-button, .add-tag-button {
-  background: var(--red);
-  color: var(--linen);
-  border-radius: 1px;
-  border: 1px solid var(--red);
-  font-size: 16px;
-  padding: 10px 20px;
-}
+
 .tags-input-wrapper{
   border:2px solid var(--primary-color);
   border-radius: 5px;
@@ -48,7 +41,6 @@ textarea:focus, #squad-tags-input:focus{
 #list-tags {
   max-width: 400px;
   display: flex;
-  flex-direction: column;
   margin: 0;
   padding: 10px 0;
 }
@@ -57,24 +49,45 @@ textarea:focus, #squad-tags-input:focus{
   justify-content: space-between;
   align-items: center;
   font-size: 22px;
-  padding-left: 20px;
+  padding: 8px;
   font-weight: 400;
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  border-radius: 2px;
+  color: var(--linen);
+  background: var(--red);
+  border-radius: 10px;
 }
 .button-wrapper{
  display: flex;
- justify-content: space-evenly;
+ justify-content: space-between;
 }
-.remove-tag-button {
-  border: 1px solid var(--red);
+.tagList-wrapper{
+  padding:0 5px;
+}
+ .add-tag-button {
   background: var(--red);
   color: var(--linen);
   border-radius: 1px;
+  border: 1px solid var(--red);
   font-size: 16px;
   padding: 10px 20px;
 }
-.remove-tag-button:hover {
-  background-color: var(--vermilion)
+.new-squad-button {
+  background: var(--red);
+  color: var(--linen);
+  border-radius: 1px;
+  border: 1px solid var(--red);
+  font-size: 16px;
+  padding: 10px 84px;
+}
+@media screen and (max-width: 800px){
+  #squad-tags-input{
+    padding:0;
+  }
+ 
+
+.new-squad-button {
+   padding: 12px 20px;
+}
+.new-squad-button{
+ padding: 10px 30px;
+}
 }

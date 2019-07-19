@@ -45,3 +45,9 @@
 .Scrollable-squads{
   height: 410px;
 }
+
+@media screen and (max-width: 800px){
+  .Scrollable-squads{
+  height: 245px;
+}
+}
