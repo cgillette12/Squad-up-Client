@@ -35,9 +35,15 @@ export default function Header() {
   return (
     <header className='Header'>
       <h1 className='Header__brand'>
+        {TokenService.hasAuthToken() ? 
+        <Link to="/dashboard">
+          SquadUp
+        </Link> :
         <Link to='/'>
-          Squad Up
+          SquadUp
         </Link>
+      }
+          
       </h1>
       <nav className='Header__nav'>
         {TokenService.hasAuthToken()

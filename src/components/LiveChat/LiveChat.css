@@ -37,11 +37,11 @@
 }
 .Time-Text{
     font-weight: lighter;
+    font-size: 11px;
     color:rgb(116, 113, 113);
 }
 .User-Text{
     font-weight:bold;
-    
 }
 .Chat-SquadList-Ctner{
     position:absolute;
@@ -49,10 +49,8 @@
     background-color:white;
     z-index:5;
     list-style-type: none;
-    margin-top:-40px;
     height:fit-content;
     max-height: 200px;
-    width:fit-content;
 }
 .Drop-Down-Squad{
     height:20px;
@@ -63,4 +61,14 @@
 .Show-List-Btn{
     width:100%;
     font-size:18px;
+}
+@media only screen and (min-width:800px){
+    .Chat-SquadList-Ctner{
+        width:20%;
+    }
+}
+@media only screen and (max-width:800px){
+    .Chat-SquadList-Ctner{
+        width:100%;
+    }
 }

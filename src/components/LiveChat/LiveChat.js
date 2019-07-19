@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect, useRef, useLayoutEffect } from 'react'
 import config from '../../config'
 import openSocket from 'socket.io-client'
 import UserContext from '../../contexts/UserContext'
@@ -9,6 +9,7 @@ import MessageBlock from './MessageBlock'
 import MobileUtils from '../Utils/MobileUtils'
 import ScrollArea from 'react-scrollbar'
 import { Input } from '../FormUtils/FormUtils'
+
 import './LiveChat.css'
 
 const io = openSocket(config.LIVE_CHAT_ENDPOINT)
@@ -20,6 +21,18 @@ export default function LiveChat(props) {
   const squadContext = useContext(SquadContext)
   const [messages, setMessages] = useState([])
   const [showBotMenu, setShowBotMenu] = useState(false)
+  const scrollArea = useRef()
+  const scrollable = useRef()
+  const inner = useRef()
+
+  useLayoutEffect(() => {
+    const realHeight = inner.current.getBoundingClientRect().height
+    const containerHeight = scrollable.current.clientHeight-20
+    
+    if (realHeight>containerHeight){
+      scrollArea.current.state.topPosition = realHeight-containerHeight
+    }
+  },[messages])
 
   useEffect(() => {
     io.emit('join room', context.squad_id)
@@ -32,7 +45,7 @@ export default function LiveChat(props) {
     ev.preventDefault()
     setShowBotMenu(!showBotMenu)
   }
-
+  
   useEffect(() => {
     io.on('update chat', function(msg) {
       setMessages([...messages, msg])
@@ -55,6 +68,7 @@ export default function LiveChat(props) {
     }
     setMessage('')
     io.emit('message', newMessage)
+    
   }
 
   const displayDropDown = () => {
@@ -67,6 +81,7 @@ export default function LiveChat(props) {
             ev.preventDefault()
             context.setSquadId(squad.squad_id)
             context.setSquadName(squad.squad_name)
+            setShowBotMenu(!showBotMenu)
           }}
         >
           {squad.squad_name}
@@ -103,14 +118,17 @@ export default function LiveChat(props) {
   return (
     <div className="LiveChat">
       <h4>{context.squad_name}</h4>
-      <div className="ChatHistory">
+      <div className="ChatHistory" ref={scrollable}>
         <ScrollArea
           speed={0.8}
           className="Scrollable-Chat"
           horizontal={false}
           vertical={true}
+          ref={scrollArea}
         >
-          {messagesBlock()}
+          <div id="Inner-Msg" ref={inner}>
+            {messagesBlock()}
+          </div>
         </ScrollArea>
       </div>
       <div className="red" role="alert">
@@ -126,6 +144,7 @@ export default function LiveChat(props) {
                 ev.preventDefault()
                 context.setSquadId(999)
                 context.setSquadName('General Chat')
+                setShowBotMenu(!showBotMenu)
               }}
             >
               General Chat

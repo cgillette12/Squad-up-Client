@@ -1,6 +1,5 @@
 export default {
-  // API_ENDPOINT: 'https://squadup-server.herokuapp.com/api',
-  API_ENDPOINT: 'http://localhost:8000/api',
-  TOKEN_KEY: 'squad-up',
-  LIVE_CHAT_ENDPOINT: 'http://localhost:8000'
+  API_ENDPOINT: 'https://squadup-server.herokuapp.com/api',
+  LIVE_CHAT_ENDPOINT: 'https://squadup-server.herokuapp.com',
+  TOKEN_KEY: 'squad-up'
 }

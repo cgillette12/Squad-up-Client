@@ -1,5 +1,7 @@
 import React from 'react'
 import RegisterForm from '../../components/RegisterForm/RegisterForm'
+import TokenService from '../../services/token-service'
+import { Redirect } from 'react-router-dom'
 
 export default function RegisterRoute(props) {
   
@@ -11,6 +13,7 @@ export default function RegisterRoute(props) {
 
   return (
     <div className='register-parent'>
+      {TokenService.hasAuthToken()? <Redirect to="/dashboard"/> : <></>}
       <section className='register-section'>
         <h1 className='register-Title'>Sign Up</h1>
         <RegisterForm onRegisterSuccess={handleRegisterSuccess} />
