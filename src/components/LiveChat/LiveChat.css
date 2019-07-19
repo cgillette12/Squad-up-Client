@@ -62,13 +62,3 @@
     width:100%;
     font-size:18px;
 }
-@media only screen and (min-width:800px){
-    .Chat-SquadList-Ctner{
-        width:20%;
-    }
-}
-@media only screen and (max-width:800px){
-    .Chat-SquadList-Ctner{
-        width:100%;
-    }
-}
