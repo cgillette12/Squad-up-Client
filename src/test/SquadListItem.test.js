@@ -1,13 +1,13 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom'
 import ReactDOM from 'react-dom';
-import Header from '../components/Header/Header'
+import SquadListItem from '../components/SquadListItem/SquadListItem'
 
-it('renders Header without crashing', () => {
+it('renders SquadListItem without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <BrowserRouter>
-    <Header  />
+    <SquadListItem squad={{tags: []}} />
     </BrowserRouter>, div)
   ReactDOM.unmountComponentAtNode(div)
 })

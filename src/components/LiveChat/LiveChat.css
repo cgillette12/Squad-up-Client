@@ -36,7 +36,8 @@
     padding:10px;
 }
 .Time-Text{
-    float:right;
+    font-weight: lighter;
+    color:rgb(116, 113, 113);
 }
 .User-Text{
     font-weight:bold;

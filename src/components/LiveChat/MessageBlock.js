@@ -18,11 +18,10 @@ export default function MessageBlock(props) {
   }
 
   return (
-    <div className="Msg-Ctner">
+    <div className="Msg-Ctner" id={props.id}>
       <div key={props.id} name={props.idx}>
-        <span className="User-Text">{props.username} :</span>
-        <span> {props.message_body}</span>
-        <span className="Time-Text">{renderTimeStamp()}</span>
+        <span className="User-Text">{props.username} </span>{' '} <span className="Time-Text">{renderTimeStamp()}</span><br/>
+        <span> {props.message_body}</span>   
       </div>
     </div>
   )

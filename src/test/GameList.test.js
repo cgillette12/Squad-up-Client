@@ -1,16 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'
-import LandingPage from '../components/Landing-Page/Landing-Page';
+import ReactDOM from 'react-dom';
+import GameList from '../components/GamesList/GamesList';
 
 
-
-it('renders LandingPage without crashing', () => {
+it('renders GameList without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
         <BrowserRouter>
-        <LandingPage/>
+        <GameList />
         </BrowserRouter>, div)
     ReactDOM.unmountComponentAtNode(div)
 })
-
