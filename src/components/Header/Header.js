@@ -26,7 +26,7 @@ export default function Header() {
   const renderLoginLink = () => {
     return (
       <div className='Header__logged-out'>
-        <Link to='/register'>Register</Link>
+        <Link to='/register'>Sign Up</Link>
         <Link to='/login'>Login</Link>
       </div>
     )
@@ -37,10 +37,10 @@ export default function Header() {
       <h1 className='Header__brand'>
         {TokenService.hasAuthToken() ? 
         <Link to="/dashboard">
-          Squad Up
+          SquadUp
         </Link> :
         <Link to='/'>
-          Squad Up
+          SquadUp
         </Link>
       }
           
