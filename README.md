@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/screen_shots/squaduplogo.png" height="300" /><br/>
+  <img src="/screenshots/squaduplogo.png" height="300" /><br/>
   <font size="4"><b>Find people to play the games you love</b></font><br/>
 </p>
 
@@ -12,15 +12,15 @@
 
 Created by gamers to bring all your gaming communities under one roof. Find new squads to enjoy your favorite activities from competitive FPS and MMO's to classic table-top RPGs, card games and even sports. No more bouncing from app to app to find like-minded gamers. 
 
-## Screen Shots
+## Screenshots
 Dashboard
-  ![Dashboard Main](/screen_shots/DashBoardMain.png)
+  ![Dashboard Main](/screenshots/DashBoardMain.png)
 
 DashBoard with Squads
-  ![Dashboard Main](/screen_shots/DashBoardSquads.png)
+  ![Dashboard Main](/screenshots/DashBoardSquads.png)
 
 Creating a new Squad
-  ![Dashboard Main](/screen_shots/DashBoardMakeSquad.png)
+  ![Dashboard Main](/screenshots/DashBoardMakeSquad.png)
 
 
 ## V1 Feature List
@@ -40,26 +40,26 @@ Created with React, React-Hooks, JSX, HTML5, CSS3
 
 ## Wire Frames
 <!-- Dashboard
-![WireFrame-Dashboard](/screen_shots/WireFrame-Dashboard.png)
+![WireFrame-Dashboard](/screenshots/WireFrame-Dashboard.png)
 Squads
-![WireFrame-Dashboard](/screen_shots/WireFrame-GameSquadList.png)
+![WireFrame-Dashboard](/screenshots/WireFrame-GameSquadList.png)
 New Squad form
-![WireFrame-Dashboard](/screen_shots/WireFrame-newSquadForm.png)
+![WireFrame-Dashboard](/screenshots/WireFrame-newSquadForm.png)
 Mobile Dashboard
-![WireFrame-Dashboard](/screen_shots/WireFrame-Mobile-Dash.png)
+![WireFrame-Dashboard](/screenshots/WireFrame-Mobile-Dash.png)
 Mobile Chat
-![WireFrame-Dashboard](/screen_shots/WireFrame-Mobile-chat.png) -->
+![WireFrame-Dashboard](/screenshots/WireFrame-Mobile-chat.png) -->
 <p align="center">
   <font size="3"><b>Dashboard</b></font><br/>
-  <img src="/screen_shots/WireFrame-Dashboard.png"  /><br/><br>
+  <img src="/screenshots/WireFrame-Dashboard.png"  /><br/><br>
   <font size="3"><b>Dashboard with Squads List</b></font><br/>
-  <img src="/screen_shots/WireFrame-GameSquadList.png" /><br/><br>
+  <img src="/screenshots/WireFrame-GameSquadList.png" /><br/><br>
   <font size="3"><b>New Squad Form</b></font><br/>
-  <img src="/screen_shots/WireFrame-newSquadForm.png" /><br/><br>
+  <img src="/screenshots/WireFrame-newSquadForm.png" /><br/><br>
   <font size="3"><b>Mobile Dashboard</b></font><br/>
-  <img src="/screen_shots/WireFrame-Mobile-Dash.png" /><br/><br>
+  <img src="/screenshots/WireFrame-Mobile-Dash.png" /><br/><br>
   <font size="3"><b>Mobile Chat</b></font><br/>
-  <img src="/screen_shots/WireFrame-Mobile-chat.png" /><br/>
+  <img src="/screenshots/WireFrame-Mobile-chat.png" /><br/>
 </p>
 
 ## Created By
