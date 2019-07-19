@@ -55,7 +55,7 @@ Mobile Chat
   <font size="3"><b>Dashboard with Squads List</b></font><br/>
   <img src="/screen_shots/WireFrame-GameSquadList.png" /><br/><br>
   <font size="3"><b>New Squad Form</b></font><br/>
-  <img src="//screen_shots/WireFrame-newSquadForm.png" /><br/><br>
+  <img src="/screen_shots/WireFrame-newSquadForm.png" /><br/><br>
   <font size="3"><b>Mobile Dashboard</b></font><br/>
   <img src="/screen_shots/WireFrame-Mobile-Dash.png" /><br/><br>
   <font size="3"><b>Mobile Chat</b></font><br/>
