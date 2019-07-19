@@ -7,6 +7,7 @@
 ## Introduction
 
 [SquadUp Live](https://squadup.now.sh "Live Site")
+
 [SquadUp Backend Repo](https://github.com/nickjlee/squad-up-api "Backend Repo")
 
 Created by gamers to bring all your gaming communities under one roof. Find new squads to enjoy your favorite activities from competitive FPS and MMO's to classic table-top RPGs, card games and even sports. No more bouncing from app to app to find like-minded gamers. 
@@ -15,7 +16,7 @@ Created by gamers to bring all your gaming communities under one roof. Find new 
 Dashboard
   ![Dashboard Main](/screen_shots/DashBoardMain.png)
 
-DashBoard showing 
+DashBoard with Squads
   ![Dashboard Main](/screen_shots/DashBoardSquads.png)
 
 Creating a new Squad
@@ -38,16 +39,28 @@ Creating a new Squad
 Created with React, React-Hooks, JSX, HTML5, CSS3 
 
 ## Wire Frames
-Wire Frame Dashboard
+<!-- Dashboard
 ![WireFrame-Dashboard](/screen_shots/WireFrame-Dashboard.png)
-Wire Frame GameSquadList
+Squads
 ![WireFrame-Dashboard](/screen_shots/WireFrame-GameSquadList.png)
-Wire Frame new Squad form
+New Squad form
 ![WireFrame-Dashboard](/screen_shots/WireFrame-newSquadForm.png)
-Wire Frame Mobile Dashboard
+Mobile Dashboard
 ![WireFrame-Dashboard](/screen_shots/WireFrame-Mobile-Dash.png)
-Wire Frame Mobile Chat
-![WireFrame-Dashboard](/screen_shots/WireFrame-Mobile-chat.png)
+Mobile Chat
+![WireFrame-Dashboard](/screen_shots/WireFrame-Mobile-chat.png) -->
+<p align="center">
+  <font size="3"><b>Dashboard</b></font><br/>
+  <img src="/screen_shots/WireFrame-Dashboard.png"  /><br/><br>
+  <font size="3"><b>Dashboard with Squads List</b></font><br/>
+  <img src="/screen_shots/WireFrame-GameSquadList.png" /><br/><br>
+  <font size="3"><b>New Squad Form</b></font><br/>
+  <img src="//screen_shots/WireFrame-newSquadForm.png" /><br/><br>
+  <font size="3"><b>Mobile Dashboard</b></font><br/>
+  <img src="/screen_shots/WireFrame-Mobile-Dash.png" /><br/><br>
+  <font size="3"><b>Mobile Chat</b></font><br/>
+  <img src="/screen_shots/WireFrame-Mobile-chat.png" /><br/>
+</p>
 
 ## Created By
 * [Adam](https://github.com/AdamPavlicek "Adam's Github")
