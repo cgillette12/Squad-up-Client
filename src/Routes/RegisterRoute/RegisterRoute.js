@@ -15,7 +15,7 @@ export default function RegisterRoute(props) {
     <div className='register-parent'>
       {TokenService.hasAuthToken()? <Redirect to="/dashboard"/> : <></>}
       <section className='register-section'>
-        <h1 className='register-Title'>Register</h1>
+        <h1 className='register-Title'>Sign Up</h1>
         <RegisterForm onRegisterSuccess={handleRegisterSuccess} />
       </section>
     </div>

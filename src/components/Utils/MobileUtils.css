@@ -12,9 +12,12 @@
 
 .mobile-button{
   font-size: 20px;
-  padding: 5, 8;
   margin: 10px;
   border-radius: 25px;
+  text-decoration: none;
+  color: var(--linen);
+  background: var(--red);
+  padding: 5px 10px;
 }
 
 
