@@ -10,12 +10,18 @@
     padding: 22px 0px;
     font-size: 28px;;
     box-shadow: 0 4px 4px rgba(160, 160, 160, .6);
-    background:#7A0607;
+    background:var(--red);
     color: var(--linen);
 }
 
 .Scrollable-Chat{
     height:70vh;
+}
+.scrollarea .scrollbar-container.vertical .scrollbar{
+    width: 0; 
+    height: 0;
+    background: none;
+    margin-left: 0;
 }
 .Message-Input{
     font-size:18px;

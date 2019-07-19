@@ -63,4 +63,9 @@
 .SquadListItem__join-button {
   margin-left: auto;
   padding: 10px 20px;
+  background: var(--red);
+  color: var(--linen);
+  border-radius: 1px;
+  font-size: 16px;
+  padding: 10px 20px;
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import GameContext from '../../contexts/GameContext'
 import GameApiService from '../../services/game-api.service'
 import GamesSublist from '../GamesSublist/GamesSublist'
+import ScrollArea from 'react-scrollbar'
 import { Input } from '../FormUtils/FormUtils'
 import './GamesList.css'
 
@@ -71,7 +72,17 @@ export default function GamesList() {
           autoFocus
         />
       </form>
+      <ScrollArea
+        speed={0.8}
+        className="Scrollable-games"
+        horizontal={false}
+        vertical={true}
+        smoothScrolling={true}
+      >
+      <section className='games-section'>
       {renderGames()}
+      </section>
+      </ScrollArea>
     </section>
   )
 }
