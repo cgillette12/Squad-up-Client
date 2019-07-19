@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import { Input, Label } from '../../components/FormUtils/FormUtils'
 import avatarList from './avatarList'
+import ScrollArea from 'react-scrollbar'
 import './RegisterForm.css'
 
 export default function RegisterForm(props) {
@@ -40,7 +41,14 @@ export default function RegisterForm(props) {
   }
   
   return (
-    <div className="register">
+    <div className="register"> 
+      <ScrollArea
+        speed={0.8}
+        className="Scrollable-register"
+        horizontal={false}
+        vertical={true}
+        smoothScrolling={true}
+      >
       <form className="register-form" onSubmit={handleNewUserSubmit}>
         <div className="red" role="alert">{error && <p>{error}</p>}</div>
         <Input
@@ -51,7 +59,7 @@ export default function RegisterForm(props) {
           placeholder="Name"
           aria-label="name"
           required
-        />
+          />
         <Input
           onChange={e => setUserName(e.target.value)}
           id="register-username-input"
@@ -60,7 +68,7 @@ export default function RegisterForm(props) {
           aria-label="username"
           placeholder="Username"
           required
-        />
+          />
         <Input
           onChange={e => setPassword(e.target.value)}
           id="register-password-input"
@@ -69,27 +77,28 @@ export default function RegisterForm(props) {
           aria-label="password"
           placeholder="Password"
           required
-        />
+          />
         <div className="avatar-section">
           <Label className="avatar">Select Your Avatar:</Label>
           <div className="avatar-list">
             {avatarList.map((avatar, index) => (
               <img
-                key={index}
-                className="avatar-item"
-                onClick={() => setAvatar(avatar)}
-                onKeyPress={e => {if(e.key === " ") setAvatar(avatar)}}
-                tabIndex="0"
-                src={avatar}
-                alt={`avatar${index}`}
+              key={index}
+              className="avatar-item"
+              onClick={() => setAvatar(avatar)}
+              onKeyPress={e => {if(e.key === " ") setAvatar(avatar)}}
+              tabIndex="0"
+              src={avatar}
+              alt={`avatar${index}`}
               />
-            ))}
+              ))}
           </div>
         </div>
         <button type="submit" className="register-button">
           Register
         </button>
       </form>
+      </ScrollArea>
     </div>
   )
 }

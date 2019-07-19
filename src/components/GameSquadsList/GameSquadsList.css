@@ -43,11 +43,11 @@
   padding: 10px 20px;
 }
 .Scrollable-squads{
-  height: 410px;
+  height: 60vh;
 }
 
 @media screen and (max-width: 800px){
   .Scrollable-squads{
-  height: 245px;
+  height: 50vh;
 }
 }

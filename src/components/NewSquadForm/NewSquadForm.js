@@ -57,8 +57,8 @@ export default function NewSquadForm(props) {
         <section className='taglist'>
           <ul id='list-tags'>
             {squadTags.map((tag, index) =>
-              <section className='tagList-wrapper'>
-                <li className='squad-tag' key={index}>
+              <section className='tagList-wrapper' key={index}>
+                <li className='squad-tag'>
                   <p className='remove-tag-button'>{tag}
                     <span
                       onClick={() => removeTag(index)}> X </span>
