@@ -81,14 +81,14 @@ export default function RegisterForm(props) {
         <div className="avatar-section">
           <Label className="avatar">Select Your Avatar:</Label>
           <div className="avatar-list">
-            {avatarList.map((avatar, index) => (
+            {avatarList.map((avtr, index) => (
               <img
               key={index}
-              className="avatar-item"
-              onClick={() => setAvatar(avatar)}
-              onKeyPress={e => {if(e.key === " ") setAvatar(avatar)}}
+              className={`avatar-item${avatar !== avtr ? '' : ' selected-avatar'}`}
+              onClick={() => setAvatar(avtr)}
+              onKeyPress={e => {if(e.key === " ") setAvatar(avtr)}}
               tabIndex="0"
-              src={avatar}
+              src={avtr}
               alt={`avatar${index}`}
               />
               ))}
