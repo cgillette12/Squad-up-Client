@@ -7,7 +7,7 @@ export default function RegisterRoute(props) {
   
   const handleRegisterSuccess = () => {
     const {location = {}, history={push: () => {}}} = props;
-    const destination = (location.state || {}).from || '/login'
+    const destination = (location.state || {}).from || '/dashboard'
     history.push(destination)
   }
 
