@@ -3,6 +3,7 @@ import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/UserContext'
 import { Input } from '../../components/FormUtils/FormUtils'
 import './LoginForm.css'
+import DemoCreds from '../DemoCreds/DemoCreds';
 
 export default function LoginForm(props) {
   const [user, setUser] = useState('')
@@ -61,6 +62,7 @@ export default function LoginForm(props) {
           <button type="submit" className="login-button">
             Login
           </button>
+          <DemoCreds />
     </form>
   )
 }

@@ -1,64 +1,70 @@
-.LiveChat{
-    border-left:1px solid var(--grey);
-    border-bottom:1px solid var(--grey);
-    color:var(--black);
+.LiveChat {
+  border-left: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+  color: var(--black);
 }
 
-.LiveChat h4{
-    text-align: center;
-    margin: 0;
-    padding: 22px 0px;
-    font-size: 28px;;
-    box-shadow: 0 4px 4px rgba(160, 160, 160, .6);
-    background:var(--red);
-    color: var(--linen);
+.LiveChat h4 {
+  text-align: center;
+  margin: 0;
+  padding: 22px 0px;
+  font-size: 28px;
+  box-shadow: 0 4px 4px rgba(160, 160, 160, 0.6);
+  background: var(--red);
+  color: var(--linen);
 }
 
-.Scrollable-Chat{
-    height:70vh;
+.Scrollable-Chat {
+  height: 70vh;
 }
-.scrollarea .scrollbar-container.vertical .scrollbar{
-    width: 0; 
-    height: 0;
-    background: none;
-    margin-left: 0;
+.scrollarea .scrollbar-container.vertical .scrollbar {
+  width: 0;
+  height: 0;
+  background: none;
+  margin-left: 0;
 }
-.Message-Input{
-    font-size:18px;
-    width:100%;
-    margin-bottom:0;
-    margin-top:0;
+.Message-Input {
+  font-size: 18px;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
 }
-.Msg-Ctner{
-   padding:10px
+.Msg-Ctner {
+  padding: 10px;
 }
-.ChatHistory{
-    padding:10px;
+.ChatHistory {
+  padding: 10px;
 }
-.Time-Text{
-    font-weight: lighter;
-    font-size: 11px;
-    color:rgb(116, 113, 113);
+.Time-Text {
+  font-weight: lighter;
+  font-size: 11px;
+  color: rgb(116, 113, 113);
 }
-.User-Text{
-    font-weight:bold;
+.User-Text {
+  font-weight: bold;
 }
-.Chat-SquadList-Ctner{
-    position:absolute;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    background-color:white;
-    z-index:5;
-    list-style-type: none;
-    height:fit-content;
-    max-height: 200px;
+.Chat-SquadList-Ctner {
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  z-index: 5;
+  list-style-type: none;
+  height: fit-content;
+  max-height: 200px;
 }
-.Drop-Down-Squad{
-    height:20px;
-    font-size:18px;
-    text-align:center;
-    margin-bottom: 8px;
+.Drop-Down-Squad {
+  height: 20px;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 8px;
 }
-.Show-List-Btn{
-    width:100%;
-    font-size:18px;
+.Show-List-Btn {
+  width: 100%;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 800px) {
+  .Scrollable-Chat {
+    height: 58vh;
+  }
 }

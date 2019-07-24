@@ -3,7 +3,6 @@ import LoginForm from '../../components/LoginForm/LoginForm'
 import { Redirect } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 
-
 export default function LoginRoute(props) {
 
   const handleLoginSuccess = () => {

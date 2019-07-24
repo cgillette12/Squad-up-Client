@@ -38,6 +38,16 @@
   border-radius: 3px;
 }
 
+.Register__password-req-txt {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.avatar {
+  font-size: 22px;
+}
+
 .avatar-list {
   display: flex;
   flex-flow: row wrap;
@@ -51,6 +61,7 @@
   border-radius: 50%;
   background-color: var(--vermilion);
   margin: 3px;
+  transition: transform ease-in 0.2s;
 }
 
 .avatar-item:hover,
@@ -58,7 +69,13 @@
   transform: scale(1.1, 1.1);
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   cursor: pointer;
+  border: 3px solid var(--red);
 }
+
+.selected-avatar {
+  border-radius: 0;
+}
+
 .Scrollable-register{
   height: 83vh;
 }
