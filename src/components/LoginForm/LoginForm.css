@@ -1,9 +1,9 @@
 
 
 .login-section {
-    margin: auto;
-    max-width: 500px;
-    color: var(--black);
+  margin: auto;
+  max-width: 500px;
+  color: var(--black);
 }
 
 .login-form {
@@ -11,6 +11,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.login-Title{
+  margin: 0;
+  font-size: 36px;
+  text-align: center;
+  padding: 15px;
 }
 
 .login-button {

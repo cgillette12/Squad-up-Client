@@ -1,9 +1,10 @@
-
 #homePage{
   margin: auto;
+  max-width: 80%;
   color: var(--black);
   display: flex;
   flex-direction: column;
+
 }
 .landing-page-heading, .tag-line, .image-caption {
   text-align: center;
