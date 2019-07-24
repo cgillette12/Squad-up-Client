@@ -6,13 +6,6 @@ import UserContext from '../../contexts/UserContext'
 import AuthApiService from '../../services/auth-api-service'
 
 export default function RegisterRoute(props) {
-<<<<<<< HEAD
-  
-  const handleRegisterSuccess = () => {
-    const {location = {}, history={push: () => {}}} = props;
-    const destination = (location.state || {}).from || '/dashboard'
-    history.push(destination)
-=======
   const userContext = useContext(UserContext)
 
   const handleRegisterSuccess = (username, password) => {
@@ -28,7 +21,6 @@ export default function RegisterRoute(props) {
         history.push(destination)
       })
       .catch(res => alert(res.error))
->>>>>>> 4c310966d1053e690bfb01e570fac7edf5d20224
   }
 
   return (
