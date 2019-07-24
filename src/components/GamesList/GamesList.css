@@ -10,12 +10,13 @@
     border: 2px solid var(--primary-color);
     width: 100%;
 }
+
 .Scrollable-games{
     max-height: 70vh;
 }
 
 @media screen and (max-width: 800px){
   .Scrollable-games{
-  height: 60vh;
-}
+    height: 48vh;
+  }
 }
