@@ -4,10 +4,11 @@ import './Landing-Page.css'
 import DashboardScreenshot from '../../screenshots/DashBoardWithUpdatedChat.png'
 import DemoCreds from '../DemoCreds/DemoCreds'
 import TokenService from '../../services/token-service'
-import UserContext from '../../contexts/UserContext';
+import UserContext from '../../contexts/UserContext'
 
 export default function Home() {
-  const userContext = useContext(UserContext);
+  // eslint-disable-next-line no-unused-vars
+  const userContext = useContext(UserContext)
 
   return (
     <div id="homePage">
@@ -31,8 +32,7 @@ export default function Home() {
             <br />
             The SquadUp dashboard is the last tool you'll need to connect with
             fellow gamers. Search for games, join or create squads and stay
-            connected to your squadmates with a dedicated squad chatroom.{' '}
-            <br />
+            connected to your squadmates with a dedicated squad chatroom. <br />
             <br />
             Check us out before signing up!
           </p>
