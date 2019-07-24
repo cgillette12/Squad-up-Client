@@ -36,7 +36,7 @@ export default function MySquads() {
       )
     })
   }
-
+// Due to time restraints the only funtionality of this component is desplaying the squad list 
   return (
     <div className="Dashboard__user-squads">
       <div role="alert">{error && <p>{error}</p>}</div>

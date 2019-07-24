@@ -21,9 +21,6 @@
   color:var(--black);
   text-align: center;
 }
-.squad:hover{
-  transform: scale(1.01);
-}
 .squad-item-wrapper{
   display:flex;
 }
