@@ -21,6 +21,7 @@
   background-color: firebrick;
   border-radius: 50%;
   width: 33px;
+  height: 33px;
 }
 
 .Header__logged-in,
