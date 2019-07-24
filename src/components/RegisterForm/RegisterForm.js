@@ -5,6 +5,7 @@ import avatarList from './avatarList'
 import ScrollArea from 'react-scrollbar'
 import './RegisterForm.css'
 import DemoCreds from '../DemoCreds/DemoCreds';
+import UserContext from '../../contexts/UserContext';
 
 export default function RegisterForm(props) {
   const [userName, setUserName] = useState('')
@@ -30,11 +31,11 @@ export default function RegisterForm(props) {
       avatar
     })
       .then(() => {
+        onRegisterSuccess(userName, password)
         setUserName('')
         setName('')
         setPassword('')
         setAvatar('')
-        onRegisterSuccess()
       })
       .catch(res => {
         setError(res.error)
