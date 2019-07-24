@@ -4,6 +4,7 @@ import { Input, Label } from '../../components/FormUtils/FormUtils'
 import avatarList from './avatarList'
 import ScrollArea from 'react-scrollbar'
 import './RegisterForm.css'
+import DemoCreds from '../DemoCreds/DemoCreds';
 
 export default function RegisterForm(props) {
   const [userName, setUserName] = useState('')
@@ -107,6 +108,7 @@ export default function RegisterForm(props) {
           <button type="submit" className="register-button">
             Sign Up
           </button>
+          <DemoCreds />
         </form>
       </ScrollArea>
     </div>
