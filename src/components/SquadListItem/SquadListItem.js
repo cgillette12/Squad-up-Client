@@ -55,6 +55,7 @@ export default function SquadListItem(props) {
             src={member.avatar}
             alt="Member Avatar"
           />
+          <span className="SquadListItem__member-name">{member.username}</span>
         </div>
       )
     })
