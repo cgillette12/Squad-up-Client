@@ -64,6 +64,12 @@ export default function LiveChat(props) {
       setError(new Error('Please log in'))
     }
 
+    if(!message.trim().length) {
+      setMessage('')
+      setError('no empty strings in chat!')
+      return
+    }
+
     const newMessage = {
       message_body: message,
       username: context.user.username,
@@ -71,7 +77,6 @@ export default function LiveChat(props) {
     }
     setMessage('')
     io.emit('message', newMessage)
-    
   }
 
   const displayDropDown = () => {

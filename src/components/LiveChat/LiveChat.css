@@ -17,18 +17,22 @@
 .Scrollable-Chat {
   height: 70vh;
 }
+
 .scrollarea .scrollbar-container.vertical .scrollbar {
   width: 0;
   height: 0;
   background: none;
   margin-left: 0;
 }
+
 .Message-Input {
   font-size: 18px;
+  padding: 10px 20px;
   width: 100%;
   margin-bottom: 0;
   margin-top: 0;
 }
+
 .Msg-Ctner {
   padding: 10px;
 }
