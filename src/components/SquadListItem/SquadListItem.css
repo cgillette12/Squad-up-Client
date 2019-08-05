@@ -30,6 +30,10 @@
 
 .SquadListItem__member-name {
   padding: 4px 0;
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .SquadListItem__member-img {

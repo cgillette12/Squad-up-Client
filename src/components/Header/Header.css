@@ -24,6 +24,11 @@
   height: 33px;
 }
 
+.header__user-name{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .Header__logged-in,
 .Header__not-logged-in {
   display: flex;
@@ -52,4 +57,14 @@
 .Header__logged-out a{
   color:var(--black);
 }
+}
+
+@media screen and (max-width: 400px){
+  .Header a {
+    color: var(--linen);
+    text-decoration: none;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
