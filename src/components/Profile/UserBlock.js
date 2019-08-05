@@ -33,7 +33,7 @@ export default function UserBlock(props) {
             src={props.avatar}
             alt={`Avatar of ${props.username}`}
           />
-          <h3>{props.username}</h3>
+          <h3 className='profile-user-name'>{props.username}</h3>
         </section>
         <div className="Level-Container">
           <h4>level: {props.level}</h4>
