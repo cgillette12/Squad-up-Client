@@ -12,6 +12,7 @@
 /build
 
 # misc
+package-lock.json
 .vscode
 .assets
 .DS_Store

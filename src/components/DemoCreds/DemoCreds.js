@@ -1,13 +1,17 @@
 import React, { useContext } from 'react'
+import { withRouter } from 'react-router-dom'
 import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/UserContext'
 
-export default function DemoCreds(props) {
+function DemoCreds(props) {
   const userContext = useContext(UserContext)
 
   const handleDemoLoginSuccess = () => {
     const { location = {}, history = { push: () => {} } } = props
-    const destination = (location.state || {}).from || '/dashboard'
+    const destination =
+      (location.state || {}).from || window.innerWidth <= 800
+        ? '/games'
+        : '/dashboard'
     history.push(destination)
   }
 
@@ -31,3 +35,5 @@ export default function DemoCreds(props) {
     </button>
   )
 }
+
+export default withRouter(DemoCreds)
