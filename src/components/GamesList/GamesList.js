@@ -78,10 +78,11 @@ export default function GamesList() {
         horizontal={false}
         vertical={true}
         smoothScrolling={true}
+        style={{maxHeight: `${window.innerHeight - ((window.innerWidth <= 800) ? 338 : 259)}px`}}
       >
-      <section className='games-section'>
-      {renderGames()}
-      </section>
+        <section className='games-section'>
+        {renderGames()}
+        </section>
       </ScrollArea>
     </section>
   )

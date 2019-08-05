@@ -1,22 +1,12 @@
 .GamesList__search-bar {
- padding:15px;
- box-shadow: 0 4px 4px rgba(160, 160, 160, .6);
+  padding: 15px;
+  box-shadow: 0 4px 4px rgba(160, 160, 160, 0.6);
 }
 
 .GamesList__search-input {
-    font-size: 22px;
-    padding: 8px 20px;
-    border-radius: 5px;
-    border: 2px solid var(--primary-color);
-    width: 100%;
-}
-
-.Scrollable-games{
-    max-height: 64vh;
-}
-
-@media screen and (max-width: 800px){
-  .Scrollable-games{
-    height: 48vh;
-  }
+  font-size: 22px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+  width: 100%;
 }
