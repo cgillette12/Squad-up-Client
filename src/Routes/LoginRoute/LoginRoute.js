@@ -7,7 +7,8 @@ export default function LoginRoute(props) {
 
   const handleLoginSuccess = () => {
     const {location = {}, history={push: () => {}}} = props;
-    const destination = (location.state || {}).from || '/dashboard'
+    console.log(window.innerWidth)
+    const destination = (location.state || {}).from || (window.innerWidth <= 800) ? '/games' : '/dashboard'
     history.push(destination)
   }
 

@@ -17,7 +17,6 @@
 }
 
 .Header__user-avatar {
-  /* filter: invert(100%); */
   background-color: firebrick;
   border-radius: 50%;
   width: 33px;
@@ -35,10 +34,11 @@
 }
 
 @media screen and (max-width: 800px) {
-  body{
-    padding-top:75px;
+  body {
+    padding-top: 75px;
     padding-bottom: 45px;
   }
+
   .Header {
     flex-direction: column;
     position: fixed;
@@ -46,10 +46,9 @@
     top: 0;
     z-index: 2;
   }
-  .Header__user-avatar {
-  width: 25px;
-}
-.Header__logged-out a{
-  color:var(--black);
-}
+
+  .Header__logged-in,
+  .Header__logged-out {
+    display: none;
+  }
 }
