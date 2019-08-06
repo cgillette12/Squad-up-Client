@@ -12,6 +12,7 @@
 /build
 
 # misc
+__snapshots__
 package-lock.json
 .vscode
 .assets
