@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the LandingPage as expected 1`] = `
+<form
+  className="login-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="red"
+    role="alert"
+  />
+  <input
+    aria-label="username"
+    autoFocus={true}
+    id="login-username-input"
+    name="username"
+    onChange={[Function]}
+    placeholder="Username"
+    required={true}
+    type="text"
+    value=""
+  />
+  <input
+    aria-label="password"
+    id="login-password-input"
+    name="password"
+    onChange={[Function]}
+    placeholder="Password"
+    required={true}
+    type="password"
+    value=""
+  />
+  <button
+    className="login-button"
+    type="submit"
+  >
+    Login
+  </button>
+  <button
+    className="link-button"
+    onClick={[Function]}
+  >
+    Demo
+  </button>
+</form>
+`;
