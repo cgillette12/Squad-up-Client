@@ -64,6 +64,12 @@ export default function LiveChat(props) {
       setError(new Error('Please log in'))
     }
 
+    if(!message.trim().length) {
+      setMessage('')
+      setError('no empty strings in chat!')
+      return
+    }
+
     const newMessage = {
       message_body: message,
       username: context.user.username,
@@ -71,7 +77,6 @@ export default function LiveChat(props) {
     }
     setMessage('')
     io.emit('message', newMessage)
-    
   }
 
   const displayDropDown = () => {
@@ -115,8 +120,9 @@ export default function LiveChat(props) {
   }
 
   const ulStyle = {
-    marginTop: `-${(squadContext.squadList.length + 1) * 28}px`,
-    width:`${dropDownWidth}px`
+    marginTop: `-${10 + (squadContext.squadList.length + 1) * 28}px`,
+    width:`${dropDownWidth}px`,
+    paddingTop: `${showBotMenu ? '10' : '0'}px`
   }
 
   return (

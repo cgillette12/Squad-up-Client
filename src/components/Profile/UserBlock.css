@@ -19,6 +19,11 @@
     height:70px;
 }
 
+.profile-user-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .Level-Container{
     display: flex;
     justify-content: space-around;
