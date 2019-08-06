@@ -25,7 +25,8 @@ export default function GameSquadsList() {
     gameContext.clearError()
     setSquadsList(gameContext.selectedGame.squadsList)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [gameContext.selectedGame])
+
 
   const renderSquads = () => {
     if (openSquadForm === true) {
@@ -73,12 +74,21 @@ export default function GameSquadsList() {
         !res.ok ? res.json().then(err => Promise.reject(err)) : res.json()
       )
       .then(newSquad => {
-        setOpenSquadForm(false)
         setSquadsList([...squadsList, newSquad])
-        squadContext.addToSquadList(newSquad)
+        // squadContext.addToSquadList(newSquad)
+        let newList = gameContext.selectedGame
+        let addSquad = newSquad
+        addSquad.id = newSquad.squad_id
+        newList.squadsList.push(addSquad)
+        gameContext.setSelectedGame(newList)
+
         ProfileService.getUserInfo(userContext.user.id).then(data => {
           userContext.setUser(data)
         })
+      })
+      .then( () => {
+        console.log(squadsList,squadContext.squadList)
+        setOpenSquadForm(false)
       })
       .catch(res => {
         setError(res.error)
