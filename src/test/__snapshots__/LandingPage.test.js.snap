@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the LandingPage as expected 1`] = `
+<div
+  id="homePage"
+>
+  <h1
+    className="landing-page-heading"
+  >
+    SquadUp
+  </h1>
+  <h2
+    className="tag-line"
+  >
+    One platform. Any game.
+  </h2>
+  <div
+    id="features-wrapper"
+  >
+    <img
+      alt="Dashboard Screenshot"
+      className="image"
+      src="DashBoardWithUpdatedChat.png"
+    />
+    <div
+      id="content-wrapper"
+    >
+      <p
+        className="image-caption"
+      >
+        Everyone loves games. But finding a community for your specific game can leave you with a bunch of accounts and apps to download. Not anymore. SquadUp is the new home for all of your gaming interests. From the latest FPS and MOBAs, to the oldest table-top RPGs and even IRL sports, we've got it all.
+        <br />
+        <br />
+        The SquadUp dashboard is the last tool you'll need to connect with fellow gamers. Search for games, join or create squads and stay connected to your squadmates with a dedicated squad chatroom. 
+        <br />
+        <br />
+        Check us out before signing up!
+      </p>
+      <div
+        id="links-wrapper"
+      >
+        <a
+          href="/Register"
+          onClick={[Function]}
+        >
+          <button
+            className="link-button"
+          >
+            Sign up
+          </button>
+        </a>
+        <a
+          href="/Login"
+          onClick={[Function]}
+        >
+          <button
+            className="link-button"
+          >
+            Login
+          </button>
+        </a>
+        <button
+          className="link-button"
+          onClick={[Function]}
+        >
+          Demo
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
